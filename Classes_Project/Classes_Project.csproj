@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -55,10 +56,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inloggen.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Keuken.cs" />
     <Compile Include="Manager.cs" />
-    <Compile Include="Medewerkers.cs" />
+    <Compile Include="Medewerker.cs" />
+    <Compile Include="MedewerkerDAO.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />

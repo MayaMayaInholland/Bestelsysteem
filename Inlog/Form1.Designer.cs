@@ -63,12 +63,13 @@
             // 
             // btn_3
             // 
+            this.btn_3.BackColor = System.Drawing.Color.Transparent;
             this.btn_3.Location = new System.Drawing.Point(243, 180);
             this.btn_3.Name = "btn_3";
             this.btn_3.Size = new System.Drawing.Size(60, 47);
             this.btn_3.TabIndex = 2;
             this.btn_3.Text = "3";
-            this.btn_3.UseVisualStyleBackColor = true;
+            this.btn_3.UseVisualStyleBackColor = false;
             this.btn_3.Click += new System.EventHandler(this.btn_3_Click);
             // 
             // btn_4

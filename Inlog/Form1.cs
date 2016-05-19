@@ -3,28 +3,28 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using Classes_Project;
 
 namespace Inlog
 {
     public partial class Form1 : Form
     {
 
-        string connString = ConfigurationManager.ConnectionStrings["ReserveringenConnectionStringsSQL"].ConnectionString;
-        SqlConnection conn; 
+        SqlConnection conn;
         private string password;
 
         public Form1()
         {
             InitializeComponent();
-            conn = new SqlConnection(connString);
+            conn = new SqlConnection(Helper.ConnectionString);
             conn.Open();
             if (conn.State != ConnectionState.Open)
             {
-                lbl_Info.Text = "Kon niet verbinden met server";
+                lbl_Info.Text = "Kon niet verbinden met de server";
             }
             else
             {
-               // lbl_Info.Text = "Verbonden!";
+                // lbl_Info.Text = "Verbonden!";
             }
         }
 
@@ -93,10 +93,47 @@ namespace Inlog
 
         private void VerifyPassword()
         {
-            if(password.Length == 4)
+            if (password.Length == 4)
             {
-                lbl_Info.Text = "Bezig met inloggen..."; 
-                //query DB
+                if (conn.State == ConnectionState.Open)
+                {
+                    lbl_Info.Text = "Bezig met inloggen...";
+
+                    MedewerkerDAO mDAO = new MedewerkerDAO();
+                    Medewerker m = mDAO.GetByPincode(password);
+
+                    switch (m.GetType().Name)
+                    {
+                        case "Keuken":
+                            Keuken k = (Keuken)m;
+                            MessageBox.Show(k.Voornaam + " " + k.Achternaam);
+                            break;
+
+                        case "Bar":
+                            Bar b = (Bar)m;
+                            MessageBox.Show(b.Voornaam + " " + b.Achternaam);
+
+                            break;
+
+                        case "Bediening":
+                            Bediening be = (Bediening)m;
+                            MessageBox.Show(be.Voornaam + " " + be.Achternaam);
+
+                            break;
+
+                        case "Manager":
+                            Manager ma = (Manager)m;
+                            MessageBox.Show(m.Voornaam + " " + m.Achternaam);
+
+                            break;
+                    }
+
+                    conn.Close();
+                }
+                else
+                {
+                    lbl_Info.Text = "Kon niet verbinden met de server";
+                }
             }
         }
     }
