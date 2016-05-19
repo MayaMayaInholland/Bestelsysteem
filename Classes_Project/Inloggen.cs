@@ -7,5 +7,6 @@ namespace Classes_Project
 {
     public class Inloggen
     {
+
     }
 }
