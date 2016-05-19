@@ -107,23 +107,28 @@ namespace Inlog
                         case "Keuken":
                             Keuken k = (Keuken)m;
                             MessageBox.Show(k.Voornaam + " " + k.Achternaam);
+                            //open keuken form en stuur keuken mee
+
                             break;
 
                         case "Bar":
                             Bar b = (Bar)m;
                             MessageBox.Show(b.Voornaam + " " + b.Achternaam);
+                            //open bar form en stuur bar mee
 
                             break;
 
                         case "Bediening":
                             Bediening be = (Bediening)m;
                             MessageBox.Show(be.Voornaam + " " + be.Achternaam);
+                            //open bediening form en stuur bediening mee
 
                             break;
 
                         case "Manager":
                             Manager ma = (Manager)m;
                             MessageBox.Show(m.Voornaam + " " + m.Achternaam);
+                            //open manager form en stuur manager mee
 
                             break;
                     }
