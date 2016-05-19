@@ -9,11 +9,11 @@ namespace Classes_Project
     {
 
         //Meer ?
-        List<int>Tafel_nr = new List<int>();
+        List<Tafel> tafels;
 
         public Bediening(int id, int pincode, string naam, string achternaam) : base(id, pincode, naam, achternaam)
         {
-            
+            tafels = new List<Tafel>();
         }
     }
 }

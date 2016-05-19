@@ -9,9 +9,9 @@ namespace Classes_Project
     {
         private int Id;
         public int Nummer { get; set; }
-        public string Status { get; set; }
+        public TafelStatus Status { get; set; }
 
-        public Tafel(int nummer, string status)
+        public Tafel(int nummer, TafelStatus status)
         {
             this.Nummer = nummer;
             this.Status = status;

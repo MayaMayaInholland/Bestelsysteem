@@ -7,11 +7,11 @@ namespace Classes_Project
 {
     public class Product
     {
-        protected int Id;
-        protected int Categorie_id;
-        protected int Prijs;
-        protected int Voorraad;
-        protected int Btw;
+        private int Id;
+        public int Categorie_id { get; set; }
+        public int Prijs { get; set; }
+        public int Voorraad { get; set; }
+        public int Btw { get; set; }
 
         public Product(int id, int categorie_id, int prijs, int voorraad, int btw)
         {
