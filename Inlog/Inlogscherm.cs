@@ -102,46 +102,17 @@ namespace Inlog
                     MedewerkerDAO mDAO = new MedewerkerDAO();
                     Medewerker m = mDAO.GetByPincode(password);
 
-                    switch (m.GetType().Name)
+                    if (m != null)
                     {
-                        case "Keuken":
-                            Keuken k = (Keuken)m;
-                            MayaMaya keuken = new MayaMaya(k);
-                            keuken.Show();
-                           // MessageBox.Show(k.Voornaam + " " + k.Achternaam);
-                            //open keuken form en stuur keuken mee
 
-                            break;
-
-                        case "Bar":
-                            Bar b = (Bar)m;
-                            MayaMaya bar = new MayaMaya(b);
-                            bar.Show();
-                            //MessageBox.Show(b.Voornaam + " " + b.Achternaam);
-                            //open bar form en stuur bar mee
-
-                            break;
-
-                        case "Bediening":
-                            Bediening be = (Bediening)m;
-                            MayaMaya bediening = new MayaMaya(be);
-                            bediening.Show();
-                           // MessageBox.Show(be.Voornaam + " " + be.Achternaam);
-                            //open bediening form en stuur bediening mee
-
-                            break;
-
-                        case "Manager":
-                            Manager ma = (Manager)m;
-                            MayaMaya manager = new MayaMaya(ma);
-                            manager.Show();
-                            //MessageBox.Show(m.Voornaam + " " + m.Achternaam);
-                            //open manager form en stuur manager mee
-
-                            break;
+                        MayaMaya mayamaya = new MayaMaya(m);
+                        mayamaya.Show();
+                    }
+                    else
+                    {
+                        //gebruiker niet gevonden.. 
                     }
 
-                    
                     this.Hide();
 
                     conn.Close();
