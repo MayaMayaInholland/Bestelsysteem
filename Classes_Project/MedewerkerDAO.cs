@@ -50,8 +50,7 @@ namespace Classes_Project
                         return manager;
                 }
             }
-
-            return new Bediening(1, 1, "dit moet", "nog gefixt worden", MedewerkerRol.Bediening);
+            return null;
         }
         //public List<Medewerker> GetAll()
         //{
@@ -91,7 +90,7 @@ namespace Classes_Project
                         return manager;
                 }
             }
-            return new Bediening(1, 1, "dit moet", "nog gefixt worden", MedewerkerRol.Bediening);
+            return null;
         }
 
 

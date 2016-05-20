@@ -107,21 +107,27 @@ namespace Inlog
 
                         MayaMaya mayamaya = new MayaMaya(m);
                         mayamaya.Show();
+                        this.Hide();
+                        conn.Close();
                     }
                     else
                     {
-                        //gebruiker niet gevonden.. 
+                        lbl_Info.Text = "Inloggen niet geslaagd. Probeer het nog een keer.";
+                        password = "";
+                        txt_Password.Text = "";
                     }
-
-                    this.Hide();
-
-                    conn.Close();
                 }
                 else
                 {
                     lbl_Info.Text = "Kon niet verbinden met de server";
                 }
             }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            password = password.Remove(password.Length - 1);
+            txt_Password.Text = txt_Password.Text.Remove(txt_Password.TextLength - 1);
         }
     }
 }

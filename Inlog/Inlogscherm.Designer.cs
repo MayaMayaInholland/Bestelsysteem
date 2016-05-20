@@ -39,6 +39,7 @@
             this.btn_9 = new System.Windows.Forms.Button();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.lbl_Info = new System.Windows.Forms.Label();
+            this.btn_delete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_1
@@ -152,11 +153,22 @@
             this.lbl_Info.Size = new System.Drawing.Size(0, 16);
             this.lbl_Info.TabIndex = 10;
             // 
-            // Form1
+            // btn_delete
+            // 
+            this.btn_delete.Location = new System.Drawing.Point(111, 340);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(192, 23);
+            this.btn_delete.TabIndex = 11;
+            this.btn_delete.Text = "<--";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // Inlogscherm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(440, 429);
+            this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.lbl_Info);
             this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.btn_9);
@@ -168,7 +180,7 @@
             this.Controls.Add(this.btn_3);
             this.Controls.Add(this.btn_2);
             this.Controls.Add(this.btn_1);
-            this.Name = "Form1";
+            this.Name = "Inlogscherm";
             this.Text = "Login - MayaMaya";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -188,6 +200,7 @@
         private System.Windows.Forms.Button btn_9;
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.Label lbl_Info;
+        private System.Windows.Forms.Button btn_delete;
     }
 }
 
