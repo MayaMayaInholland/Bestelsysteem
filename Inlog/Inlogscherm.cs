@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using Classes_Project;
@@ -10,7 +9,6 @@ namespace Inlog
 {
     public partial class Inlogscherm : Form
     {
-
         SqlConnection conn;
         private string password;
 
@@ -134,7 +132,6 @@ namespace Inlog
 
         private void Shake()
         {
-           
             Point original = txt_Password.Location;
             Random rnd = new Random(5);
             const int shake_amplitude = 20;
