@@ -126,8 +126,11 @@ namespace Inlog
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            password = password.Remove(password.Length - 1);
-            txt_Password.Text = txt_Password.Text.Remove(txt_Password.TextLength - 1);
+            if (password.Length > 0)
+            {
+                password = password.Remove(password.Length - 1);
+                txt_Password.Text = txt_Password.Text.Remove(txt_Password.TextLength - 1);
+            }
         }
 
         private void Shake()

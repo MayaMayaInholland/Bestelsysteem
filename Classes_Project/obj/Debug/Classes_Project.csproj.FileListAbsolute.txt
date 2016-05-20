@@ -7,6 +7,4 @@ C:\Users\Jasper\Source\Repos\MayaMaya\Classes_Project\obj\Debug\Classes_Project.
 C:\Users\Jasper\Source\Repos\MayaMaya\Classes_Project\obj\Debug\Classes_Project.exe
 C:\Users\Jasper\Source\Repos\MayaMaya\Classes_Project\obj\Debug\Classes_Project.pdb
 C:\Users\Jasper\Source\Repos\MayaMaya\Classes_Project\obj\Debug\Classes_Project.MayaMaya.resources
-C:\Users\Jasper\Source\Repos\MayaMaya\Classes_Project\bin\Debug\Inlog.exe
-C:\Users\Jasper\Source\Repos\MayaMaya\Classes_Project\bin\Debug\Inlog.pdb
 C:\Users\Jasper\Source\Repos\MayaMaya\Classes_Project\obj\Debug\Classes_Project.csprojResolveAssemblyReference.cache
