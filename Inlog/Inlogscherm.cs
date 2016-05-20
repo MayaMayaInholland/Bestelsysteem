@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using Classes_Project;
+using System.Drawing;
 
 namespace Inlog
 {
@@ -112,6 +113,7 @@ namespace Inlog
                     }
                     else
                     {
+                        Shake();
                         lbl_Info.Text = "Inloggen niet geslaagd. Probeer het nog een keer.";
                         password = "";
                         txt_Password.Text = "";
@@ -128,6 +130,20 @@ namespace Inlog
         {
             password = password.Remove(password.Length - 1);
             txt_Password.Text = txt_Password.Text.Remove(txt_Password.TextLength - 1);
+        }
+
+        private void Shake()
+        {
+           
+            Point original = txt_Password.Location;
+            Random rnd = new Random(5);
+            const int shake_amplitude = 20;
+            for (int i = 0; i < 10; i++)
+            {
+                txt_Password.Location = new Point(original.X + rnd.Next(-shake_amplitude, shake_amplitude), original.Y);
+                System.Threading.Thread.Sleep(30);
+            }
+            txt_Password.Location = original;
         }
     }
 }
