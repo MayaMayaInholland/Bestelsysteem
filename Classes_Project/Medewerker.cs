@@ -18,7 +18,7 @@ namespace Classes_Project
         public string Achternaam { get; set; }
         public MedewerkerRol Rol {get;set;}
 
-        public Medewerker(int id, int pincode, string naam, string achternaam)
+        public Medewerker(int id, int pincode, string naam, string achternaam, MedewerkerRol rol)
         {
             this.Id = id;
             this.Pincode = pincode;

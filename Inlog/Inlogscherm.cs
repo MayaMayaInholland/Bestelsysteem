@@ -7,13 +7,13 @@ using Classes_Project;
 
 namespace Inlog
 {
-    public partial class Form1 : Form
+    public partial class Inlogscherm : Form
     {
 
         SqlConnection conn;
         private string password;
 
-        public Form1()
+        public Inlogscherm()
         {
             InitializeComponent();
             conn = new SqlConnection(Helper.ConnectionString);
@@ -106,32 +106,43 @@ namespace Inlog
                     {
                         case "Keuken":
                             Keuken k = (Keuken)m;
-                            MessageBox.Show(k.Voornaam + " " + k.Achternaam);
+                            MayaMaya keuken = new MayaMaya(k);
+                            keuken.Show();
+                           // MessageBox.Show(k.Voornaam + " " + k.Achternaam);
                             //open keuken form en stuur keuken mee
 
                             break;
 
                         case "Bar":
                             Bar b = (Bar)m;
-                            MessageBox.Show(b.Voornaam + " " + b.Achternaam);
+                            MayaMaya bar = new MayaMaya(b);
+                            bar.Show();
+                            //MessageBox.Show(b.Voornaam + " " + b.Achternaam);
                             //open bar form en stuur bar mee
 
                             break;
 
                         case "Bediening":
                             Bediening be = (Bediening)m;
-                            MessageBox.Show(be.Voornaam + " " + be.Achternaam);
+                            MayaMaya bediening = new MayaMaya(be);
+                            bediening.Show();
+                           // MessageBox.Show(be.Voornaam + " " + be.Achternaam);
                             //open bediening form en stuur bediening mee
 
                             break;
 
                         case "Manager":
                             Manager ma = (Manager)m;
-                            MessageBox.Show(m.Voornaam + " " + m.Achternaam);
+                            MayaMaya manager = new MayaMaya(ma);
+                            manager.Show();
+                            //MessageBox.Show(m.Voornaam + " " + m.Achternaam);
                             //open manager form en stuur manager mee
 
                             break;
                     }
+
+                    
+                    this.Hide();
 
                     conn.Close();
                 }

@@ -50,11 +50,11 @@
     <Compile Include="Bar.cs" />
     <Compile Include="Bediening.cs" />
     <Compile Include="Bestelling.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="MayaMaya.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MayaMaya.Designer.cs">
+      <DependentUpon>MayaMaya.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="Keuken.cs" />
@@ -69,6 +69,9 @@
     <Compile Include="Tafel.cs" />
     <Compile Include="TafelStatus.cs" />
     <Compile Include="Voorraad.cs" />
+    <EmbeddedResource Include="MayaMaya.resx">
+      <DependentUpon>MayaMaya.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -90,7 +93,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -15,7 +15,7 @@ namespace Classes_Project
     public enum MedewerkerRol
     {
         Keuken,
-        Bediende,
+        Bediening,
         Manager,
         Bar
     }

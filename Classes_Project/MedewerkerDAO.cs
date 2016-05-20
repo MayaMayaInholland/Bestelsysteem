@@ -34,24 +34,24 @@ namespace Classes_Project
                 switch (rol)
                 {
                     case "Keuken":
-                        Keuken keuken = new Keuken(id, pincode, voornaam, achternaam);
+                        Keuken keuken = new Keuken(id, pincode, voornaam, achternaam, MedewerkerRol.Keuken);
                         return keuken;
 
                     case "Bar":
-                        Bar bar = new Bar(id, pincode, voornaam, achternaam);
+                        Bar bar = new Bar(id, pincode, voornaam, achternaam, MedewerkerRol.Bar);
                         return bar;
 
                     case "Bediening":
-                        Bediening bediening = new Bediening(id, pincode, voornaam, achternaam);
+                        Bediening bediening = new Bediening(id, pincode, voornaam, achternaam, MedewerkerRol.Bediening);
                         return bediening;
 
                     case "Manager":
-                        Manager manager = new Manager(id, pincode, voornaam, achternaam);
+                        Manager manager = new Manager(id, pincode, voornaam, achternaam, MedewerkerRol.Manager);
                         return manager;
                 }
             }
 
-            return new Bediening(1, 1, "dit moet", "nog gefixt worden");
+            return new Bediening(1, 1, "dit moet", "nog gefixt worden", MedewerkerRol.Bediening);
         }
         //public List<Medewerker> GetAll()
         //{
@@ -73,25 +73,25 @@ namespace Classes_Project
                 switch (rol)
                 {
                     case "Keuken":
-                        Keuken keuken = new Keuken(id, int.Parse(pincode), voornaam, achternaam);
+                        Keuken keuken = new Keuken(id, int.Parse(pincode), voornaam, achternaam, MedewerkerRol.Keuken);
                         return keuken;
 
                     case "Bar":
-                        Bar bar = new Bar(id, int.Parse(pincode), voornaam, achternaam);
+                        Bar bar = new Bar(id, int.Parse(pincode), voornaam, achternaam, MedewerkerRol.Bar);
                         return bar;
 
 
                     case "Bediening":
-                        Bediening bediening = new Bediening(id, int.Parse(pincode), voornaam, achternaam);
+                        Bediening bediening = new Bediening(id, int.Parse(pincode), voornaam, achternaam, MedewerkerRol.Bediening);
                         return bediening;
 
 
                     case "Manager":
-                        Manager manager = new Manager(id, int.Parse(pincode), voornaam, achternaam);
+                        Manager manager = new Manager(id, int.Parse(pincode), voornaam, achternaam, MedewerkerRol.Manager);
                         return manager;
                 }
             }
-            return new Bediening(1, 1, "dit moet", "nog gefixt worden");
+            return new Bediening(1, 1, "dit moet", "nog gefixt worden", MedewerkerRol.Bediening);
         }
 
 

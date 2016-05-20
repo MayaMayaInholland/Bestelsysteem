@@ -1,6 +1,6 @@
 ﻿namespace Inlog
 {
-    partial class Form1
+    partial class Inlogscherm
     {
         /// <summary>
         /// Required designer variable.

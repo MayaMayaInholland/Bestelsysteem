@@ -9,7 +9,7 @@ namespace Classes_Project
     {
         //Meer ?
 
-        public Manager(int id, int pincode, string naam, string achternaam) : base(id, pincode, naam, achternaam)
+        public Manager(int id, int pincode, string naam, string achternaam, MedewerkerRol rol) : base(id, pincode, naam, achternaam, rol)
         {
 
         }
