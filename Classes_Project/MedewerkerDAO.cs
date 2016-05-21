@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Configuration;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Data;
 
 namespace Classes_Project
 {
@@ -52,10 +46,47 @@ namespace Classes_Project
             }
             return null;
         }
-        //public List<Medewerker> GetAll()
-        //{
+        public List<Medewerker> GetAll()
+        {
+            List<Medewerker> medewerkers = new List<Medewerker>();
 
-        //}
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Medewerker", conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int id = (int)reader["id"];
+                string voornaam = (string)reader["voornaam"];
+                string achternaam = (string)reader["achternaam"];
+                string rol = (string)reader["rol"];
+                int pincode = (int)reader["pincode"];
+
+                switch (rol)
+                {
+                    case "Keuken":
+                        Keuken keuken = new Keuken(id, pincode, voornaam, achternaam, MedewerkerRol.Keuken);
+                        medewerkers.Add(keuken);
+                        break;
+
+                    case "Bar":
+                        Bar bar = new Bar(id, pincode, voornaam, achternaam, MedewerkerRol.Bar);
+                        medewerkers.Add(bar);
+                        break;
+
+                    case "Bediening":
+                        Bediening bediening = new Bediening(id, pincode, voornaam, achternaam, MedewerkerRol.Bediening);
+                        medewerkers.Add(bediening);
+                        break;
+
+                    case "Manager":
+                        Manager manager = new Manager(id, pincode, voornaam, achternaam, MedewerkerRol.Manager);
+                        medewerkers.Add(manager);
+                        break;
+                }
+
+            }
+            return medewerkers;
+        }
 
         public Medewerker GetByPincode(string pincode)
         {
@@ -92,7 +123,5 @@ namespace Classes_Project
             }
             return null;
         }
-
-
     }
 }
