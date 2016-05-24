@@ -65,9 +65,7 @@
     <Compile Include="Bar.cs" />
     <Compile Include="Bediening.cs" />
     <Compile Include="Bestelling.cs" />
-    <Compile Include="MayaMaya.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MayaMaya.cs" />
     <Compile Include="MayaMaya.Designer.cs">
       <DependentUpon>MayaMaya.cs</DependentUpon>
     </Compile>

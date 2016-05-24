@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Inlog.Properties
+namespace Bestelling.Properties
 {
 
 

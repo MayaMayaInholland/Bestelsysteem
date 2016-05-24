@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Inlog
+namespace Bestelling
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Inlog
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inlogscherm());
+            Application.Run(new Form1());
         }
     }
 }
