@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
+using Classes_Project;
 using System.Drawing;
 
 namespace Inlog
@@ -103,7 +104,7 @@ namespace Inlog
                     if (m != null)
                     {
 
-                        MayaMaya mayamaya = new MayaMaya(m);
+                        MainForm mayamaya = new MainForm(m);
                         mayamaya.Show();
                         this.Hide();
                         conn.Close();

@@ -9,3 +9,8 @@ C:\Users\Jasper\Source\Repos\MayaMaya\Inlog\obj\Debug\Inlog.pdb
 C:\Users\Jasper\Source\Repos\MayaMaya\Inlog\bin\Debug\Classes_Project.exe
 C:\Users\Jasper\Source\Repos\MayaMaya\Inlog\bin\Debug\Classes_Project.pdb
 C:\Users\Jasper\Source\Repos\MayaMaya\Inlog\obj\Debug\Inlog.Inlogscherm.resources
+C:\Users\570408\Source\Repos\Bestelsysteem\Inlog\obj\Debug\Inlog.csprojResolveAssemblyReference.cache
+C:\Users\570408\Source\Repos\Bestelsysteem\Inlog\obj\Debug\Inlog.Inlogscherm.resources
+C:\Users\570408\Source\Repos\Bestelsysteem\Inlog\obj\Debug\Inlog.Properties.Resources.resources
+C:\Users\570408\Source\Repos\Bestelsysteem\Inlog\obj\Debug\Inlog.csproj.GenerateResource.Cache
+C:\Users\570408\Source\Repos\Bestelsysteem\Inlog\bin\Debug\Inlog.exe.config
