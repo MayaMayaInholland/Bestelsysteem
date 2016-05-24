@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Inlog;
 
 namespace Classes_Project
 {
@@ -16,7 +17,7 @@ namespace Classes_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MayaMaya());
+            Application.Run(new LoginForm());
         }
     }
 }
