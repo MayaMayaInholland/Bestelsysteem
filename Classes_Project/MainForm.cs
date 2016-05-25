@@ -24,22 +24,32 @@ namespace Classes_Project
             InitializeComponent();
 
             ingelogdeMedewerker = m;
-
+            // bepalen welke tabs de medewerker krijgt te zien.
             switch (m.Rol)
             {
                 case MedewerkerRol.Bar:
                     tabControl.TabPages.Remove(tab_TafelOverzicht);
+                    tabControl.TabPages.Remove(tab_Bestellen);
+                    tabControl.TabPages.Remove(tab_Keuken);
+                    tabControl.TabPages.Remove(tab_medewerkerOverzicht);
+                    tabControl.TabPages.Remove(tab_Rekening);
                     break;
                 case MedewerkerRol.Keuken:
                     tabControl.TabPages.Remove(tab_TafelOverzicht);
+                    tabControl.TabPages.Remove(tab_Bestellen);
+                    tabControl.TabPages.Remove(tab_Bar);
+                    tabControl.TabPages.Remove(tab_medewerkerOverzicht);
+                    tabControl.TabPages.Remove(tab_Rekening);
                     break;
                 case MedewerkerRol.Manager:
                     break;
                 case MedewerkerRol.Bediening:
-
+                    tabControl.TabPages.Remove(tab_Bar);
+                    tabControl.TabPages.Remove(tab_Keuken);
+                    tabControl.TabPages.Remove(tab_medewerkerOverzicht);
+                    tabControl.TabPages.Remove(tab_Rekening);
                     break;
-            }
-            tabControl.TabPages.Remove(tab_Bestellen);
+            }      
         }
 
         private void button3_Click(object sender, EventArgs e)
