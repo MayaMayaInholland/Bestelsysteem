@@ -10,15 +10,17 @@ namespace Classes_Project
         protected int id;
 
         public int RekeningId { get; set; }
-
-        public int Tijd { get; set; }
+        public int ProductId { get; set; }
+        public DateTime Tijd { get; set; }
         public string Opmerkingen { get; set; }
         public string Status { get; set; }
 
-        public Bestelling( Tafel tafel, Medewerker medewerker, int tijd, string status)
+        public Bestelling(int id, int rekeningid, int productid, DateTime tijd)
         {
+            this.id = id;
+            this.RekeningId = rekeningid;
+            this.ProductId = productid;
             this.Tijd = tijd;
-            this.Status = status;
         }
 
     }

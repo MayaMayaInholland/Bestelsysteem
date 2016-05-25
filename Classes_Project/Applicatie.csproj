@@ -104,6 +104,7 @@
     <Compile Include="Rekening.cs" />
     <Compile Include="RekeningDAO.cs" />
     <Compile Include="Tafel.cs" />
+    <Compile Include="TafelDAO.cs" />
     <Compile Include="TafelStatus.cs" />
     <Compile Include="Voorraad.cs" />
     <EmbeddedResource Include="AfrekenForm.resx">

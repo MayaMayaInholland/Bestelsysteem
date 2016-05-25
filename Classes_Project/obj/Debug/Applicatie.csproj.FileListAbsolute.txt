@@ -20,3 +20,4 @@ C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\obj\Debug\Classes
 C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.MainForm.resources
 C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.Properties.Resources.resources
 C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\obj\Debug\Applicatie.csproj.GenerateResource.Cache
+C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.AfrekenForm.resources
