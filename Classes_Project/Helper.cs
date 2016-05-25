@@ -19,4 +19,11 @@ namespace Classes_Project
         Manager,
         Bar
     }
+
+    public enum BestellingStatus
+    {
+        Open = 1,
+        Gereed,
+        Geserveerd
+    }
 }

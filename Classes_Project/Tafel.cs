@@ -11,10 +11,11 @@ namespace Classes_Project
         public int Nummer { get; set; }
         public TafelStatus Status { get; set; }
 
-        public Tafel(int nummer, TafelStatus status)
+        public Tafel(int Id, int nummer, TafelStatus status)
         {
             this.Nummer = nummer;
             this.Status = status;
+            this.Id = Id;
         }
     }
 }
