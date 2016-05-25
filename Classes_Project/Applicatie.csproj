@@ -63,9 +63,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AfrekenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AfrekenForm.Designer.cs">
+      <DependentUpon>AfrekenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bar.cs" />
     <Compile Include="Bediening.cs" />
     <Compile Include="Bestelling.cs" />
+    <Compile Include="BestellingDAO.cs" />
     <Compile Include="Inlogscherm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,12 +98,17 @@
     <Compile Include="MedewerkerDAO.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rekening.cs" />
+    <Compile Include="RekeningDAO.cs" />
     <Compile Include="Tafel.cs" />
     <Compile Include="TafelStatus.cs" />
     <Compile Include="Voorraad.cs" />
+    <EmbeddedResource Include="AfrekenForm.resx">
+      <DependentUpon>AfrekenForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inlogscherm.resx">
       <DependentUpon>Inlogscherm.cs</DependentUpon>
     </EmbeddedResource>
