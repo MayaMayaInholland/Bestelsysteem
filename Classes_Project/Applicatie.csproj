@@ -64,6 +64,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bar.cs" />
+    <Compile Include="BarOverzicht.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarOverzicht.Designer.cs">
+      <DependentUpon>BarOverzicht.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bediening.cs" />
     <Compile Include="Bestelling.cs" />
     <Compile Include="Inlogscherm.cs">
@@ -71,6 +77,12 @@
     </Compile>
     <Compile Include="Inlogscherm.Designer.cs">
       <DependentUpon>Inlogscherm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KeukenOverzicht.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KeukenOverzicht.Designer.cs">
+      <DependentUpon>KeukenOverzicht.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -98,8 +110,14 @@
     <Compile Include="TafelDAO.cs" />
     <Compile Include="TafelStatus.cs" />
     <Compile Include="Voorraad.cs" />
+    <EmbeddedResource Include="BarOverzicht.resx">
+      <DependentUpon>BarOverzicht.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inlogscherm.resx">
       <DependentUpon>Inlogscherm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KeukenOverzicht.resx">
+      <DependentUpon>KeukenOverzicht.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
