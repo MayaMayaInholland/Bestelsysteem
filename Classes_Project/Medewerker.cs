@@ -24,6 +24,7 @@ namespace Classes_Project
             this.Pincode = pincode;
             this.Voornaam = naam;
             this.Achternaam = achternaam;
+            this.Rol = rol;
         }
 
     }
