@@ -76,12 +76,13 @@ namespace Classes_Project
                     EnablePage(tab_TafelOverzicht, true);
                     EnablePage(tab_Keuken, true);
                     EnablePage(tab_Bar, true);
+                    EnablePage(tab_Bestellen, true);
                     break;
                 case MedewerkerRol.Bediening:
                     EnablePage(tab_TafelOverzicht, true);
+                    EnablePage(tab_Bestellen, true);
                     break;
             }
-            tabControl.TabPages.Remove(tab_Bestellen);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -97,12 +98,13 @@ namespace Classes_Project
             Tafel tafel = tafelDAO.GetByTafelNummer(1);
             if (tafel.Status == TafelStatus.VRIJ)
             {
-                Bestelling bestelling = new Bestelling(tafel, ingelogdeMedewerker, DateTime.Now, BestellingStatus.Gereed);
+                Bestelling bestelling = new Bestelling(tafel, ingelogdeMedewerker, DateTime.Now, BestellingStatus.Open);
             }
             else if (tafel.Status == TafelStatus.BEZET)
             {
 
             }
+            tabControl.SelectedTab = tab_Bestellen;
 
         }
 
@@ -112,6 +114,11 @@ namespace Classes_Project
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

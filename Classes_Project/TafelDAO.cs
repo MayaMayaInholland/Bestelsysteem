@@ -35,9 +35,11 @@ namespace Classes_Project
                 Tafel tafel = new Tafel(id, nummer, status);
                 return tafel;
             }
-
-            return null;
+            conn.Close();
+            return null;          
         }
+
+        
 
 
 

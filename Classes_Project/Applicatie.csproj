@@ -66,6 +66,7 @@
     <Compile Include="Bar.cs" />
     <Compile Include="Bediening.cs" />
     <Compile Include="Bestelling.cs" />
+    <Compile Include="BestellingDAO.cs" />
     <Compile Include="Inlogscherm.cs">
       <SubType>Form</SubType>
     </Compile>
