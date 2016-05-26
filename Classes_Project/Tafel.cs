@@ -11,7 +11,7 @@ namespace Classes_Project
         public int Nummer { get; set; }
         public TafelStatus Status { get; set; }
         public Bestelling Bestelling { get; set; }
-        public int Id { get; set; }
+       // public int Id { get; set; }
 
         public Tafel(int id, int nummer, TafelStatus status)
         {
