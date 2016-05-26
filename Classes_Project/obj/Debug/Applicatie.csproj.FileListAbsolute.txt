@@ -35,3 +35,14 @@ C:\Users\alkma\Source\Repos\Bestelsysteem\Classes_Project\bin\Debug\Classes_Proj
 C:\Users\alkma\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.exe
 C:\Users\alkma\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.pdb
 C:\Users\alkma\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Applicatie.csprojResolveAssemblyReference.cache
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\bin\Debug\Classes_Project.exe.config
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.exe
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.pdb
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Applicatie.csprojResolveAssemblyReference.cache
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.BarOverzicht.resources
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Inlog.Inlogscherm.resources
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.KeukenOverzicht.resources
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.LoginForm.resources
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.MainForm.resources
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.Properties.Resources.resources
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Applicatie.csproj.GenerateResource.Cache
