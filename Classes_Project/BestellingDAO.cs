@@ -17,16 +17,19 @@ namespace Classes_Project
             conn.Open();
         }
 
+        //------------------------------------------DATA RETRIEVAL________________________________________________________
         //1. Haal bestellingen  op => ID
         //Bestellingen worden bij een 'bezette' tafel opgehaald.
         public Bestelling GetByTafelId(int tafel_id)
         {
+
+
             //De aangeklikte tafel geeft de tafel_id mee.
-            SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM Bestelling WHERE tafel_id = {0} ", tafel_id), conn);
+            SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM Bestelling WHERE tafel_id = {0} AND id = MAX(id) ", tafel_id), conn);
             SqlDataReader reader = cmd.ExecuteReader();
 
             //List waarin de al bestelde producten in komen.
-            List<Product> bestellingen = new List<Product>();
+            List<Product> lijst_bestellingen = new List<Product>();
 
             while (reader.Read())
             {
@@ -36,17 +39,18 @@ namespace Classes_Project
                 int Tijd = (int)reader["tijd"];
                 int totaalbedrag = (int)reader["totaalbedrag"];
                 string opmerkingen = (string)reader["opmerkingen"];
-                BestellingStatus status = (BestellingStatus)reader["status"]; 
+                BestellingStatus status = (BestellingStatus)reader["status"];
                 int fooi = (int)reader["fooi"];
 
                 //Roept GetByBestellingeId aan --> zie hieronder.
-                bestellingen = GetByBestellingId(Id);
+                lijst_bestellingen = GetByBestellingId(Id);
 
                 //Overload van class bestelling voor al bestaande bestellingen.... ( opgezet zodat code runt )
-                Bestelling bestelling = new  Bestelling(Tafel_id, bestellingen);
+                Bestelling Lopende_bestelling = new Bestelling(Tafel_id, lijst_bestellingen);
 
-                return bestelling;
+                return Lopende_bestelling;
             }
+            conn.Close();
             return null;
         }
 
@@ -65,14 +69,18 @@ namespace Classes_Project
 
             while (reader.Read())
             {
-                int id = (int)reader["id"];
+                int id = (int)reader["id"]; // welke id zal de reader readen ?
                 int categorie_id = (int)reader["categorie_id"];
                 string omschrijving = (string)reader["omschrijving"];
                 int prijs = (int)reader["prijs"];
                 int voorraad = (int)reader["voorraad"];
                 int btw = (int)reader["btw"];
+                int bestelling_id = (int)reader["bestelling_id"];
+                int product_id = (int)reader["product_id"];
+                int aantal = (int)reader["aantal"];
+                string opmerking = (string)reader["opmerking"];
 
-                Product = new Product(id, categorie_id, prijs, voorraad, btw);
+                Product = new Product(id, categorie_id, prijs, voorraad, btw, omschrijving);
 
                 Besteld_producten.Add(Product); // Toevoegen product aan Besteld_product list.
             }
@@ -80,6 +88,15 @@ namespace Classes_Project
             return Besteld_producten;
 
         }
+
+        //-------------------------INSERT DATA____________________________________
+
+        public void VoegToe_Bestelling()
+        {
+            string sql = string.Format("INSERT INTO Besteld_product ");
+        }
+
+
 
     }
 }

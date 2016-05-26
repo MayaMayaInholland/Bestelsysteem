@@ -97,6 +97,7 @@ namespace Classes_Project
             BestellingDAO bestellingDAO = new BestellingDAO();
             TafelDAO tafelDAO = new TafelDAO();
             Tafel tafel = tafelDAO.GetByTafelNummer(1);
+
             if (tafel.Status == TafelStatus.VRIJ)
             {
                 List<Product> besteld_productLijst = new List<Product>();
@@ -119,8 +120,8 @@ namespace Classes_Project
         {
 
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        //Geeft lunch, avond maaltijd weer
+        private void cmb_menuCategorie_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

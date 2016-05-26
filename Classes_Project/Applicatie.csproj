@@ -71,6 +71,12 @@
       <DependentUpon>BarOverzicht.cs</DependentUpon>
     </Compile>
     <Compile Include="Bediening.cs" />
+    <Compile Include="BedieningForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BedieningForm.Designer.cs">
+      <DependentUpon>BedieningForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bestelling.cs" />
     <Compile Include="BestellingDAO.cs" />
     <Compile Include="Inlogscherm.cs">
@@ -113,6 +119,9 @@
     <Compile Include="Voorraad.cs" />
     <EmbeddedResource Include="BarOverzicht.resx">
       <DependentUpon>BarOverzicht.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BedieningForm.resx">
+      <DependentUpon>BedieningForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inlogscherm.resx">
       <DependentUpon>Inlogscherm.cs</DependentUpon>

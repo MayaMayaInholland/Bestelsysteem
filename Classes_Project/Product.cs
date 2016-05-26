@@ -7,19 +7,23 @@ namespace Classes_Project
 {
     public class Product
     {
-        private int Id;
-        private int Categorie_id { get; set; }
-        private int Prijs { get; set; }
-        private int Btw { get; set; }
-        private int Voorraad { get; set; }
+        //veiligheid controleren ( properties correct toegepast ? )
+        public int Id { get; set; }
+        public int Categorie_id { get; set; }
+        public int Prijs { get; set; }
+        public int Btw { get; set; }
+        public int Voorraad { get; set; }
+        public string Omschrijving { get; set; }
 
-        public Product(int id, int categorie_id, int prijs, int voorraad, int btw)
+
+        public Product(int id, int categorie_id, int prijs, int voorraad, int btw, string omschrijving)
         {
             this.Btw = btw;
             this.Categorie_id = categorie_id;
             this.Id = id;
             this.Prijs = prijs;
             this.Voorraad = voorraad;
+            this.Omschrijving = omschrijving;
         }
 
     }
