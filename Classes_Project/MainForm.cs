@@ -98,7 +98,7 @@ namespace Classes_Project
             Tafel tafel = tafelDAO.GetByTafelNummer(1);
             if (tafel.Status == TafelStatus.VRIJ)
             {
-                Bestelling bestelling = new Bestelling(tafel, ingelogdeMedewerker, DateTime.Now, BestellingStatus.Open);
+                Bestelling bestelling = new Bestelling(tafel, ingelogdeMedewerker, DateTime.Now, BestellingStatus.Open, new List<Besteld_product>());
             }
             else if (tafel.Status == TafelStatus.BEZET)
             {
