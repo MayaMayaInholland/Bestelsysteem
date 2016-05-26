@@ -41,20 +41,20 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.tab_TafelOverzicht = new System.Windows.Forms.TabPage();
+            this.btn_Tafel10 = new System.Windows.Forms.Button();
+            this.btn_Tafel9 = new System.Windows.Forms.Button();
+            this.btn_Tafel8 = new System.Windows.Forms.Button();
+            this.btn_Tafel7 = new System.Windows.Forms.Button();
+            this.btn_Tafel6 = new System.Windows.Forms.Button();
+            this.btn_Tafel5 = new System.Windows.Forms.Button();
+            this.btn_Tafel4 = new System.Windows.Forms.Button();
+            this.btn_Tafel3 = new System.Windows.Forms.Button();
+            this.btn_Tafel2 = new System.Windows.Forms.Button();
             this.btn_Tafel1 = new System.Windows.Forms.Button();
             this.tab_Keuken = new System.Windows.Forms.TabPage();
             this.tab_Bar = new System.Windows.Forms.TabPage();
             this.tab_medewerkerOverzicht = new System.Windows.Forms.TabPage();
             this.tab_Rekening = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tab_Bestellen.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -182,15 +182,15 @@
             // 
             // tab_TafelOverzicht
             // 
-            this.tab_TafelOverzicht.Controls.Add(this.button9);
-            this.tab_TafelOverzicht.Controls.Add(this.button8);
-            this.tab_TafelOverzicht.Controls.Add(this.button7);
-            this.tab_TafelOverzicht.Controls.Add(this.button6);
-            this.tab_TafelOverzicht.Controls.Add(this.button5);
-            this.tab_TafelOverzicht.Controls.Add(this.button4);
-            this.tab_TafelOverzicht.Controls.Add(this.button3);
-            this.tab_TafelOverzicht.Controls.Add(this.button2);
-            this.tab_TafelOverzicht.Controls.Add(this.button1);
+            this.tab_TafelOverzicht.Controls.Add(this.btn_Tafel10);
+            this.tab_TafelOverzicht.Controls.Add(this.btn_Tafel9);
+            this.tab_TafelOverzicht.Controls.Add(this.btn_Tafel8);
+            this.tab_TafelOverzicht.Controls.Add(this.btn_Tafel7);
+            this.tab_TafelOverzicht.Controls.Add(this.btn_Tafel6);
+            this.tab_TafelOverzicht.Controls.Add(this.btn_Tafel5);
+            this.tab_TafelOverzicht.Controls.Add(this.btn_Tafel4);
+            this.tab_TafelOverzicht.Controls.Add(this.btn_Tafel3);
+            this.tab_TafelOverzicht.Controls.Add(this.btn_Tafel2);
             this.tab_TafelOverzicht.Controls.Add(this.btn_Tafel1);
             this.tab_TafelOverzicht.Location = new System.Drawing.Point(4, 22);
             this.tab_TafelOverzicht.Name = "tab_TafelOverzicht";
@@ -199,6 +199,123 @@
             this.tab_TafelOverzicht.TabIndex = 1;
             this.tab_TafelOverzicht.Text = "Tafel Overzicht";
             this.tab_TafelOverzicht.UseVisualStyleBackColor = true;
+            // 
+            // btn_Tafel10
+            // 
+            this.btn_Tafel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel10.BackgroundImage")));
+            this.btn_Tafel10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Tafel10.Location = new System.Drawing.Point(398, 547);
+            this.btn_Tafel10.Name = "btn_Tafel10";
+            this.btn_Tafel10.Size = new System.Drawing.Size(104, 98);
+            this.btn_Tafel10.TabIndex = 19;
+            this.btn_Tafel10.Text = "10";
+            this.btn_Tafel10.UseVisualStyleBackColor = true;
+            this.btn_Tafel10.Click += new System.EventHandler(this.btn_Tafel10_Click);
+            // 
+            // btn_Tafel9
+            // 
+            this.btn_Tafel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel9.BackgroundImage")));
+            this.btn_Tafel9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Tafel9.Location = new System.Drawing.Point(72, 547);
+            this.btn_Tafel9.Name = "btn_Tafel9";
+            this.btn_Tafel9.Size = new System.Drawing.Size(104, 98);
+            this.btn_Tafel9.TabIndex = 18;
+            this.btn_Tafel9.Text = "9";
+            this.btn_Tafel9.UseVisualStyleBackColor = true;
+            this.btn_Tafel9.Click += new System.EventHandler(this.btn_Tafel9_Click);
+            // 
+            // btn_Tafel8
+            // 
+            this.btn_Tafel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel8.BackgroundImage")));
+            this.btn_Tafel8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Tafel8.Location = new System.Drawing.Point(398, 419);
+            this.btn_Tafel8.Name = "btn_Tafel8";
+            this.btn_Tafel8.Size = new System.Drawing.Size(104, 98);
+            this.btn_Tafel8.TabIndex = 17;
+            this.btn_Tafel8.Text = "8";
+            this.btn_Tafel8.UseVisualStyleBackColor = true;
+            this.btn_Tafel8.Click += new System.EventHandler(this.btn_Tafel8_Click);
+            // 
+            // btn_Tafel7
+            // 
+            this.btn_Tafel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel7.BackgroundImage")));
+            this.btn_Tafel7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Tafel7.Location = new System.Drawing.Point(72, 419);
+            this.btn_Tafel7.Name = "btn_Tafel7";
+            this.btn_Tafel7.Size = new System.Drawing.Size(104, 98);
+            this.btn_Tafel7.TabIndex = 16;
+            this.btn_Tafel7.Text = "7";
+            this.btn_Tafel7.UseVisualStyleBackColor = true;
+            this.btn_Tafel7.Click += new System.EventHandler(this.btn_Tafel7_Click);
+            // 
+            // btn_Tafel6
+            // 
+            this.btn_Tafel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel6.BackgroundImage")));
+            this.btn_Tafel6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Tafel6.Location = new System.Drawing.Point(398, 296);
+            this.btn_Tafel6.Name = "btn_Tafel6";
+            this.btn_Tafel6.Size = new System.Drawing.Size(104, 98);
+            this.btn_Tafel6.TabIndex = 15;
+            this.btn_Tafel6.Text = "6";
+            this.btn_Tafel6.UseVisualStyleBackColor = true;
+            this.btn_Tafel6.Click += new System.EventHandler(this.btn_Tafel6_Click);
+            // 
+            // btn_Tafel5
+            // 
+            this.btn_Tafel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel5.BackgroundImage")));
+            this.btn_Tafel5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Tafel5.Location = new System.Drawing.Point(72, 296);
+            this.btn_Tafel5.Name = "btn_Tafel5";
+            this.btn_Tafel5.Size = new System.Drawing.Size(104, 98);
+            this.btn_Tafel5.TabIndex = 14;
+            this.btn_Tafel5.Text = "5";
+            this.btn_Tafel5.UseVisualStyleBackColor = true;
+            this.btn_Tafel5.Click += new System.EventHandler(this.btn_Tafel5_Click);
+            // 
+            // btn_Tafel4
+            // 
+            this.btn_Tafel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel4.BackgroundImage")));
+            this.btn_Tafel4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Tafel4.Location = new System.Drawing.Point(398, 170);
+            this.btn_Tafel4.Name = "btn_Tafel4";
+            this.btn_Tafel4.Size = new System.Drawing.Size(104, 98);
+            this.btn_Tafel4.TabIndex = 13;
+            this.btn_Tafel4.Text = "4";
+            this.btn_Tafel4.UseVisualStyleBackColor = true;
+            this.btn_Tafel4.Click += new System.EventHandler(this.btn_Tafel4_Click);
+            // 
+            // btn_Tafel3
+            // 
+            this.btn_Tafel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel3.BackgroundImage")));
+            this.btn_Tafel3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Tafel3.Location = new System.Drawing.Point(72, 170);
+            this.btn_Tafel3.Name = "btn_Tafel3";
+            this.btn_Tafel3.Size = new System.Drawing.Size(104, 98);
+            this.btn_Tafel3.TabIndex = 12;
+            this.btn_Tafel3.Text = "3";
+            this.btn_Tafel3.UseVisualStyleBackColor = true;
+            this.btn_Tafel3.Click += new System.EventHandler(this.btn_Tafel3_Click);
+            // 
+            // btn_Tafel2
+            // 
+            this.btn_Tafel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel2.BackgroundImage")));
+            this.btn_Tafel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Tafel2.Location = new System.Drawing.Point(398, 49);
+            this.btn_Tafel2.Name = "btn_Tafel2";
+            this.btn_Tafel2.Size = new System.Drawing.Size(104, 98);
+            this.btn_Tafel2.TabIndex = 11;
+            this.btn_Tafel2.Text = "2";
+            this.btn_Tafel2.UseVisualStyleBackColor = true;
+            this.btn_Tafel2.Click += new System.EventHandler(this.btn_Tafel2_Click);
             // 
             // btn_Tafel1
             // 
@@ -249,114 +366,6 @@
             this.tab_Rekening.Text = "Rekening";
             this.tab_Rekening.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(398, 49);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 98);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "2";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(72, 170);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 98);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "3";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(398, 170);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(104, 98);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "4";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(72, 296);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 98);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "5";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Location = new System.Drawing.Point(398, 296);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(104, 98);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "6";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button6.Location = new System.Drawing.Point(72, 419);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(104, 98);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "7";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button7.Location = new System.Drawing.Point(398, 419);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(104, 98);
-            this.button7.TabIndex = 17;
-            this.button7.Text = "8";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button8.Location = new System.Drawing.Point(72, 547);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(104, 98);
-            this.button8.TabIndex = 18;
-            this.button8.Text = "9";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button9.Location = new System.Drawing.Point(398, 547);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(104, 98);
-            this.button9.TabIndex = 19;
-            this.button9.Text = "10";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,14 +402,14 @@
         private System.Windows.Forms.TabPage tab_medewerkerOverzicht;
         private System.Windows.Forms.TabPage tab_Rekening;
         private System.Windows.Forms.Button btn_Tafel1;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Tafel10;
+        private System.Windows.Forms.Button btn_Tafel9;
+        private System.Windows.Forms.Button btn_Tafel8;
+        private System.Windows.Forms.Button btn_Tafel7;
+        private System.Windows.Forms.Button btn_Tafel6;
+        private System.Windows.Forms.Button btn_Tafel5;
+        private System.Windows.Forms.Button btn_Tafel4;
+        private System.Windows.Forms.Button btn_Tafel3;
+        private System.Windows.Forms.Button btn_Tafel2;
     }
 }

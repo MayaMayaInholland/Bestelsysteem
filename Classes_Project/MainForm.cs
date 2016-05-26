@@ -87,25 +87,29 @@ namespace Classes_Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-
         }
+
 
         //tafel clicks.. 
         //dit moet nog afgemaakt worden.
-        private void btn_Tafel1_Click(object sender, EventArgs e)
+        private void TafelClick(int tafelNummer)
         {
             TafelDAO tafelDAO = new TafelDAO();
-            Tafel tafel = tafelDAO.GetByTafelNummer(1);
+            Tafel tafel = tafelDAO.GetByTafelNummer(tafelNummer);
             if (tafel.Status == TafelStatus.VRIJ)
             {
-                Bestelling bestelling = new Bestelling(tafel, ingelogdeMedewerker, DateTime.Now, BestellingStatus.Open, new List<Besteld_product>());
+                //ga naar bestelling
             }
             else if (tafel.Status == TafelStatus.BEZET)
             {
 
             }
             tabControl.SelectedTab = tab_Bestellen;
+        }
 
+        private void btn_Tafel1_Click(object sender, EventArgs e)
+        {
+            TafelClick(1);
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -121,6 +125,51 @@ namespace Classes_Project
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Tafel2_Click(object sender, EventArgs e)
+        {
+            TafelClick(2);
+        }
+
+        private void btn_Tafel3_Click(object sender, EventArgs e)
+        {
+            TafelClick(3);
+        }
+
+        private void btn_Tafel4_Click(object sender, EventArgs e)
+        {
+            TafelClick(4);
+        }
+
+        private void btn_Tafel5_Click(object sender, EventArgs e)
+        {
+            TafelClick(5);
+        }
+
+        private void btn_Tafel6_Click(object sender, EventArgs e)
+        {
+            TafelClick(6);
+        }
+
+        private void btn_Tafel7_Click(object sender, EventArgs e)
+        {
+            TafelClick(7);
+        }
+
+        private void btn_Tafel8_Click(object sender, EventArgs e)
+        {
+            TafelClick(8);
+        }
+
+        private void btn_Tafel9_Click(object sender, EventArgs e)
+        {
+            TafelClick(9);
+        }
+
+        private void btn_Tafel10_Click(object sender, EventArgs e)
+        {
+            TafelClick(10);
         }
     }
 }
