@@ -94,15 +94,17 @@ namespace Classes_Project
         //dit moet nog afgemaakt worden.
         private void btn_Tafel1_Click(object sender, EventArgs e)
         {
+            BestellingDAO bestellingDAO = new BestellingDAO();
             TafelDAO tafelDAO = new TafelDAO();
             Tafel tafel = tafelDAO.GetByTafelNummer(1);
             if (tafel.Status == TafelStatus.VRIJ)
             {
-                Bestelling bestelling = new Bestelling(tafel, ingelogdeMedewerker, DateTime.Now, BestellingStatus.Open);
+                List<Product> besteld_productLijst = new List<Product>();
+                Bestelling bestelling = new Bestelling(tafel, ingelogdeMedewerker, DateTime.Now, BestellingStatus.Open, besteld_productLijst );
             }
             else if (tafel.Status == TafelStatus.BEZET)
             {
-
+                bestellingDAO.GetByTafelId(1);
             }
             tabControl.SelectedTab = tab_Bestellen;
 

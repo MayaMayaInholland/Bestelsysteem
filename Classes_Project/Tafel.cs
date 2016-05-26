@@ -7,6 +7,7 @@ namespace Classes_Project
 {
     public class Tafel
     {
+        public int Id { get; set; }
         public int Nummer { get; set; }
         public TafelStatus Status { get; set; }
         public Bestelling Bestelling { get; set; }

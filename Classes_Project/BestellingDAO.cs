@@ -17,34 +17,51 @@ namespace Classes_Project
             conn.Open();
         }
 
+        //1. Haal bestellingen  op => ID
+        //Bestellingen worden bij een 'bezette' tafel opgehaald.
         public Bestelling GetByTafelId(int tafel_id)
         {
+            //De aangeklikte tafel geeft de tafel_id mee.
             SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM Bestelling WHERE tafel_id = {0} ", tafel_id), conn);
             SqlDataReader reader = cmd.ExecuteReader();
-            List<Besteld_product> bestellingen = new List<Besteld_product>();
+
+            //List waarin de al bestelde producten in komen.
+            List<Product> bestellingen = new List<Product>();
+
             while (reader.Read())
             {
                 int Id = (int)reader["id"];
                 int Tafel_id = (int)reader["tafel_id"];
                 int Medewerker_id = (int)reader["medewerker_id"];
-                int tijd = (int)reader["tijd"];
+                int Tijd = (int)reader["tijd"];
                 int totaalbedrag = (int)reader["totaalbedrag"];
                 string opmerkingen = (string)reader["opmerkingen"];
-                BestellingStatus status = (BestellingStatus)reader["status"];
+                BestellingStatus status = (BestellingStatus)reader["status"]; 
                 int fooi = (int)reader["fooi"];
-                bestellingen = GetByBestellingId(Id);
-            }
 
+                //Roept GetByBestellingeId aan --> zie hieronder.
+                bestellingen = GetByBestellingId(Id);
+
+                //Overload van class bestelling voor al bestaande bestellingen.... ( opgezet zodat code runt )
+                Bestelling bestelling = new  Bestelling(Tafel_id, bestellingen);
+
+                return bestelling;
+            }
+            return null;
         }
 
-        public List<Besteld_product> GetByBestellingId(int Bestelling_Id)
+        //2. Haalt list met al bestelde producten op met bestelling_Id
+        public List<Product> GetByBestellingId(int Bestelling_Id)
         {
             SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM Besteld_product INNER JOIN Product ON Besteld_product.product_id = Product.id WHERE Besteld_product.bestelling_id = {0}", Bestelling_Id), conn);
             SqlDataReader reader = cmd.ExecuteReader();
 
-            List<Besteld_product> besteld_producten;
-            int counter = 0;
-            besteld_producten = new List<Besteld_product>();
+            //List dat bestelde producten op vangt.
+            //Manier om aantal van producten bij te houden ??
+            List<Product> Besteld_producten = new List<Product>();
+
+            // 2a Maken van elk besteld product om in een product object.
+            Product Product;
 
             while (reader.Read())
             {
@@ -55,14 +72,12 @@ namespace Classes_Project
                 int voorraad = (int)reader["voorraad"];
                 int btw = (int)reader["btw"];
 
-                Product product = new Product(id, categorie_id, prijs, voorraad, btw);
+                Product = new Product(id, categorie_id, prijs, voorraad, btw);
 
-                Besteld_product besteld_product = new Besteld_product(product);
-
-                besteld_producten.Add(besteld_product);
+                Besteld_producten.Add(Product); // Toevoegen product aan Besteld_product list.
             }
 
-            return besteld_producten;
+            return Besteld_producten;
 
         }
 
