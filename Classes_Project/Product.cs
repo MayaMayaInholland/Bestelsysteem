@@ -8,10 +8,10 @@ namespace Classes_Project
     public class Product
     {
         private int Id;
-        public int Categorie_id { get; set; }
-        public int Prijs { get; set; }
-        public int Voorraad { get; set; }
-        public int Btw { get; set; }
+        private int Categorie_id { get; set; }
+        private int Prijs { get; set; }
+        private int Btw { get; set; }
+        private int Voorraad { get; set; }
 
         public Product(int id, int categorie_id, int prijs, int voorraad, int btw)
         {

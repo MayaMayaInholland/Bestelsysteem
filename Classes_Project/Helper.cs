@@ -24,6 +24,7 @@ namespace Classes_Project
     {
         Open = 1,
         Gereed,
-        Geserveerd
+        Geserveerd,
+        Betaald
     }
 }

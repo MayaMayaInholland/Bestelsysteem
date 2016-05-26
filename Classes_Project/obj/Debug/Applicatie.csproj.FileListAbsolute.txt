@@ -35,3 +35,5 @@ C:\Users\alkma\Source\Repos\Bestelsysteem\Classes_Project\bin\Debug\Classes_Proj
 C:\Users\alkma\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.exe
 C:\Users\alkma\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.pdb
 C:\Users\alkma\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Applicatie.csprojResolveAssemblyReference.cache
+C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.BarOverzicht.resources
+C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.KeukenOverzicht.resources

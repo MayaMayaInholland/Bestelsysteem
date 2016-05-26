@@ -71,6 +71,7 @@
       <DependentUpon>BarOverzicht.cs</DependentUpon>
     </Compile>
     <Compile Include="Bediening.cs" />
+    <Compile Include="Besteld_product.cs" />
     <Compile Include="Bestelling.cs" />
     <Compile Include="BestellingDAO.cs" />
     <Compile Include="Inlogscherm.cs">
