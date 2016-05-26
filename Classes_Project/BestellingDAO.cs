@@ -3,45 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace Classes_Project
 {
     class BestellingDAO
     {
-        private List<Bestelling> bestellingen;
-        // dit is allemaal fake!!
+        SqlConnection conn;
 
         public BestellingDAO()
         {
-            bestellingen = new List<Bestelling>();
-            bestellingen.Add(new Bestelling(1, 1, 3, DateTime.Now));
-            bestellingen.Add(new Bestelling(2, 1, 5, DateTime.Now));
-            bestellingen.Add(new Bestelling(3, 1, 5, DateTime.Now));
-            bestellingen.Add(new Bestelling(4, 2, 7, DateTime.Now));
-            bestellingen.Add(new Bestelling(5, 2, 6, DateTime.Now));
-            bestellingen.Add(new Bestelling(6, 2, 5, DateTime.Now));
+            conn = new SqlConnection(Helper.ConnectionString);
+            conn.Open();
         }
 
-        public List<Bestelling> GetAll()
+        public Bestelling GetByTafelId(int tafel_id)
         {
-            return bestellingen;
-        }
+            SqlCommand cmd = new SqlCommand(string.Format("Select * FROM Producten_bij_bestelling WHERE bestelling_id IN( SELECT id FROM Bestelling WHERE tafel_id = {0} ", tafel_id), conn);
+            SqlDataReader reader = cmd.ExecuteReader();
 
-        public List<Bestelling> GetAllForRekening(int Rekeningid)
-        {
-            List<Bestelling> selectie = new List<Bestelling>();
-            foreach (Bestelling bestelling in bestellingen)
+            while (reader.Read())
             {
-                if (bestelling.RekeningId == Rekeningid)
-                    selectie.Add(bestelling);
+
             }
-            return selectie;
         }
-
-        public void Create(Bestelling nieuweBestelling)
-        {
-            bestellingen.Add(nieuweBestelling);
-        }
-
+    
     }
 }

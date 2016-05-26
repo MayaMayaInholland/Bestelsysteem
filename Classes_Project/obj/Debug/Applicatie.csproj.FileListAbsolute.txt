@@ -9,20 +9,6 @@ C:\Users\570408\Source\Repos\Bestelsysteem\Classes_Project\bin\Debug\Classes_Pro
 C:\Users\570408\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.exe
 C:\Users\570408\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.pdb
 C:\Users\570408\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Applicatie.csprojResolveAssemblyReference.cache
-<<<<<<< HEAD
-C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\bin\Debug\Classes_Project.exe.config
-C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.exe
-C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.pdb
-C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\bin\Debug\Classes_Project.exe
-C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\bin\Debug\Classes_Project.pdb
-C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\obj\Debug\Applicatie.csprojResolveAssemblyReference.cache
-C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\obj\Debug\Inlog.Inlogscherm.resources
-C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.LoginForm.resources
-C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.MainForm.resources
-C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.Properties.Resources.resources
-C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\obj\Debug\Applicatie.csproj.GenerateResource.Cache
-C:\Users\jeroen\Documents\Github\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.AfrekenForm.resources
-=======
 C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\bin\Debug\Classes_Project.exe.config
 C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.exe
 C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.pdb
@@ -45,4 +31,7 @@ C:\Users\Jasper\Source\Repos\MayaMaya\Bestelsysteem\Classes_Project\obj\Debug\Cl
 C:\Users\Jasper\Source\Repos\MayaMaya\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.MainForm.resources
 C:\Users\Jasper\Source\Repos\MayaMaya\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.Properties.Resources.resources
 C:\Users\Jasper\Source\Repos\MayaMaya\Bestelsysteem\Classes_Project\obj\Debug\Applicatie.csproj.GenerateResource.Cache
->>>>>>> origin/master
+C:\Users\alkma\Source\Repos\Bestelsysteem\Classes_Project\bin\Debug\Classes_Project.exe.config
+C:\Users\alkma\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.exe
+C:\Users\alkma\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.pdb
+C:\Users\alkma\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Applicatie.csprojResolveAssemblyReference.cache
