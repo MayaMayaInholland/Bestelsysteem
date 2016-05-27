@@ -27,4 +27,10 @@ namespace Classes_Project
         Geserveerd,
         Betaald
     }
+    
+    public enum MenuCategorie
+    {
+        Lunch,
+        Dinner
+    }
 }

@@ -112,11 +112,31 @@ namespace Classes_Project
                     MedewerkerDAO mDAO = new MedewerkerDAO();
                     Medewerker m = mDAO.GetByPincode(password);
 
-                    if (m != null)
+                    if (m.Rol == MedewerkerRol.Manager)
                     {
-
                         MainForm mayamaya = new MainForm(m);
                         mayamaya.Show();
+                        this.Hide();
+                        conn.Close();
+                    }
+                    else if(m.Rol == MedewerkerRol.Bediening)
+                    {
+                        BedieningForm bediening = new BedieningForm(m);
+                        bediening.Show();
+                        this.Hide();
+                        conn.Close();
+                    }
+                    else if (m.Rol == MedewerkerRol.Keuken)
+                    {
+                        MainForm Keuken = new MainForm(m);
+                        Keuken.Show();
+                        this.Hide();
+                        conn.Close();
+                    }
+                    else if (m.Rol == MedewerkerRol.Bar)
+                    {
+                        MainForm Bar = new MainForm(m);
+                        Bar.Show();
                         this.Hide();
                         conn.Close();
                     }

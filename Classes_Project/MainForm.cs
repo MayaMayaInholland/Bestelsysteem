@@ -94,20 +94,12 @@ namespace Classes_Project
         //dit moet nog afgemaakt worden.
         private void btn_Tafel1_Click(object sender, EventArgs e)
         {
-            BestellingDAO bestellingDAO = new BestellingDAO();
-            TafelDAO tafelDAO = new TafelDAO();
-            Tafel tafel = tafelDAO.GetByTafelNummer(1);
+            Bestelling_bijTafel(1);
+        }
 
-            if (tafel.Status == TafelStatus.VRIJ)
-            {
-                List<Product> besteld_productLijst = new List<Product>();
-                Bestelling bestelling = new Bestelling(tafel, ingelogdeMedewerker, DateTime.Now, BestellingStatus.Open, besteld_productLijst );
-            }
-            else if (tafel.Status == TafelStatus.BEZET)
-            {
-                bestellingDAO.GetByTafelId(1);
-            }
-            tabControl.SelectedTab = tab_Bestellen;
+
+        private void btn_Tafel2_Click(object sender, EventArgs e)
+        {
 
         }
 
@@ -120,10 +112,32 @@ namespace Classes_Project
         {
 
         }
+
         //Geeft lunch, avond maaltijd weer
         private void cmb_menuCategorie_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+        public void Bestelling_bijTafel(int Tafelnr)
+        {
+            BestellingDAO bestellingDAO = new BestellingDAO();
+            TafelDAO tafelDAO = new TafelDAO();
+            Tafel tafel = tafelDAO.GetByTafelNummer(Tafelnr);
+            Bestelling bestelling = bestellingDAO.GetByTafelId(2);
+
+
+            if (tafel.Status == TafelStatus.VRIJ)
+            {
+                List<Product> besteld_productLijst = new List<Product>();
+                //Bestelling bestelling = new Bestelling(tafel, ingelogdeMedewerker.Id , DateTime.Now, BestellingStatus.Open, besteld_productLijst);
+            }
+            else if (tafel.Status == TafelStatus.BEZET)
+            {
+                bestellingDAO.GetByTafelId(Tafelnr);
+            }
+            tabControl.SelectedTab = tab_Bestellen;
+        }
+
     }
 }
