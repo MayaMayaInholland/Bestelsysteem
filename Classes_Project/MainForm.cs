@@ -85,10 +85,6 @@ namespace Classes_Project
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         //tafel clicks.. 
         //dit moet nog afgemaakt worden.
@@ -97,21 +93,6 @@ namespace Classes_Project
             Bestelling_bijTafel(1);
         }
 
-
-        private void btn_Tafel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         //Geeft lunch, avond maaltijd weer
         private void cmb_menuCategorie_SelectedIndexChanged(object sender, EventArgs e)
@@ -138,6 +119,5 @@ namespace Classes_Project
             }
             tabControl.SelectedTab = tab_Bestellen;
         }
-
     }
 }

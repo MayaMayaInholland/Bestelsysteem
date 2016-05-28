@@ -17,7 +17,7 @@ namespace Classes_Project
         public int Aantal { get; set; }
 
 
-        public Product(int id, int categorie_id, float prijs, int voorraad, int btw, string omschrijving)
+        public Product(int id, int categorie_id, int prijs, int voorraad, int btw, string omschrijving)
         {
             this.Btw = btw;
             this.Categorie_id = categorie_id;

@@ -76,7 +76,7 @@ namespace Classes_Project
                 int id = (int)reader["id"]; // welke id zal de reader readen ?
                 int categorie_id = (int)reader["categorie_id"];
                 string omschrijving = (string)reader["omschrijving"];
-                float prijs = (float)reader["prijs"];
+                int prijs = (int)reader["prijs"];
                 int voorraad = (int)reader["voorraad"];
                 int btw = (int)reader["btw"];
                 int bestelling_id = (int)reader["bestelling_id"];
@@ -93,7 +93,40 @@ namespace Classes_Project
 
         }
 
+
+        //Ophalen producten uitDatabase
+        public List<Product> GetProducts()
+        {
+            List<Product> Lijst_Producten = new List<Product>();
+
+            conn = new SqlConnection(Helper.ConnectionString);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Product");
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int id = (int)reader["id"];
+                int categorie_id = (int)reader["categorie_id"];
+                string omschrijving = (string)reader["omschrijving"];
+                int prijs = (int)reader["prijs"];
+                int voorraad = (int)reader["voorraad"];
+                int btw = (int)reader["btw"];
+
+                Product product = new Product(id, categorie_id, prijs, voorraad, btw, omschrijving);
+
+                Lijst_Producten.Add(product);
+            }
+
+            conn.Close();
+            return Lijst_Producten;
+        }
+
+
+
         //-------------------------INSERT DATA____________________________________
+        //tafel-bestelling kan worden opgenomen...
 
         public void INSERT_Bestelling(Bestelling bestelling)
         {
@@ -138,6 +171,10 @@ namespace Classes_Project
 
 
         }
+
+        //Bestelde Producten verzamelen
+
+
 
     }
 
