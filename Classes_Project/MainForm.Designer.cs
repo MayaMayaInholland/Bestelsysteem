@@ -44,18 +44,8 @@
             this.tab_Bar = new System.Windows.Forms.TabPage();
             this.tab_medewerkerOverzicht = new System.Windows.Forms.TabPage();
             this.tab_Rekening = new System.Windows.Forms.TabPage();
-            this.listview_producten = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.menuStrip_bestelling = new System.Windows.Forms.MenuStrip();
-            this.lunchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dinnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.drankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listB_producten = new System.Windows.Forms.ListBox();
             this.tabControl.SuspendLayout();
-            this.tab_Bestellen.SuspendLayout();
             this.tab_TafelOverzicht.SuspendLayout();
-            this.menuStrip_bestelling.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -74,9 +64,6 @@
             // 
             // tab_Bestellen
             // 
-            this.tab_Bestellen.Controls.Add(this.listB_producten);
-            this.tab_Bestellen.Controls.Add(this.listview_producten);
-            this.tab_Bestellen.Controls.Add(this.menuStrip_bestelling);
             this.tab_Bestellen.Location = new System.Drawing.Point(4, 22);
             this.tab_Bestellen.Name = "tab_Bestellen";
             this.tab_Bestellen.Padding = new System.Windows.Forms.Padding(3);
@@ -236,91 +223,16 @@
             this.tab_Rekening.Text = "Rekening";
             this.tab_Rekening.UseVisualStyleBackColor = true;
             // 
-            // listview_producten
-            // 
-            this.listview_producten.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.listview_producten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listview_producten.Location = new System.Drawing.Point(6, 303);
-            this.listview_producten.Name = "listview_producten";
-            this.listview_producten.Size = new System.Drawing.Size(469, 191);
-            this.listview_producten.TabIndex = 0;
-            this.listview_producten.UseCompatibleStateImageBehavior = false;
-            this.listview_producten.View = System.Windows.Forms.View.Details;
-            this.listview_producten.SelectedIndexChanged += new System.EventHandler(this.listview_producten_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Naam";
-            this.columnHeader1.Width = 350;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Aantal";
-            this.columnHeader2.Width = 100;
-            // 
-            // menuStrip_bestelling
-            // 
-            this.menuStrip_bestelling.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lunchToolStripMenuItem,
-            this.dinnerToolStripMenuItem,
-            this.drankToolStripMenuItem});
-            this.menuStrip_bestelling.Location = new System.Drawing.Point(3, 3);
-            this.menuStrip_bestelling.Name = "menuStrip_bestelling";
-            this.menuStrip_bestelling.Size = new System.Drawing.Size(475, 24);
-            this.menuStrip_bestelling.TabIndex = 2;
-            this.menuStrip_bestelling.Text = "menuStrip1";
-            // 
-            // lunchToolStripMenuItem
-            // 
-            this.lunchToolStripMenuItem.Name = "lunchToolStripMenuItem";
-            this.lunchToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.lunchToolStripMenuItem.Text = "Lunch";
-            this.lunchToolStripMenuItem.Click += new System.EventHandler(this.lunchToolStripMenuItem_Click);
-            // 
-            // dinnerToolStripMenuItem
-            // 
-            this.dinnerToolStripMenuItem.Name = "dinnerToolStripMenuItem";
-            this.dinnerToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.dinnerToolStripMenuItem.Text = "Dinner";
-            this.dinnerToolStripMenuItem.Click += new System.EventHandler(this.dinnerToolStripMenuItem_Click);
-            // 
-            // drankToolStripMenuItem
-            // 
-            this.drankToolStripMenuItem.Name = "drankToolStripMenuItem";
-            this.drankToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.drankToolStripMenuItem.Text = "Drank";
-            this.drankToolStripMenuItem.Click += new System.EventHandler(this.drankToolStripMenuItem_Click);
-            // 
-            // listB_producten
-            // 
-            this.listB_producten.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.listB_producten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listB_producten.FormattingEnabled = true;
-            this.listB_producten.ItemHeight = 16;
-            this.listB_producten.Location = new System.Drawing.Point(6, 102);
-            this.listB_producten.Name = "listB_producten";
-            this.listB_producten.Size = new System.Drawing.Size(469, 196);
-            this.listB_producten.TabIndex = 3;
-            this.listB_producten.UseWaitCursor = true;
-            this.listB_producten.SelectedIndexChanged += new System.EventHandler(this.listB_producten_SelectedIndexChanged);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(513, 604);
             this.Controls.Add(this.tabControl);
-            this.MainMenuStrip = this.menuStrip_bestelling;
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.tabControl.ResumeLayout(false);
-            this.tab_Bestellen.ResumeLayout(false);
-            this.tab_Bestellen.PerformLayout();
             this.tab_TafelOverzicht.ResumeLayout(false);
-            this.menuStrip_bestelling.ResumeLayout(false);
-            this.menuStrip_bestelling.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -342,13 +254,5 @@
         private System.Windows.Forms.Button btn_Tafel5;
         private System.Windows.Forms.Button btn_Tafel4;
         private System.Windows.Forms.Button btn_Tafel3;
-        private System.Windows.Forms.ListView listview_producten;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.MenuStrip menuStrip_bestelling;
-        private System.Windows.Forms.ToolStripMenuItem lunchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dinnerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem drankToolStripMenuItem;
-        private System.Windows.Forms.ListBox listB_producten;
     }
 }
