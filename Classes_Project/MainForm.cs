@@ -94,7 +94,6 @@ namespace Classes_Project
         }
 
 
-
         public void Bestelling_bijTafel(int Tafelnr)
         {
             BestellingDAO bestellingDAO = new BestellingDAO();
@@ -113,7 +112,9 @@ namespace Classes_Project
             tabControl.SelectedTab = tab_Bestellen;
         }
 
+        private void tab_Bestellen_Click(object sender, EventArgs e)
+        {
 
-       
+        }
     }
 }

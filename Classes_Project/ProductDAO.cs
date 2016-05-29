@@ -14,7 +14,6 @@ namespace Classes_Project
         public ProductDAO()
         {
             conn = new SqlConnection(Helper.ConnectionString);
-            conn.Open();
         }
 
         public List<Product> GetProducten()
@@ -43,6 +42,36 @@ namespace Classes_Project
 
             conn.Close();
             return Lijst_Producten;
+        }
+
+        public Product GetProductByOmschrijving(string omschrijving)
+        {
+            conn = new SqlConnection(Helper.ConnectionString);
+            conn.Open();
+
+            Product product;
+
+            SqlCommand cmd = new SqlCommand(("SELECT * FROM Product"), conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int id = (int)reader["id"];
+                int categorie_id = (int)reader["categorie_id"];
+                string Omschrijving = (string)reader["omschrijving"];
+                //float prijs = (float)reader["prijs"];
+                int voorraad = (int)reader["voorraad"];
+                int btw = (int)reader["btw"];
+
+                if (omschrijving == Omschrijving)
+                {
+                    product = new Product(id, categorie_id, 10, voorraad, btw, Omschrijving);
+                    return product;
+                }
+
+            }
+            conn.Close();
+            return null;
         }
     }
 }

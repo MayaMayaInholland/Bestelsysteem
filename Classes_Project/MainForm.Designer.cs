@@ -71,6 +71,7 @@
             this.tab_Bestellen.TabIndex = 0;
             this.tab_Bestellen.Text = "Bestelling";
             this.tab_Bestellen.UseVisualStyleBackColor = true;
+            this.tab_Bestellen.Click += new System.EventHandler(this.tab_Bestellen_Click);
             // 
             // tab_TafelOverzicht
             // 

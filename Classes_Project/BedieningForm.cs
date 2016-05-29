@@ -13,15 +13,19 @@ namespace Classes_Project
 {
     public partial class BedieningForm : Form
     {
-      
+
+        private Medewerker ingelogdemedewerker;
 
         //constructor form
         public BedieningForm(Medewerker m)
         {
             InitializeComponent();
+            tabB_volledig.SelectedTab = tabB_TafelOverzicht;
+
+            ingelogdemedewerker = m;
+
         }
 
-        
 
         //tellen aantal van product??
         public void tel_AantalProducten(Bestelling bestelling)
@@ -39,32 +43,10 @@ namespace Classes_Project
             }
         }
 
-        public void Bestelling_bijTafel(int Tafelnr, Medewerker m)
-        {
-            //aanmaken bestellingDAO;
-            BestellingDAO bestellingDAO = new BestellingDAO();
-
-            //aanmaken tafelDAO 
-            TafelDAO tafelDAO = new TafelDAO();
-
-            //Verkrijgen tafel obj 
-            Tafel tafel = tafelDAO.GetByTafelNummer(Tafelnr);
-
-            if (tafel.Status == TafelStatus.VRIJ)
-            {
-                List<Product> besteld_productLijst = new List<Product>();
-                Bestelling bestelling = new Bestelling(tafel, m.Id , DateTime.Now, BestellingStatus.Open, besteld_productLijst);
-            }
-            else if (tafel.Status == TafelStatus.BEZET)
-            {
-                bestellingDAO.GetByTafelId(Tafelnr);
-            }
-            tabB_volledig.SelectedTab = tabB_Bestellen1;
-        }
 
         //Er moet een methode hiervan gemaakt kunnen worden, alleen de categorie_id vershilt per click.
         //tonen van alle lunch opties op listview
-        private void lunchToolStripMenuItem_Click(object sender, EventArgs e)
+        private void lunchToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             ProductDAO productDAO = new ProductDAO();
             List<Product> lijst_producten = new List<Product>(productDAO.GetProducten());
@@ -84,7 +66,7 @@ namespace Classes_Project
         }
 
         //tonen van alle dinner opties op listview
-        private void dinnerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void dinnerToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             ProductDAO productDAO = new ProductDAO();
             List<Product> lijst_producten = new List<Product>(productDAO.GetProducten());
@@ -104,7 +86,7 @@ namespace Classes_Project
         }
 
         // tonen van alle dranken op Listview
-        private void drankToolStripMenuItem_Click(object sender, EventArgs e)
+        private void drankToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             ProductDAO productDAO = new ProductDAO();
             List<Product> lijst_producten = new List<Product>(productDAO.GetProducten());
@@ -123,14 +105,9 @@ namespace Classes_Project
             listB_producten.SelectedIndexChanged += listB_producten_SelectedIndexChanged;
         }
 
-        //doorgeven van geslecteerde producten naar listview....
-        private void listB_producten_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         //verwijderen product uit listview ( nog zonder aantal.... )
-        private void listview_producten_SelectedIndexChanged(object sender, EventArgs e)
+        private void listview_producten_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             foreach (ListViewItem eachItem in listview_producten.SelectedItems)
             {
@@ -138,6 +115,59 @@ namespace Classes_Project
             }
         }
 
+        // Hierbij wordt de geselecteerde producten overgezet naar de listview
+        private void listB_producten_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string omschrijving = listB_producten.SelectedItems[0].ToString();
 
+            ListViewItem item = new ListViewItem(omschrijving);
+
+            listview_producten.Items.Add(item);
+        }
+
+        //Medewerker kan terug naar tafeloverzicht ( als er niks besteld is, is er niks veranderd.) 
+        private void btn_returnOverzicht_Click(object sender, EventArgs e)
+        {
+            tabB_volledig.SelectedTab = tabB_TafelOverzicht;
+        }
+
+        //Tafel 1 wordt geopend.
+        private void btn_Tafel1_Click(object sender, EventArgs e)
+        {
+            Bestelling bestelling = Bestelling_bijTafel(1);
+            tafelClick(1);
+            
+        }
+
+        
+        public void tafelClick(int tafelnr)
+        {
+            tabB_volledig.SelectedTab = tabB_Bestellen1;           
+
+        }
+
+        //Het terug halen van de bijhorende bestelling.
+        public Bestelling Bestelling_bijTafel(int Tafelnr)
+        {
+            BestellingDAO bestellingDAO = new BestellingDAO();
+            TafelDAO tafelDAO = new TafelDAO();
+            Tafel tafel = tafelDAO.GetByTafelNummer(Tafelnr);
+            Bestelling bestelling;
+
+            if (tafel.Status == TafelStatus.VRIJ)
+            {
+                List<Product> nieuw_productLijst = new List<Product>();
+                bestelling = new Bestelling(tafel, ingelogdemedewerker.Id, DateTime.Now, BestellingStatus.Open, nieuw_productLijst);
+                return bestelling;
+            }
+            else if (tafel.Status == TafelStatus.BEZET)
+            {
+                bestelling = bestellingDAO.GetByTafelId(Tafelnr);
+                return bestelling;
+            }
+            return null;
+        }
+
+        
     }
 }
