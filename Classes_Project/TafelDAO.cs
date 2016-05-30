@@ -39,11 +39,25 @@ namespace Classes_Project
             return null;          
         }
 
-        
+        public List<Tafel> GetAllTafels()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Tafel", conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<Tafel> tafels = new List<Tafel>();
 
+            while (reader.Read())
+            {
+                int id = (int) reader["id"];
+                TafelStatus status = (TafelStatus) reader["status"];
+                int nummer = (int) reader["nummer"];
 
+                Tafel tafel = new Tafel(id,nummer,status);
+                tafels.Add(tafel);
 
-
+            }
+            conn.Close();
+            return tafels;
+        }
 
     }
 }

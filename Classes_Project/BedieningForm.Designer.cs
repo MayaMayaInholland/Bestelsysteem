@@ -204,6 +204,7 @@
             this.btn_Tafel10.Name = "btn_Tafel10";
             this.btn_Tafel10.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel10.TabIndex = 20;
+            this.btn_Tafel10.Tag = "tafel10";
             this.btn_Tafel10.Text = "10";
             this.btn_Tafel10.UseVisualStyleBackColor = true;
             // 
@@ -216,6 +217,7 @@
             this.btn_Tafel9.Name = "btn_Tafel9";
             this.btn_Tafel9.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel9.TabIndex = 19;
+            this.btn_Tafel9.Tag = "tafel9";
             this.btn_Tafel9.Text = "9";
             this.btn_Tafel9.UseVisualStyleBackColor = true;
             // 
@@ -228,6 +230,7 @@
             this.btn_Tafel8.Name = "btn_Tafel8";
             this.btn_Tafel8.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel8.TabIndex = 18;
+            this.btn_Tafel8.Tag = "tafel8";
             this.btn_Tafel8.Text = "8";
             this.btn_Tafel8.UseVisualStyleBackColor = true;
             // 
@@ -240,6 +243,7 @@
             this.btn_Tafel7.Name = "btn_Tafel7";
             this.btn_Tafel7.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel7.TabIndex = 17;
+            this.btn_Tafel7.Tag = "tafel7";
             this.btn_Tafel7.Text = "7";
             this.btn_Tafel7.UseVisualStyleBackColor = true;
             // 
@@ -252,6 +256,7 @@
             this.btn_Tafel6.Name = "btn_Tafel6";
             this.btn_Tafel6.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel6.TabIndex = 16;
+            this.btn_Tafel6.Tag = "tafel6";
             this.btn_Tafel6.Text = "6";
             this.btn_Tafel6.UseVisualStyleBackColor = true;
             // 
@@ -264,6 +269,7 @@
             this.btn_Tafel5.Name = "btn_Tafel5";
             this.btn_Tafel5.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel5.TabIndex = 15;
+            this.btn_Tafel5.Tag = "tafel5";
             this.btn_Tafel5.Text = "5";
             this.btn_Tafel5.UseVisualStyleBackColor = true;
             // 
@@ -276,6 +282,7 @@
             this.btn_Tafel4.Name = "btn_Tafel4";
             this.btn_Tafel4.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel4.TabIndex = 14;
+            this.btn_Tafel4.Tag = "tafel4";
             this.btn_Tafel4.Text = "4";
             this.btn_Tafel4.UseVisualStyleBackColor = true;
             // 
@@ -288,6 +295,7 @@
             this.btn_Tafel3.Name = "btn_Tafel3";
             this.btn_Tafel3.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel3.TabIndex = 13;
+            this.btn_Tafel3.Tag = "tafel3";
             this.btn_Tafel3.Text = "3";
             this.btn_Tafel3.UseVisualStyleBackColor = true;
             // 
@@ -300,18 +308,19 @@
             this.btn_Tafel2.Name = "btn_Tafel2";
             this.btn_Tafel2.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel2.TabIndex = 12;
+            this.btn_Tafel2.Tag = "tafel2";
             this.btn_Tafel2.Text = "2";
             this.btn_Tafel2.UseVisualStyleBackColor = true;
             // 
             // btn_Tafel1
             // 
-            this.btn_Tafel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel1.BackgroundImage")));
             this.btn_Tafel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Tafel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Tafel1.Location = new System.Drawing.Point(45, 18);
             this.btn_Tafel1.Name = "btn_Tafel1";
             this.btn_Tafel1.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel1.TabIndex = 11;
+            this.btn_Tafel1.Tag = "tafel1";
             this.btn_Tafel1.Text = "1";
             this.btn_Tafel1.UseVisualStyleBackColor = true;
             this.btn_Tafel1.Click += new System.EventHandler(this.btn_Tafel1_Click);
