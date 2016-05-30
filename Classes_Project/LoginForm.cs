@@ -128,14 +128,14 @@ namespace Classes_Project
                     }
                     else if (m.Rol == MedewerkerRol.Keuken)
                     {
-                        MainForm Keuken = new MainForm(m);
+                        KeukenOverzicht Keuken = new KeukenOverzicht();
                         Keuken.Show();
                         this.Hide();
                         conn.Close();
                     }
                     else if (m.Rol == MedewerkerRol.Bar)
                     {
-                        MainForm Bar = new MainForm(m);
+                        BarOverzicht Bar = new BarOverzicht();
                         Bar.Show();
                         this.Hide();
                         conn.Close();
