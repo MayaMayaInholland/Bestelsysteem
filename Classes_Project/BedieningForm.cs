@@ -126,10 +126,7 @@ namespace Classes_Project
         }
 
         //Medewerker kan terug naar tafeloverzicht ( als er niks besteld is, is er niks veranderd.) 
-        private void btn_returnOverzicht_Click(object sender, EventArgs e)
-        {
-            tabB_volledig.SelectedTab = tabB_TafelOverzicht;
-        }
+        private void btn_returnOverzicht_Click(object sender, EventArgs e) => tabB_volledig.SelectedTab = tabB_TafelOverzicht;
 
         //Tafel 1 wordt geopend.
         private void btn_Tafel1_Click(object sender, EventArgs e)
