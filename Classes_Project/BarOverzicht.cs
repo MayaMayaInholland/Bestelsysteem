@@ -12,9 +12,12 @@ namespace Classes_Project
 {
     public partial class BarOverzicht : Form
     {
-        public BarOverzicht()
+        public BarOverzicht(Medewerker m)
         {
             InitializeComponent();
+
+            lbl_IngelogdeMedewerker.Text = m.Voornaam;
+
             //Bestellingen
             List<int> bestelling = new List<int>();
 

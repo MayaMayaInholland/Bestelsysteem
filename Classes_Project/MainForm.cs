@@ -54,6 +54,8 @@ namespace Classes_Project
         {
             InitializeComponent();
 
+            lbl_IngelogdeMedewerker.Text = m.Voornaam;
+
             TabControl.TabPageCollection tabs = tabControl.TabPages;
             foreach (TabPage tab in tabs)
             {

@@ -17,7 +17,6 @@ namespace Classes_Project
         private Medewerker ingelogdemedewerker;
         private List<Product> besteldeProducten = new List<Product>();
 
-
         //constructor form
         public BedieningForm(Medewerker m)
         {
@@ -25,6 +24,7 @@ namespace Classes_Project
             tabB_volledig.SelectedTab = tabB_TafelOverzicht;
 
             ingelogdemedewerker = m;
+            lbl_IngelogdeMedewerker.Text = m.Voornaam;
 
         }
 

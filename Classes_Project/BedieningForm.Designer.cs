@@ -53,6 +53,7 @@
             this.btn_Tafel2 = new System.Windows.Forms.Button();
             this.btn_Tafel1 = new System.Windows.Forms.Button();
             this.btn_Loguit = new System.Windows.Forms.Button();
+            this.lbl_IngelogdeMedewerker = new System.Windows.Forms.Label();
             this.tabB_volledig.SuspendLayout();
             this.tabB_Bestellen1.SuspendLayout();
             this.menuStrip_bestelling.SuspendLayout();
@@ -189,7 +190,7 @@
             this.tabB_TafelOverzicht.Location = new System.Drawing.Point(4, 22);
             this.tabB_TafelOverzicht.Name = "tabB_TafelOverzicht";
             this.tabB_TafelOverzicht.Padding = new System.Windows.Forms.Padding(3);
-            this.tabB_TafelOverzicht.Size = new System.Drawing.Size(507, 651);
+            this.tabB_TafelOverzicht.Size = new System.Drawing.Size(507, 564);
             this.tabB_TafelOverzicht.TabIndex = 1;
             this.tabB_TafelOverzicht.Text = "TafelOverzicht";
             this.tabB_TafelOverzicht.UseVisualStyleBackColor = true;
@@ -325,11 +326,20 @@
             this.btn_Loguit.UseVisualStyleBackColor = true;
             this.btn_Loguit.Click += new System.EventHandler(this.btn_Loguit_Click);
             // 
+            // lbl_IngelogdeMedewerker
+            // 
+            this.lbl_IngelogdeMedewerker.AutoSize = true;
+            this.lbl_IngelogdeMedewerker.Location = new System.Drawing.Point(417, 604);
+            this.lbl_IngelogdeMedewerker.Name = "lbl_IngelogdeMedewerker";
+            this.lbl_IngelogdeMedewerker.Size = new System.Drawing.Size(0, 13);
+            this.lbl_IngelogdeMedewerker.TabIndex = 2;
+            // 
             // BedieningForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 624);
+            this.Controls.Add(this.lbl_IngelogdeMedewerker);
             this.Controls.Add(this.btn_Loguit);
             this.Controls.Add(this.tabB_volledig);
             this.Name = "BedieningForm";
@@ -341,6 +351,7 @@
             this.menuStrip_bestelling.PerformLayout();
             this.tabB_TafelOverzicht.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -370,5 +381,6 @@
         private System.Windows.Forms.Button btn_returnOverzicht;
         private System.Windows.Forms.Button btn_bevestig;
         private System.Windows.Forms.Button btn_Loguit;
+        private System.Windows.Forms.Label lbl_IngelogdeMedewerker;
     }
 }

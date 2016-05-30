@@ -12,9 +12,11 @@ namespace Classes_Project
 {
     public partial class KeukenOverzicht : Form
     {
-        public KeukenOverzicht()
+        public KeukenOverzicht(Medewerker m)
         {
             InitializeComponent();
+
+            lbl_IngelogdeMedewerker.Text = m.Voornaam;
 
             //Bestellingen
             List<int> bestelling = new List<int>();

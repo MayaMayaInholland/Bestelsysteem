@@ -118,7 +118,7 @@ namespace Classes_Project
                         }
                         else if (m.Rol == MedewerkerRol.Keuken)
                         {
-                            KeukenOverzicht keuken = new KeukenOverzicht();
+                            KeukenOverzicht keuken = new KeukenOverzicht(m);
                             keuken.StartPosition = FormStartPosition.CenterScreen;
                             keuken.Show();
                             this.Hide();
@@ -126,7 +126,7 @@ namespace Classes_Project
                         }
                         else if (m.Rol == MedewerkerRol.Bar)
                         {
-                            BarOverzicht bar = new BarOverzicht();
+                            BarOverzicht bar = new BarOverzicht(m);
                             bar.StartPosition = FormStartPosition.CenterScreen;
                             bar.Show();
                             this.Hide();
