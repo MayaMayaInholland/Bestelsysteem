@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BedieningForm));
             this.tabB_volledig = new System.Windows.Forms.TabControl();
             this.tabB_Bestellen1 = new System.Windows.Forms.TabPage();
+            this.btn_bevestig = new System.Windows.Forms.Button();
+            this.btn_returnOverzicht = new System.Windows.Forms.Button();
+            this.listB_producten = new System.Windows.Forms.ListBox();
             this.listview_producten = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -49,9 +52,7 @@
             this.btn_Tafel3 = new System.Windows.Forms.Button();
             this.btn_Tafel2 = new System.Windows.Forms.Button();
             this.btn_Tafel1 = new System.Windows.Forms.Button();
-            this.listB_producten = new System.Windows.Forms.ListBox();
-            this.btn_returnOverzicht = new System.Windows.Forms.Button();
-            this.btn_bevestig = new System.Windows.Forms.Button();
+            this.btn_Loguit = new System.Windows.Forms.Button();
             this.tabB_volledig.SuspendLayout();
             this.tabB_Bestellen1.SuspendLayout();
             this.menuStrip_bestelling.SuspendLayout();
@@ -65,7 +66,7 @@
             this.tabB_volledig.Location = new System.Drawing.Point(2, 3);
             this.tabB_volledig.Name = "tabB_volledig";
             this.tabB_volledig.SelectedIndex = 0;
-            this.tabB_volledig.Size = new System.Drawing.Size(517, 677);
+            this.tabB_volledig.Size = new System.Drawing.Size(515, 590);
             this.tabB_volledig.TabIndex = 0;
             // 
             // tabB_Bestellen1
@@ -79,10 +80,42 @@
             this.tabB_Bestellen1.Location = new System.Drawing.Point(4, 22);
             this.tabB_Bestellen1.Name = "tabB_Bestellen1";
             this.tabB_Bestellen1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabB_Bestellen1.Size = new System.Drawing.Size(509, 651);
+            this.tabB_Bestellen1.Size = new System.Drawing.Size(507, 564);
             this.tabB_Bestellen1.TabIndex = 0;
             this.tabB_Bestellen1.Text = "Bestellen";
             this.tabB_Bestellen1.UseVisualStyleBackColor = true;
+            // 
+            // btn_bevestig
+            // 
+            this.btn_bevestig.Location = new System.Drawing.Point(386, 498);
+            this.btn_bevestig.Name = "btn_bevestig";
+            this.btn_bevestig.Size = new System.Drawing.Size(117, 33);
+            this.btn_bevestig.TabIndex = 9;
+            this.btn_bevestig.Text = "Bevestig";
+            this.btn_bevestig.UseVisualStyleBackColor = true;
+            // 
+            // btn_returnOverzicht
+            // 
+            this.btn_returnOverzicht.Location = new System.Drawing.Point(386, 30);
+            this.btn_returnOverzicht.Name = "btn_returnOverzicht";
+            this.btn_returnOverzicht.Size = new System.Drawing.Size(117, 32);
+            this.btn_returnOverzicht.TabIndex = 8;
+            this.btn_returnOverzicht.Text = "TafelOverzicht";
+            this.btn_returnOverzicht.UseVisualStyleBackColor = true;
+            this.btn_returnOverzicht.Click += new System.EventHandler(this.btn_returnOverzicht_Click);
+            // 
+            // listB_producten
+            // 
+            this.listB_producten.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.listB_producten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listB_producten.FormattingEnabled = true;
+            this.listB_producten.ItemHeight = 16;
+            this.listB_producten.Location = new System.Drawing.Point(6, 68);
+            this.listB_producten.Name = "listB_producten";
+            this.listB_producten.Size = new System.Drawing.Size(500, 196);
+            this.listB_producten.TabIndex = 7;
+            this.listB_producten.UseWaitCursor = true;
+            this.listB_producten.SelectedIndexChanged += new System.EventHandler(this.listB_producten_SelectedIndexChanged);
             // 
             // listview_producten
             // 
@@ -116,7 +149,7 @@
             this.drankToolStripMenuItem});
             this.menuStrip_bestelling.Location = new System.Drawing.Point(3, 3);
             this.menuStrip_bestelling.Name = "menuStrip_bestelling";
-            this.menuStrip_bestelling.Size = new System.Drawing.Size(503, 24);
+            this.menuStrip_bestelling.Size = new System.Drawing.Size(501, 24);
             this.menuStrip_bestelling.TabIndex = 3;
             this.menuStrip_bestelling.Text = "menuStrip1";
             // 
@@ -156,7 +189,7 @@
             this.tabB_TafelOverzicht.Location = new System.Drawing.Point(4, 22);
             this.tabB_TafelOverzicht.Name = "tabB_TafelOverzicht";
             this.tabB_TafelOverzicht.Padding = new System.Windows.Forms.Padding(3);
-            this.tabB_TafelOverzicht.Size = new System.Drawing.Size(509, 651);
+            this.tabB_TafelOverzicht.Size = new System.Drawing.Size(507, 651);
             this.tabB_TafelOverzicht.TabIndex = 1;
             this.tabB_TafelOverzicht.Text = "TafelOverzicht";
             this.tabB_TafelOverzicht.UseVisualStyleBackColor = true;
@@ -282,43 +315,22 @@
             this.btn_Tafel1.UseVisualStyleBackColor = true;
             this.btn_Tafel1.Click += new System.EventHandler(this.btn_Tafel1_Click);
             // 
-            // listB_producten
+            // btn_Loguit
             // 
-            this.listB_producten.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.listB_producten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listB_producten.FormattingEnabled = true;
-            this.listB_producten.ItemHeight = 16;
-            this.listB_producten.Location = new System.Drawing.Point(6, 68);
-            this.listB_producten.Name = "listB_producten";
-            this.listB_producten.Size = new System.Drawing.Size(500, 196);
-            this.listB_producten.TabIndex = 7;
-            this.listB_producten.UseWaitCursor = true;
-            this.listB_producten.SelectedIndexChanged += new System.EventHandler(this.listB_producten_SelectedIndexChanged);
-            // 
-            // btn_returnOverzicht
-            // 
-            this.btn_returnOverzicht.Location = new System.Drawing.Point(386, 30);
-            this.btn_returnOverzicht.Name = "btn_returnOverzicht";
-            this.btn_returnOverzicht.Size = new System.Drawing.Size(117, 32);
-            this.btn_returnOverzicht.TabIndex = 8;
-            this.btn_returnOverzicht.Text = "TafelOverzicht";
-            this.btn_returnOverzicht.UseVisualStyleBackColor = true;
-            this.btn_returnOverzicht.Click += new System.EventHandler(this.btn_returnOverzicht_Click);
-            // 
-            // btn_bevestig
-            // 
-            this.btn_bevestig.Location = new System.Drawing.Point(386, 498);
-            this.btn_bevestig.Name = "btn_bevestig";
-            this.btn_bevestig.Size = new System.Drawing.Size(117, 33);
-            this.btn_bevestig.TabIndex = 9;
-            this.btn_bevestig.Text = "Bevestig";
-            this.btn_bevestig.UseVisualStyleBackColor = true;
+            this.btn_Loguit.Location = new System.Drawing.Point(2, 595);
+            this.btn_Loguit.Name = "btn_Loguit";
+            this.btn_Loguit.Size = new System.Drawing.Size(75, 23);
+            this.btn_Loguit.TabIndex = 1;
+            this.btn_Loguit.Text = "Log uit";
+            this.btn_Loguit.UseVisualStyleBackColor = true;
+            this.btn_Loguit.Click += new System.EventHandler(this.btn_Loguit_Click);
             // 
             // BedieningForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 568);
+            this.ClientSize = new System.Drawing.Size(515, 624);
+            this.Controls.Add(this.btn_Loguit);
             this.Controls.Add(this.tabB_volledig);
             this.Name = "BedieningForm";
             this.Text = "BedieningForm";
@@ -357,5 +369,6 @@
         private System.Windows.Forms.ListBox listB_producten;
         private System.Windows.Forms.Button btn_returnOverzicht;
         private System.Windows.Forms.Button btn_bevestig;
+        private System.Windows.Forms.Button btn_Loguit;
     }
 }

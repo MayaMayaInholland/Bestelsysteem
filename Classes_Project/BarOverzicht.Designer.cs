@@ -33,6 +33,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.Geschiedenis = new System.Windows.Forms.TabPage();
             this.label42 = new System.Windows.Forms.Label();
+            this.btn_Loguit = new System.Windows.Forms.Button();
             this.Overzichtbar.SuspendLayout();
             this.BarNu.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +45,7 @@
             this.Overzichtbar.Location = new System.Drawing.Point(12, 58);
             this.Overzichtbar.Name = "Overzichtbar";
             this.Overzichtbar.SelectedIndex = 0;
-            this.Overzichtbar.Size = new System.Drawing.Size(929, 704);
+            this.Overzichtbar.Size = new System.Drawing.Size(929, 633);
             this.Overzichtbar.TabIndex = 0;
             // 
             // BarNu
@@ -54,7 +55,7 @@
             this.BarNu.Location = new System.Drawing.Point(4, 22);
             this.BarNu.Name = "BarNu";
             this.BarNu.Padding = new System.Windows.Forms.Padding(3);
-            this.BarNu.Size = new System.Drawing.Size(921, 678);
+            this.BarNu.Size = new System.Drawing.Size(921, 607);
             this.BarNu.TabIndex = 0;
             this.BarNu.Text = "Nu";
             this.BarNu.UseVisualStyleBackColor = true;
@@ -89,11 +90,22 @@
             this.label42.TabIndex = 102;
             this.label42.Text = "Bar";
             // 
+            // btn_Loguit
+            // 
+            this.btn_Loguit.Location = new System.Drawing.Point(16, 697);
+            this.btn_Loguit.Name = "btn_Loguit";
+            this.btn_Loguit.Size = new System.Drawing.Size(75, 23);
+            this.btn_Loguit.TabIndex = 103;
+            this.btn_Loguit.Text = "Log uit";
+            this.btn_Loguit.UseVisualStyleBackColor = true;
+            this.btn_Loguit.Click += new System.EventHandler(this.btn_Loguit_Click);
+            // 
             // BarOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 728);
+            this.Controls.Add(this.btn_Loguit);
             this.Controls.Add(this.label42);
             this.Controls.Add(this.Overzichtbar);
             this.Enabled = false;
@@ -114,5 +126,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TabPage Geschiedenis;
         private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Button btn_Loguit;
     }
 }

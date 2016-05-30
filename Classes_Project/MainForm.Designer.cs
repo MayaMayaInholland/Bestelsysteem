@@ -44,6 +44,7 @@
             this.tab_Bar = new System.Windows.Forms.TabPage();
             this.tab_medewerkerOverzicht = new System.Windows.Forms.TabPage();
             this.tab_Rekening = new System.Windows.Forms.TabPage();
+            this.btn_Loguit = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tab_TafelOverzicht.SuspendLayout();
             this.SuspendLayout();
@@ -224,11 +225,22 @@
             this.tab_Rekening.Text = "Rekening";
             this.tab_Rekening.UseVisualStyleBackColor = true;
             // 
+            // btn_Loguit
+            // 
+            this.btn_Loguit.Location = new System.Drawing.Point(16, 599);
+            this.btn_Loguit.Name = "btn_Loguit";
+            this.btn_Loguit.Size = new System.Drawing.Size(75, 23);
+            this.btn_Loguit.TabIndex = 1;
+            this.btn_Loguit.Text = "Log uit";
+            this.btn_Loguit.UseVisualStyleBackColor = true;
+            this.btn_Loguit.Click += new System.EventHandler(this.btn_Loguit_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 604);
+            this.ClientSize = new System.Drawing.Size(513, 629);
+            this.Controls.Add(this.btn_Loguit);
             this.Controls.Add(this.tabControl);
             this.Name = "MainForm";
             this.Text = "MainForm";
@@ -255,5 +267,6 @@
         private System.Windows.Forms.Button btn_Tafel5;
         private System.Windows.Forms.Button btn_Tafel4;
         private System.Windows.Forms.Button btn_Tafel3;
+        private System.Windows.Forms.Button btn_Loguit;
     }
 }

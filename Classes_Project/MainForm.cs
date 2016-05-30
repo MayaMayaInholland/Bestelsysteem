@@ -116,5 +116,12 @@ namespace Classes_Project
         {
 
         }
+
+        private void btn_Loguit_Click(object sender, EventArgs e)
+        {
+            LoginForm f = new LoginForm();
+            f.Show();
+            this.Hide();
+        }
     }
 }

@@ -33,70 +33,57 @@ namespace Classes_Project
 
         private void btn_1_Click(object sender, EventArgs e)
         {
-            password += 1;
-            txt_Password.Text += "*";
-            VerifyPassword();
+            GetalClick(1);
         }
 
         private void btn_2_Click(object sender, EventArgs e)
         {
-            password += 2;
-            txt_Password.Text += "*";
-            VerifyPassword();
+            GetalClick(2);
         }
 
         private void btn_3_Click(object sender, EventArgs e)
         {
-            password += 3;
-            txt_Password.Text += "*";
-            VerifyPassword();
+            GetalClick(3);
         }
 
         private void btn_4_Click(object sender, EventArgs e)
         {
-            password += 4;
-            txt_Password.Text += "*";
-            VerifyPassword();
+            GetalClick(4);
         }
 
         private void btn_5_Click(object sender, EventArgs e)
         {
-            password += 5;
-            txt_Password.Text += "*";
-            VerifyPassword();
+            GetalClick(5);
         }
 
         private void btn_6_Click(object sender, EventArgs e)
         {
-            password += 6;
-            txt_Password.Text += "*";
-            VerifyPassword();
+            GetalClick(6);
         }
 
         private void btn_7_Click(object sender, EventArgs e)
         {
-            password += 7;
-            txt_Password.Text += "*";
-            VerifyPassword();
+            GetalClick(7);
         }
 
         private void btn_8_Click(object sender, EventArgs e)
         {
-            password += 8;
-            txt_Password.Text += "*";
-            VerifyPassword();
+            GetalClick(8);
         }
 
         private void btn_9_Click(object sender, EventArgs e)
         {
-            password += 9;
-            txt_Password.Text += "*";
-            VerifyPassword();
+            GetalClick(9);
         }
 
         private void btn_0_Click(object sender, EventArgs e)
         {
-            password += 0;
+            GetalClick(0);
+        }
+
+        private void GetalClick(int getal)
+        {
+            password += getal;
             txt_Password.Text += "*";
             VerifyPassword();
         }
@@ -111,34 +98,36 @@ namespace Classes_Project
 
                     MedewerkerDAO mDAO = new MedewerkerDAO();
                     Medewerker m = mDAO.GetByPincode(password);
-
-                    if (m.Rol == MedewerkerRol.Manager)
+                    if (m != null)
                     {
-                        MainForm mayamaya = new MainForm(m);
-                        mayamaya.Show();
-                        this.Hide();
-                        conn.Close();
-                    }
-                    else if(m.Rol == MedewerkerRol.Bediening)
-                    {
-                        BedieningForm bediening = new BedieningForm(m);
-                        bediening.Show();
-                        this.Hide();
-                        conn.Close();
-                    }
-                    else if (m.Rol == MedewerkerRol.Keuken)
-                    {
-                        KeukenOverzicht Keuken = new KeukenOverzicht();
-                        Keuken.Show();
-                        this.Hide();
-                        conn.Close();
-                    }
-                    else if (m.Rol == MedewerkerRol.Bar)
-                    {
-                        BarOverzicht Bar = new BarOverzicht();
-                        Bar.Show();
-                        this.Hide();
-                        conn.Close();
+                        if (m.Rol == MedewerkerRol.Manager)
+                        {
+                            MainForm mayamaya = new MainForm(m);
+                            mayamaya.Show();
+                            this.Hide();
+                            conn.Close();
+                        }
+                        else if (m.Rol == MedewerkerRol.Bediening)
+                        {
+                            BedieningForm bediening = new BedieningForm(m);
+                            bediening.Show();
+                            this.Hide();
+                            conn.Close();
+                        }
+                        else if (m.Rol == MedewerkerRol.Keuken)
+                        {
+                            KeukenOverzicht Keuken = new KeukenOverzicht();
+                            Keuken.Show();
+                            this.Hide();
+                            conn.Close();
+                        }
+                        else if (m.Rol == MedewerkerRol.Bar)
+                        {
+                            BarOverzicht Bar = new BarOverzicht();
+                            Bar.Show();
+                            this.Hide();
+                            conn.Close();
+                        }
                     }
                     else
                     {
@@ -155,16 +144,16 @@ namespace Classes_Project
             }
         }
 
-       
+
 
         private void Shake()
         {
             Point original = txt_Password.Location;
             Random rnd = new Random(5);
-            const int shake_amplitude = 20;
+            int shakeAmplitude = 20;
             for (int i = 0; i < 10; i++)
             {
-                txt_Password.Location = new Point(original.X + rnd.Next(-shake_amplitude, shake_amplitude), original.Y);
+                txt_Password.Location = new Point(original.X + rnd.Next(-shakeAmplitude, shakeAmplitude), original.Y);
                 System.Threading.Thread.Sleep(30);
             }
             txt_Password.Location = original;

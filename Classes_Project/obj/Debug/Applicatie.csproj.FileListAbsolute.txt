@@ -34,7 +34,6 @@ C:\Users\Jasper\Source\Repos\Bestelsysteem\Classes_Project\bin\Debug\Classes_Pro
 C:\Users\Jasper\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Applicatie.csprojResolveAssemblyReference.cache
 C:\Users\Jasper\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.BarOverzicht.resources
 C:\Users\Jasper\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.BedieningForm.resources
-C:\Users\Jasper\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Inlog.Inlogscherm.resources
 C:\Users\Jasper\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.KeukenOverzicht.resources
 C:\Users\Jasper\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.LoginForm.resources
 C:\Users\Jasper\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.MainForm.resources
