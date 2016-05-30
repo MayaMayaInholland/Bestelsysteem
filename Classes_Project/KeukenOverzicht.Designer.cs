@@ -33,6 +33,8 @@
             this.BarNu = new System.Windows.Forms.TabPage();
             this.Geschiedenis = new System.Windows.Forms.TabPage();
             this.label23 = new System.Windows.Forms.Label();
+            this.btn_Loguit = new System.Windows.Forms.Button();
+            this.lbl_IngelogdeMedewerker = new System.Windows.Forms.Label();
             this.Overzichtbar.SuspendLayout();
             this.Geschiedenis.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +56,7 @@
             this.Overzichtbar.Location = new System.Drawing.Point(12, 60);
             this.Overzichtbar.Name = "Overzichtbar";
             this.Overzichtbar.SelectedIndex = 0;
-            this.Overzichtbar.Size = new System.Drawing.Size(929, 704);
+            this.Overzichtbar.Size = new System.Drawing.Size(929, 650);
             this.Overzichtbar.TabIndex = 103;
             // 
             // BarNu
@@ -63,7 +65,7 @@
             this.BarNu.Location = new System.Drawing.Point(4, 22);
             this.BarNu.Name = "BarNu";
             this.BarNu.Padding = new System.Windows.Forms.Padding(3);
-            this.BarNu.Size = new System.Drawing.Size(921, 678);
+            this.BarNu.Size = new System.Drawing.Size(921, 624);
             this.BarNu.TabIndex = 0;
             this.BarNu.Text = "Nu";
             this.BarNu.UseVisualStyleBackColor = true;
@@ -75,7 +77,7 @@
             this.Geschiedenis.Location = new System.Drawing.Point(4, 22);
             this.Geschiedenis.Name = "Geschiedenis";
             this.Geschiedenis.Padding = new System.Windows.Forms.Padding(3);
-            this.Geschiedenis.Size = new System.Drawing.Size(921, 678);
+            this.Geschiedenis.Size = new System.Drawing.Size(921, 624);
             this.Geschiedenis.TabIndex = 2;
             this.Geschiedenis.Text = "Geschiedenis";
             this.Geschiedenis.UseVisualStyleBackColor = true;
@@ -89,11 +91,31 @@
             this.label23.TabIndex = 70;
             this.label23.Text = "label23";
             // 
+            // btn_Loguit
+            // 
+            this.btn_Loguit.Location = new System.Drawing.Point(16, 716);
+            this.btn_Loguit.Name = "btn_Loguit";
+            this.btn_Loguit.Size = new System.Drawing.Size(75, 23);
+            this.btn_Loguit.TabIndex = 105;
+            this.btn_Loguit.Text = "Log uit";
+            this.btn_Loguit.UseVisualStyleBackColor = true;
+            this.btn_Loguit.Click += new System.EventHandler(this.btn_Loguit_Click);
+            // 
+            // lbl_IngelogdeMedewerker
+            // 
+            this.lbl_IngelogdeMedewerker.AutoSize = true;
+            this.lbl_IngelogdeMedewerker.Location = new System.Drawing.Point(837, 716);
+            this.lbl_IngelogdeMedewerker.Name = "lbl_IngelogdeMedewerker";
+            this.lbl_IngelogdeMedewerker.Size = new System.Drawing.Size(0, 13);
+            this.lbl_IngelogdeMedewerker.TabIndex = 106;
+            // 
             // KeukenOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 741);
+            this.Controls.Add(this.lbl_IngelogdeMedewerker);
+            this.Controls.Add(this.btn_Loguit);
             this.Controls.Add(this.label42);
             this.Controls.Add(this.Overzichtbar);
             this.Name = "KeukenOverzicht";
@@ -112,5 +134,7 @@
         private System.Windows.Forms.TabPage BarNu;
         private System.Windows.Forms.TabPage Geschiedenis;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button btn_Loguit;
+        private System.Windows.Forms.Label lbl_IngelogdeMedewerker;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Classes_Project.Properties;
 
 
 namespace Classes_Project
@@ -16,7 +17,7 @@ namespace Classes_Project
 
         private Medewerker ingelogdemedewerker;
         private List<Product> besteldeProducten = new List<Product>();
-
+        private List<Tafel> tafels;
 
         //constructor form
         public BedieningForm(Medewerker m)
@@ -25,10 +26,42 @@ namespace Classes_Project
             tabB_volledig.SelectedTab = tabB_TafelOverzicht;
 
             ingelogdemedewerker = m;
-
+            lbl_IngelogdeMedewerker.Text = m.Voornaam;
+            TafelDAO tafelDao = new TafelDAO();
+            tafels = tafelDao.GetAllTafels();
+            SetTafelImages();
         }
 
-        
+        private void SetTafelImages()
+        {
+            for (int i = 1; i <= tafels.Count; i++)
+            {
+                Control.ControlCollection controls2 = tabB_TafelOverzicht.Controls;
+                foreach (Control c in tabB_TafelOverzicht.Controls)
+                {
+                    if ((string)c.Tag == string.Format("tafel{0}",i))
+                    {
+                        Tafel huidigeTafel = tafels.Where(t => t.Nummer == i).FirstOrDefault();
+                        if (huidigeTafel.Status == TafelStatus.VRIJ)
+                        {
+                            Image img =  (Image)Resources.ResourceManager.GetObject("TafelVrij");
+                            c.BackgroundImage = img;
+                        }
+                        else if (huidigeTafel.Status == TafelStatus.BEZET)
+                        {
+                            Image img = (Image)Resources.ResourceManager.GetObject("TafelBezet");
+                            c.BackgroundImage = img;
+                        }
+                    }
+
+
+
+                }
+            }
+        }
+
+
+
         //tellen aantal van product??
         public void tel_AantalProducten(Bestelling bestelling)
         {
@@ -123,7 +156,7 @@ namespace Classes_Project
         private void listB_producten_SelectedIndexChanged(object sender, EventArgs e)
         {
             string omschrijving = listB_producten.SelectedItems[0].ToString();
-            Product product = listB_producten.SelectedItem as Product;      
+            Product product = listB_producten.SelectedItem as Product;
 
             CustomListViewItem item = new CustomListViewItem(product.Omschrijving, product.Id);
             besteldeProducten.Add(product);
@@ -139,13 +172,13 @@ namespace Classes_Project
         {
             Bestelling bestelling = Bestelling_bijTafel(1);
             tafelClick(1);
-            
+
         }
 
-        
+
         public void tafelClick(int tafelnr)
         {
-            tabB_volledig.SelectedTab = tabB_Bestellen1;           
+            tabB_volledig.SelectedTab = tabB_Bestellen1;
 
         }
 
@@ -171,6 +204,12 @@ namespace Classes_Project
             return null;
         }
 
-        
+        private void btn_Loguit_Click(object sender, EventArgs e)
+        {
+            LoginForm f = new LoginForm();
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.Show();
+            this.Hide();
+        }
     }
 }

@@ -54,6 +54,8 @@ namespace Classes_Project
         {
             InitializeComponent();
 
+            lbl_IngelogdeMedewerker.Text = m.Voornaam;
+
             TabControl.TabPageCollection tabs = tabControl.TabPages;
             foreach (TabPage tab in tabs)
             {
@@ -115,6 +117,14 @@ namespace Classes_Project
         private void tab_Bestellen_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Loguit_Click(object sender, EventArgs e)
+        {
+            LoginForm f = new LoginForm();
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.Show();
+            this.Hide();
         }
     }
 }

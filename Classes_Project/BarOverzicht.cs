@@ -12,9 +12,12 @@ namespace Classes_Project
 {
     public partial class BarOverzicht : Form
     {
-        public BarOverzicht()
+        public BarOverzicht(Medewerker m)
         {
             InitializeComponent();
+
+            lbl_IngelogdeMedewerker.Text = m.Voornaam;
+
             //Bestellingen
             List<int> bestelling = new List<int>();
 
@@ -167,6 +170,14 @@ namespace Classes_Project
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Loguit_Click(object sender, EventArgs e)
+        {
+            LoginForm f = new LoginForm();
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.Show();
+            this.Hide();
         }
     }
 }
