@@ -102,29 +102,33 @@ namespace Classes_Project
                     {
                         if (m.Rol == MedewerkerRol.Manager)
                         {
-                            MainForm mayamaya = new MainForm(m);
-                            mayamaya.Show();
+                            MainForm manager = new MainForm(m);
+                            manager.StartPosition = FormStartPosition.CenterScreen;
+                            manager.Show();
                             this.Hide();
                             conn.Close();
                         }
                         else if (m.Rol == MedewerkerRol.Bediening)
                         {
                             BedieningForm bediening = new BedieningForm(m);
+                            bediening.StartPosition = FormStartPosition.CenterScreen;
                             bediening.Show();
                             this.Hide();
                             conn.Close();
                         }
                         else if (m.Rol == MedewerkerRol.Keuken)
                         {
-                            KeukenOverzicht Keuken = new KeukenOverzicht();
-                            Keuken.Show();
+                            KeukenOverzicht keuken = new KeukenOverzicht();
+                            keuken.StartPosition = FormStartPosition.CenterScreen;
+                            keuken.Show();
                             this.Hide();
                             conn.Close();
                         }
                         else if (m.Rol == MedewerkerRol.Bar)
                         {
-                            BarOverzicht Bar = new BarOverzicht();
-                            Bar.Show();
+                            BarOverzicht bar = new BarOverzicht();
+                            bar.StartPosition = FormStartPosition.CenterScreen;
+                            bar.Show();
                             this.Hide();
                             conn.Close();
                         }
