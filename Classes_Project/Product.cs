@@ -27,5 +27,9 @@ namespace Classes_Project
             this.Omschrijving = omschrijving;
         }
 
+        public override string ToString()
+        {
+            return Omschrijving;
+        }
     }
 }

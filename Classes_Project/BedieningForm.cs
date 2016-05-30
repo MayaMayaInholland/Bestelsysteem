@@ -15,6 +15,8 @@ namespace Classes_Project
     {
 
         private Medewerker ingelogdemedewerker;
+        private List<Product> besteldeProducten = new List<Product>();
+
 
         //constructor form
         public BedieningForm(Medewerker m)
@@ -50,13 +52,13 @@ namespace Classes_Project
         {
             ProductDAO productDAO = new ProductDAO();
             List<Product> lijst_producten = new List<Product>(productDAO.GetProducten());
-            List<string> producten = new List<string>();
+            List<Product> producten = new List<Product>();
 
             foreach (Product product in lijst_producten)
             {
                 if (product.Categorie_id == 1 || product.Categorie_id == 2 || product.Categorie_id == 3)
                 {
-                    producten.Add(product.Omschrijving);
+                    producten.Add(product);
                 }
             }
             listB_producten.SelectedIndexChanged -= listB_producten_SelectedIndexChanged;
@@ -70,13 +72,13 @@ namespace Classes_Project
         {
             ProductDAO productDAO = new ProductDAO();
             List<Product> lijst_producten = new List<Product>(productDAO.GetProducten());
-            List<string> producten = new List<string>();
+            List<Product> producten = new List<Product>();
 
             foreach (Product product in lijst_producten)
             {
                 if (product.Categorie_id == 4 || product.Categorie_id == 5 || product.Categorie_id == 6 || product.Categorie_id == 7)
                 {
-                    producten.Add(product.Omschrijving);
+                    producten.Add(product);
                 }
             }
             listB_producten.SelectedIndexChanged -= listB_producten_SelectedIndexChanged;
@@ -90,13 +92,13 @@ namespace Classes_Project
         {
             ProductDAO productDAO = new ProductDAO();
             List<Product> lijst_producten = new List<Product>(productDAO.GetProducten());
-            List<string> producten = new List<string>();
+            List<Product> producten = new List<Product>();
 
             foreach (Product product in lijst_producten)
             {
                 if (product.Categorie_id == 8 || product.Categorie_id == 9 || product.Categorie_id == 10 || product.Categorie_id == 11 || product.Categorie_id == 12)
                 {
-                    producten.Add(product.Omschrijving);
+                    producten.Add(product);
                 }
             }
             listB_producten.SelectedIndexChanged -= listB_producten_SelectedIndexChanged;
@@ -109,9 +111,11 @@ namespace Classes_Project
         //verwijderen product uit listview ( nog zonder aantal.... )
         private void listview_producten_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            foreach (ListViewItem eachItem in listview_producten.SelectedItems)
+            foreach (CustomListViewItem eachItem in listview_producten.SelectedItems)
             {
                 listview_producten.Items.Remove(eachItem);
+                besteldeProducten.Remove(besteldeProducten.Where((p => p.Id == eachItem.id)).FirstOrDefault());
+
             }
         }
 
@@ -119,8 +123,10 @@ namespace Classes_Project
         private void listB_producten_SelectedIndexChanged(object sender, EventArgs e)
         {
             string omschrijving = listB_producten.SelectedItems[0].ToString();
+            Product product = listB_producten.SelectedItem as Product;      
 
-            ListViewItem item = new ListViewItem(omschrijving);
+            CustomListViewItem item = new CustomListViewItem(product.Omschrijving, product.Id);
+            besteldeProducten.Add(product);
 
             listview_producten.Items.Add(item);
         }

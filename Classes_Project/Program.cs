@@ -19,11 +19,11 @@ namespace Classes_Project
             Application.SetCompatibleTextRenderingDefault(false);
 
             
-            Application.Run(new LoginForm());
+            //Application.Run(new LoginForm());
 
             //uncomment dit en maak de regel hierboven een comment om het inlogscherm te omzeilen en direct ingelogd te zijn als een manager
             //Application.Run(new MainForm(new Manager(0, 0, "Developer", "", MedewerkerRol.Bediening)));
-            //Application.Run(new BedieningForm(new Manager(0, 0, "Developer", "", MedewerkerRol.Bediening)));
+            Application.Run(new BedieningForm(new Manager(0, 0, "Developer", "", MedewerkerRol.Bediening)));
             //Application.Run();
         }
     }
