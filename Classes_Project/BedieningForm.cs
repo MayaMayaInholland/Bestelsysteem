@@ -147,6 +147,7 @@ namespace Classes_Project
             foreach (CustomListViewItem eachItem in listview_producten.SelectedItems)
             {
                 listview_producten.Items.Remove(eachItem);
+                //Heh??
                 besteldeProducten.Remove(besteldeProducten.Where((p => p.Id == eachItem.id)).FirstOrDefault());
 
             }
@@ -204,6 +205,11 @@ namespace Classes_Project
             return null;
         }
 
+        private void btn_bevestig_Bestelling_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btn_Loguit_Click(object sender, EventArgs e)
         {
             LoginForm f = new LoginForm();
@@ -211,5 +217,7 @@ namespace Classes_Project
             f.Show();
             this.Hide();
         }
+
+
     }
 }

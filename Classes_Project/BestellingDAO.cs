@@ -27,7 +27,7 @@ namespace Classes_Project
             conn.Open();
 
             //De aangeklikte tafel geeft de tafel_id mee.
-            SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM Bestelling WHERE tafel_id = {0} ", tafel_id), conn);
+            SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM Bestelling WHERE Bestelling.status = 1 AND tafel_id = {0} ", tafel_id), conn);
             SqlDataReader reader = cmd.ExecuteReader();
 
             //List waarin de al bestelde producten in komen.
@@ -136,8 +136,6 @@ namespace Classes_Project
                 command.Parameters.AddWithValue("@opmerkingen", bestelling.opmerking);
 
             }
-
-
         }
 
         //Bestelde Producten verzamelen
