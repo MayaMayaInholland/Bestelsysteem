@@ -21,6 +21,8 @@ namespace Classes_Project
             conn.Open();
         }
 
+
+
         public Tafel GetByTafelNummer(int TafelNummer)
         {
             SqlCommand cmd = new SqlCommand(String.Format("SELECT * FROM Tafel WHERE nummer = {0} ", TafelNummer), conn);

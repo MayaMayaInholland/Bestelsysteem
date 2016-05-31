@@ -312,6 +312,8 @@
             this.btn_Tafel2.Tag = "tafel2";
             this.btn_Tafel2.Text = "2";
             this.btn_Tafel2.UseVisualStyleBackColor = true;
+            this.btn_Tafel2.MouseEnter += new System.EventHandler(this.btn_Tafel2_MouseEnter);
+            this.btn_Tafel2.MouseHover += new System.EventHandler(this.btn_Tafel2_MouseHover);
             // 
             // btn_Tafel1
             // 
@@ -325,6 +327,8 @@
             this.btn_Tafel1.Text = "1";
             this.btn_Tafel1.UseVisualStyleBackColor = true;
             this.btn_Tafel1.Click += new System.EventHandler(this.btn_Tafel1_Click);
+            this.btn_Tafel1.MouseEnter += new System.EventHandler(this.btn_Tafel1_MouseEnter);
+            this.btn_Tafel1.MouseHover += new System.EventHandler(this.btn_Tafel1_MouseHover);
             // 
             // btn_Loguit
             // 

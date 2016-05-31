@@ -39,17 +39,44 @@ namespace Classes_Project
                 Control.ControlCollection controls2 = tabB_TafelOverzicht.Controls;
                 foreach (Control c in tabB_TafelOverzicht.Controls)
                 {
-                    if ((string)c.Tag == string.Format("tafel{0}",i))
+                    if ((string)c.Tag == string.Format("tafel{0}", i))
                     {
                         Tafel huidigeTafel = tafels.Where(t => t.Nummer == i).FirstOrDefault();
                         if (huidigeTafel.Status == TafelStatus.VRIJ)
                         {
-                            Image img =  (Image)Resources.ResourceManager.GetObject("TafelVrij");
+                            Image img = (Image)Resources.ResourceManager.GetObject("TafelVrij");
+                            c.Text = i + "\n VRIJ";
                             c.BackgroundImage = img;
                         }
                         else if (huidigeTafel.Status == TafelStatus.BEZET)
                         {
-                            Image img = (Image)Resources.ResourceManager.GetObject("TafelBezet");
+                            BestellingDAO bDAO = new BestellingDAO();
+                            ProductDAO pDAO = new ProductDAO();
+                            Bestelling bestelling = bDAO.GetByTafelId(huidigeTafel.Id);
+                            List<Product> gereedGemeldeProducten = new List<Product>();
+                            Image img;
+                            string text = "";
+                            if (bestelling != null)
+                            {
+                                gereedGemeldeProducten = pDAO.GetGereedGemeldeProductenVoorBestelling(bestelling.Id);
+                                if (gereedGemeldeProducten.Count > 0)
+                                {
+                                    img = (Image)Resources.ResourceManager.GetObject("Tafel");
+                                    text = i + "\n BESTELLING \n GEREED";
+                                }
+                                else
+                                {
+                                    img = (Image)Resources.ResourceManager.GetObject("TafelBezet");
+                                    text = i + "\n BEZET";
+                                }
+                            }
+                            else
+                            {
+                                img = (Image)Resources.ResourceManager.GetObject("TafelBezet");
+                                text = i + "\n BEZET";
+                                
+                            }
+                            c.Text = text;
                             c.BackgroundImage = img;
                         }
                     }
@@ -147,7 +174,6 @@ namespace Classes_Project
             foreach (CustomListViewItem eachItem in listview_producten.SelectedItems)
             {
                 listview_producten.Items.Remove(eachItem);
-                //Heh??
                 besteldeProducten.Remove(besteldeProducten.Where((p => p.Id == eachItem.id)).FirstOrDefault());
 
             }
@@ -205,11 +231,6 @@ namespace Classes_Project
             return null;
         }
 
-        private void btn_bevestig_Bestelling_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_Loguit_Click(object sender, EventArgs e)
         {
             LoginForm f = new LoginForm();
@@ -218,6 +239,62 @@ namespace Classes_Project
             this.Hide();
         }
 
+        private void btn_Tafel1_MouseEnter(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btn_Tafel2_MouseEnter(object sender, EventArgs e)
+        {
+            // ShowTooltip(sender, 2);
+
+        }
+
+        private void ShowTooltip(object sender, int tafelNummer)
+        {
+            BestellingDAO bDAO = new BestellingDAO();
+            Tafel huidigeTafel = tafels.Where(ht => ht.Nummer == tafelNummer).FirstOrDefault();
+            Bestelling bestelling = bDAO.GetLopendeBestellingByTafelID(huidigeTafel.Id);
+            ToolTip t = new ToolTip();
+
+            if (bestelling != null)
+            {
+                StringBuilder sb = new StringBuilder();
+                List<Product> producten = bestelling.Bestelde_producten;
+                if (producten != null)
+                {
+                    sb.AppendLine("Bestellingnummer: " + bestelling.Id);
+                    sb.AppendLine("Tijd: " + bestelling.Tijd.ToShortTimeString());
+                    sb.AppendLine("Bestelde producten:");
+                    foreach (Product p in producten)
+                    {
+                        sb.AppendLine(p.Omschrijving);
+                    }
+                }
+                else
+                {
+                    if (producten.Count < 1)
+                    {
+                        //sb.AppendLine("Er is geen lopende bestelling bij deze tafel");
+                    }
+                }
+                t.Show(sb.ToString(), (Button)sender);
+            }
+            else
+            {
+                t.Show("Er is geen lopende bestelling bij deze tafel", (Button)sender);
+            }
+
+        }
+
+        private void btn_Tafel2_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 2);
+        }
+
+        private void btn_Tafel1_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 1);
+        }
     }
 }

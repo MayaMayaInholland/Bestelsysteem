@@ -19,6 +19,51 @@ namespace Classes_Project
         }
 
         //------------------------------------------DATA RETRIEVAL________________________________________________________
+
+        public Bestelling GetLopendeBestellingByTafelID(int tafelID)
+        {
+            conn = new SqlConnection(Helper.ConnectionString);
+            conn.Open();
+
+            //De aangeklikte tafel geeft de tafel_id mee.
+            SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM Bestelling WHERE tafel_id = {0} AND status = 1", tafelID), conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            //List waarin de al bestelde producten in komen.
+            List<Product> lijst_Producten = new List<Product>();
+
+            while (reader.Read())
+            {
+                int Id = (int)reader["id"];
+                int Tafel_id = (int)reader["tafel_id"];
+                int Medewerker_id = (int)reader["medewerker_id"];
+                DateTime Tijd = (DateTime)reader["tijd"];
+                int totaalbedrag = (int)reader["totaalbedrag"];
+                string opmerkingen = "";
+                if (reader["opmerkingen"] != DBNull.Value)
+                {
+                    opmerkingen = (string)reader["opmerkingen"];
+                }
+
+                BestellingStatus status = (BestellingStatus)reader["status"];
+                int fooi = (int)reader["fooi"];
+
+                //Roept GetByBestellingeId aan --> zie hieronder.
+                lijst_Producten = GetByBestellingId(Id);
+
+                //Overload van class bestelling voor al bestaande bestellingen.... ( opgezet zodat code runt )
+                Bestelling Lopende_bestelling = new Bestelling(lijst_Producten, Medewerker_id, status, Tijd, opmerkingen);
+
+                reader.Close();
+                conn.Close();
+                return Lopende_bestelling;
+            }
+            reader.Close();
+            conn.Close();
+            return null;
+        }
+
+
         //1. Haal bestellingen  op => ID
         //Bestellingen worden bij een 'bezette' tafel opgehaald.
         public Bestelling GetByTafelId(int tafel_id)
@@ -40,17 +85,22 @@ namespace Classes_Project
                 int Medewerker_id = (int)reader["medewerker_id"];
                 DateTime Tijd = (DateTime)reader["tijd"];
                 int totaalbedrag = (int)reader["totaalbedrag"];
-                //string opmerkingen = (string)reader["opmerkingen"];
+                string opmerkingen = "";
+                if (reader["opmerkingen"] != DBNull.Value)
+                {
+                    opmerkingen = (string)reader["opmerkingen"];
+                }
+
                 BestellingStatus status = (BestellingStatus)reader["status"];
-                float fooi = (float)reader["fooi"];
-                string opmerking = (string)reader["opmerking"];
+                int fooi = (int)reader["fooi"];
 
                 //Roept GetByBestellingeId aan --> zie hieronder.
                 lijst_Producten = GetByBestellingId(Id);
 
                 //Overload van class bestelling voor al bestaande bestellingen.... ( opgezet zodat code runt )
-                Bestelling Lopende_bestelling = new Bestelling(lijst_Producten, Medewerker_id, status, Tijd, opmerking);
+                Bestelling Lopende_bestelling = new Bestelling(Id, Medewerker_id, Tijd, status, lijst_Producten, opmerkingen);
 
+                reader.Close();
                 return Lopende_bestelling;
             }
             conn.Close();
@@ -60,7 +110,8 @@ namespace Classes_Project
         //2. Haalt list met al bestelde producten op met bestelling_Id
         public List<Product> GetByBestellingId(int Bestelling_Id)
         {
-
+            conn = new SqlConnection(Helper.ConnectionString);
+            conn.Open();
             SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM Besteld_product INNER JOIN Product ON Besteld_product.product_id = Product.id WHERE Besteld_product.bestelling_id = {0}", Bestelling_Id), conn);
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -82,7 +133,11 @@ namespace Classes_Project
                 int bestelling_id = (int)reader["bestelling_id"];
                 int product_id = (int)reader["product_id"];
                 int aantal = (int)reader["aantal"];
-                string opmerking = (string)reader["opmerking"];
+                string opmerking = "";
+                if (reader["opmerking"] != DBNull.Value)
+                {
+                    opmerking = (string)reader["opmerking"];
+                }
 
                 Product = new Product(id, categorie_id, prijs, voorraad, btw, omschrijving);
 
