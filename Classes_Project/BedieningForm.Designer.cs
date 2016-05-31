@@ -207,6 +207,7 @@
             this.btn_Tafel10.Tag = "tafel10";
             this.btn_Tafel10.Text = "10";
             this.btn_Tafel10.UseVisualStyleBackColor = true;
+            this.btn_Tafel10.MouseHover += new System.EventHandler(this.btn_Tafel10_MouseHover);
             // 
             // btn_Tafel9
             // 
@@ -220,6 +221,7 @@
             this.btn_Tafel9.Tag = "tafel9";
             this.btn_Tafel9.Text = "9";
             this.btn_Tafel9.UseVisualStyleBackColor = true;
+            this.btn_Tafel9.MouseHover += new System.EventHandler(this.btn_Tafel9_MouseHover);
             // 
             // btn_Tafel8
             // 
@@ -233,6 +235,7 @@
             this.btn_Tafel8.Tag = "tafel8";
             this.btn_Tafel8.Text = "8";
             this.btn_Tafel8.UseVisualStyleBackColor = true;
+            this.btn_Tafel8.MouseHover += new System.EventHandler(this.btn_Tafel8_MouseHover);
             // 
             // btn_Tafel7
             // 
@@ -246,6 +249,7 @@
             this.btn_Tafel7.Tag = "tafel7";
             this.btn_Tafel7.Text = "7";
             this.btn_Tafel7.UseVisualStyleBackColor = true;
+            this.btn_Tafel7.MouseHover += new System.EventHandler(this.btn_Tafel7_MouseHover);
             // 
             // btn_Tafel6
             // 
@@ -259,6 +263,7 @@
             this.btn_Tafel6.Tag = "tafel6";
             this.btn_Tafel6.Text = "6";
             this.btn_Tafel6.UseVisualStyleBackColor = true;
+            this.btn_Tafel6.MouseHover += new System.EventHandler(this.btn_Tafel6_MouseHover);
             // 
             // btn_Tafel5
             // 
@@ -272,6 +277,7 @@
             this.btn_Tafel5.Tag = "tafel5";
             this.btn_Tafel5.Text = "5";
             this.btn_Tafel5.UseVisualStyleBackColor = true;
+            this.btn_Tafel5.MouseHover += new System.EventHandler(this.btn_Tafel5_MouseHover);
             // 
             // btn_Tafel4
             // 
@@ -285,6 +291,7 @@
             this.btn_Tafel4.Tag = "tafel4";
             this.btn_Tafel4.Text = "4";
             this.btn_Tafel4.UseVisualStyleBackColor = true;
+            this.btn_Tafel4.MouseHover += new System.EventHandler(this.btn_Tafel4_MouseHover);
             // 
             // btn_Tafel3
             // 
@@ -298,6 +305,7 @@
             this.btn_Tafel3.Tag = "tafel3";
             this.btn_Tafel3.Text = "3";
             this.btn_Tafel3.UseVisualStyleBackColor = true;
+            this.btn_Tafel3.MouseHover += new System.EventHandler(this.btn_Tafel3_MouseHover);
             // 
             // btn_Tafel2
             // 

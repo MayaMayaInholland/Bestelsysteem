@@ -296,5 +296,45 @@ namespace Classes_Project
         {
             ShowTooltip(sender, 1);
         }
+
+        private void btn_Tafel3_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 3);
+        }
+
+        private void btn_Tafel4_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 4);
+        }
+
+        private void btn_Tafel5_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 5);
+        }
+
+        private void btn_Tafel6_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 6);
+        }
+
+        private void btn_Tafel7_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 7);
+        }
+
+        private void btn_Tafel8_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 8);
+        }
+
+        private void btn_Tafel9_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 9);
+        }
+
+        private void btn_Tafel10_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 10);
+        }
     }
 }
