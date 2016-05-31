@@ -16,6 +16,16 @@ namespace Classes_Project
         {
             InitializeComponent();
 
+            List<Product> ActiveProducten = new List<Product>();
+
+            int tafelID = 2;
+
+            KeukenDAO keukenDAO = new KeukenDAO();
+            ActiveProducten = keukenDAO.GetActiveBesteldeProducten(tafelID);
+
+
+            
+
             lbl_IngelogdeMedewerker.Text = m.Voornaam;
 
             //Bestellingen
@@ -37,7 +47,7 @@ namespace Classes_Project
             foreach (int item in bestelling)
             {
                 Maakknoppen(ref teller, ref y, yToe, ref YLBL, item);
-
+               
             }
 
             //BestellingenKlaar
@@ -61,7 +71,14 @@ namespace Classes_Project
                 KlaarKnoppen(ref teller, ref y, yToe, ref YLBL, item);
             }
 
+            foreach (Product p in ActiveProducten)
+            {
+                Bestel_lbl.txt = 
+            }
+
         }
+
+       
 
         private void KlaarKnoppen(ref int teller, ref int y, int yToe, ref int YLBL, int item)
         {
@@ -104,7 +121,7 @@ namespace Classes_Project
             Geschiedenis.Controls.Add(buttonKlaar);
         }
 
-        private void Maakknoppen(ref int teller, ref int y, int yToe, ref int YLBL, int item)
+        public void Maakknoppen(ref int teller, ref int y, int yToe, ref int YLBL, int item)
         {
             y += yToe;
             Button button = new System.Windows.Forms.Button();
@@ -164,6 +181,11 @@ namespace Classes_Project
             f.StartPosition = FormStartPosition.CenterScreen;
             f.Show();
             this.Hide();
+        }
+
+        private void KeukenOverzicht_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

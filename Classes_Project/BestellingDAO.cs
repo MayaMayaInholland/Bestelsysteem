@@ -20,6 +20,9 @@ namespace Classes_Project
 
         //------------------------------------------DATA RETRIEVAL________________________________________________________
 
+
+
+
         public Bestelling GetLopendeBestellingByTafelID(int tafelID)
         {
             conn = new SqlConnection(Helper.ConnectionString);
@@ -62,6 +65,7 @@ namespace Classes_Project
             conn.Close();
             return null;
         }
+
 
 
         //1. Haal bestellingen  op => ID

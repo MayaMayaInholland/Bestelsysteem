@@ -39,3 +39,14 @@ C:\Users\Jasper\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Pro
 C:\Users\Jasper\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.MainForm.resources
 C:\Users\Jasper\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.Properties.Resources.resources
 C:\Users\Jasper\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Applicatie.csproj.GenerateResource.Cache
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\bin\Debug\Classes_Project.exe.config
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.exe
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.pdb
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Applicatie.csprojResolveAssemblyReference.cache
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.BarOverzicht.resources
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.BedieningForm.resources
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.KeukenOverzicht.resources
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.LoginForm.resources
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.MainForm.resources
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.Properties.Resources.resources
+C:\Users\568625\Source\Repos\Bestelsysteem\Classes_Project\obj\Debug\Applicatie.csproj.GenerateResource.Cache
