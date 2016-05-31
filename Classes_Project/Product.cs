@@ -15,6 +15,7 @@ namespace Classes_Project
         public int Voorraad { get; set; }
         public string Omschrijving { get; set; }
         public int Aantal { get; set; }
+        public ProductStatus status { get; set; }
 
 
         public Product(int id, int categorie_id, float prijs, int voorraad, int btw, string omschrijving)
@@ -25,6 +26,17 @@ namespace Classes_Project
             this.Prijs = prijs;
             this.Voorraad = voorraad;
             this.Omschrijving = omschrijving;
+        }
+
+        public Product(int id, int categorie_id, float prijs, int voorraad, int btw, string omschrijving, ProductStatus status)
+        {
+            this.Btw = btw;
+            this.Categorie_id = categorie_id;
+            this.Id = id;
+            this.Prijs = prijs;
+            this.Voorraad = voorraad;
+            this.Omschrijving = omschrijving;
+            this.status = status;
         }
 
         public override string ToString()

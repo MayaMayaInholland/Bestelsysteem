@@ -28,6 +28,13 @@ namespace Classes_Project
         Betaald
     }
     
+    public enum ProductStatus
+    {
+        Besteld = 1,
+        Gereed,
+        Geserveerd
+    }
+
     public enum MenuCategorie
     {
         Lunch,

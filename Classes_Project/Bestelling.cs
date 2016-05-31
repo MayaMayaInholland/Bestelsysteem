@@ -26,6 +26,16 @@ namespace Classes_Project
             this.Status = status;          
         }
 
+        public Bestelling(int id, int medewerker, DateTime tijd, BestellingStatus status, List<Product> producten, string opmerkingen)
+        {
+            this.opmerking = opmerkingen;
+            this.Id = id;
+            this.Bestelde_producten = producten;
+            this.Medewerker_id = medewerker;
+            this.Tijd = tijd;
+            this.Status = status;
+        }
+
         public Bestelling( List<Product> bestellingen, int medewerker_id, BestellingStatus status, DateTime tijd, string opmerking)
         {
             this.Medewerker_id = Medewerker_id;
