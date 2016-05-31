@@ -73,7 +73,7 @@ namespace Classes_Project
 
             foreach (Product p in ActiveProducten)
             {
-                Bestel_lbl.txt = 
+                //Bestel_lbl.txt = 
             }
 
         }
@@ -177,7 +177,7 @@ namespace Classes_Project
 
         private void btn_Loguit_Click(object sender, EventArgs e)
         {
-            LoginForm    f = new LoginForm();
+            LoginForm f = new LoginForm();
             f.StartPosition = FormStartPosition.CenterScreen;
             f.Show();
             this.Hide();
