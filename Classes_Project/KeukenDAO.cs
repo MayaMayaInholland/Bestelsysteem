@@ -106,7 +106,7 @@ namespace Classes_Project
                 int ProductId = (int)reader["Product.id"];
                 int Categorie_id = (int)reader["categorie_id"];
                 string Omschrijving = (string)reader["omschrijving"];
-                float Prijs = (float)reader["prijs"];
+                int Prijs = (int)reader["prijs"];
                 int Voorraad = (int)reader["voorraad"];
                 int Btw = (int)reader["btw"];
 
