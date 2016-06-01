@@ -231,6 +231,13 @@ namespace Classes_Project
             return null;
         }
 
+
+        private void btn_bevestig_Bestelling_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
         private void btn_Loguit_Click(object sender, EventArgs e)
         {
             LoginForm f = new LoginForm();
