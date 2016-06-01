@@ -54,6 +54,7 @@
             this.btn_Tafel1 = new System.Windows.Forms.Button();
             this.btn_Loguit = new System.Windows.Forms.Button();
             this.lbl_IngelogdeMedewerker = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tabB_volledig.SuspendLayout();
             this.tabB_Bestellen1.SuspendLayout();
             this.menuStrip_bestelling.SuspendLayout();
@@ -112,7 +113,7 @@
             this.listB_producten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listB_producten.FormattingEnabled = true;
             this.listB_producten.ItemHeight = 16;
-            this.listB_producten.Location = new System.Drawing.Point(6, 68);
+            this.listB_producten.Location = new System.Drawing.Point(3, 68);
             this.listB_producten.Name = "listB_producten";
             this.listB_producten.Size = new System.Drawing.Size(500, 196);
             this.listB_producten.TabIndex = 7;
@@ -125,7 +126,7 @@
             this.columnHeader1,
             this.columnHeader2});
             this.listview_producten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listview_producten.Location = new System.Drawing.Point(6, 270);
+            this.listview_producten.Location = new System.Drawing.Point(3, 285);
             this.listview_producten.Name = "listview_producten";
             this.listview_producten.Size = new System.Drawing.Size(500, 191);
             this.listview_producten.TabIndex = 5;
@@ -136,7 +137,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Gekozen producten";
-            this.columnHeader1.Width = 350;
+            this.columnHeader1.Width = 395;
             // 
             // columnHeader2
             // 
@@ -208,6 +209,7 @@
             this.btn_Tafel10.Tag = "tafel10";
             this.btn_Tafel10.Text = "10";
             this.btn_Tafel10.UseVisualStyleBackColor = true;
+            this.btn_Tafel10.MouseHover += new System.EventHandler(this.btn_Tafel10_MouseHover);
             // 
             // btn_Tafel9
             // 
@@ -221,6 +223,7 @@
             this.btn_Tafel9.Tag = "tafel9";
             this.btn_Tafel9.Text = "9";
             this.btn_Tafel9.UseVisualStyleBackColor = true;
+            this.btn_Tafel9.MouseHover += new System.EventHandler(this.btn_Tafel9_MouseHover);
             // 
             // btn_Tafel8
             // 
@@ -234,6 +237,7 @@
             this.btn_Tafel8.Tag = "tafel8";
             this.btn_Tafel8.Text = "8";
             this.btn_Tafel8.UseVisualStyleBackColor = true;
+            this.btn_Tafel8.MouseHover += new System.EventHandler(this.btn_Tafel8_MouseHover);
             // 
             // btn_Tafel7
             // 
@@ -247,6 +251,7 @@
             this.btn_Tafel7.Tag = "tafel7";
             this.btn_Tafel7.Text = "7";
             this.btn_Tafel7.UseVisualStyleBackColor = true;
+            this.btn_Tafel7.MouseHover += new System.EventHandler(this.btn_Tafel7_MouseHover);
             // 
             // btn_Tafel6
             // 
@@ -260,6 +265,7 @@
             this.btn_Tafel6.Tag = "tafel6";
             this.btn_Tafel6.Text = "6";
             this.btn_Tafel6.UseVisualStyleBackColor = true;
+            this.btn_Tafel6.MouseHover += new System.EventHandler(this.btn_Tafel6_MouseHover);
             // 
             // btn_Tafel5
             // 
@@ -273,6 +279,7 @@
             this.btn_Tafel5.Tag = "tafel5";
             this.btn_Tafel5.Text = "5";
             this.btn_Tafel5.UseVisualStyleBackColor = true;
+            this.btn_Tafel5.MouseHover += new System.EventHandler(this.btn_Tafel5_MouseHover);
             // 
             // btn_Tafel4
             // 
@@ -286,6 +293,7 @@
             this.btn_Tafel4.Tag = "tafel4";
             this.btn_Tafel4.Text = "4";
             this.btn_Tafel4.UseVisualStyleBackColor = true;
+            this.btn_Tafel4.MouseHover += new System.EventHandler(this.btn_Tafel4_MouseHover);
             // 
             // btn_Tafel3
             // 
@@ -299,6 +307,7 @@
             this.btn_Tafel3.Tag = "tafel3";
             this.btn_Tafel3.Text = "3";
             this.btn_Tafel3.UseVisualStyleBackColor = true;
+            this.btn_Tafel3.MouseHover += new System.EventHandler(this.btn_Tafel3_MouseHover);
             // 
             // btn_Tafel2
             // 
@@ -348,11 +357,19 @@
             this.lbl_IngelogdeMedewerker.Size = new System.Drawing.Size(0, 13);
             this.lbl_IngelogdeMedewerker.TabIndex = 2;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(6, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(507, 25);
+            this.panel1.TabIndex = 3;
+            // 
             // BedieningForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 624);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl_IngelogdeMedewerker);
             this.Controls.Add(this.btn_Loguit);
             this.Controls.Add(this.tabB_volledig);
@@ -396,5 +413,6 @@
         private System.Windows.Forms.Button btn_bevestig_Bestelling;
         private System.Windows.Forms.Button btn_Loguit;
         private System.Windows.Forms.Label lbl_IngelogdeMedewerker;
+        private System.Windows.Forms.Panel panel1;
     }
 }

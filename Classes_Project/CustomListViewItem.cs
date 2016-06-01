@@ -9,11 +9,16 @@ namespace Classes_Project
 {
     class CustomListViewItem : ListViewItem
     {
-        public int id { get; set; }
+        public int Id { get; set; }
+        public string Omschrijving { get; set; }
+        public int Categorie_id { get; set; }
+        public int Prijs { get; set; }
+        public int Voorraad { get; set; }
+        public int Btw { get; set; }
 
         public CustomListViewItem(string omschrijving, int id) : base(omschrijving)
         {
-            this.id = id;
+            this.Id = id;
         }
 
     }
