@@ -1,1 +1,12 @@
 C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\bin\Debug\Classes_Project.exe.config
+C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\bin\Debug\Classes_Project.exe
+C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\bin\Debug\Classes_Project.pdb
+C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.BarOverzicht.resources
+C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.BedieningForm.resources
+C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.KeukenOverzicht.resources
+C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.LoginForm.resources
+C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.MainForm.resources
+C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.Properties.Resources.resources
+C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\obj\Debug\Applicatie.csproj.GenerateResource.Cache
+C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.exe
+C:\Users\Startklaar\Desktop\Classes_Project\Bestelsysteem\Classes_Project\obj\Debug\Classes_Project.pdb

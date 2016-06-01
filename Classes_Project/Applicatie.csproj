@@ -67,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bar.cs" />
-    <Compile Include="BarDAO.cs" />
     <Compile Include="BarOverzicht.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,7 +83,6 @@
     <Compile Include="Bestelling.cs" />
     <Compile Include="BestellingDAO.cs" />
     <Compile Include="CustomListViewItem.cs" />
-    <Compile Include="KeukenDAO.cs" />
     <Compile Include="KeukenOverzicht.cs">
       <SubType>Form</SubType>
     </Compile>
