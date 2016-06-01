@@ -33,13 +33,13 @@ namespace Classes_Project
             int resultaat = cmd.ExecuteNonQuery();
         }
 
-        public List<Product> GetActiveBesteldeProducten(int tafelID)
+        public List<Product> GetActiveBesteldeProducten()
         {
             conn = new SqlConnection(Helper.ConnectionString);
             conn.Open();
 
             //De aangeklikte tafel geeft de tafel_id mee.
-            SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM Besteld_product INNER JOIN Product ON Besteld_product.product_id = Product.id WHERE Besteld_product.status = 1", tafelID), conn);
+            SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM Besteld_product INNER JOIN Product ON Besteld_product.product_id = Product.id WHERE Besteld_product.status = 1"), conn);
             SqlDataReader reader = cmd.ExecuteReader();
 
             //List waarin de al bestelde producten in komen.
@@ -77,6 +77,52 @@ namespace Classes_Project
             reader.Close();
             conn.Close();
             return lijst_Activeroducten;
+        }
+
+        public List<Product> GetKLAARBesteldeProducten()
+        {
+            conn = new SqlConnection(Helper.ConnectionString);
+            conn.Open();
+
+            //De aangeklikte tafel geeft de tafel_id mee.
+            SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM Besteld_product INNER JOIN Product ON Besteld_product.product_id = Product.id WHERE Besteld_product.status = 0"), conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            //List waarin de al bestelde producten in komen.
+            List<Product> lijst_NietActiveroducten = new List<Product>();
+
+            while (reader.Read())
+            {
+                int BesteldProduct_id = (int)reader["Besteld_product.id"];
+                int Bestelling_id = (int)reader["bestelling_id"];
+                int Product_id = (int)reader["product_id"];
+                int Status = (int)reader["status"];
+                int Aantal = (int)reader["aantal"];
+                string Opmerkingen = "";
+                if (reader["opmerkingen"] != DBNull.Value)
+                {
+                    Opmerkingen = (string)reader["opmerkingen"];
+                }
+                int ProductId = (int)reader["Product.id"];
+                int Categorie_id = (int)reader["categorie_id"];
+                string Omschrijving = (string)reader["omschrijving"];
+                float Prijs = (float)reader["prijs"];
+                int Voorraad = (int)reader["voorraad"];
+                int Btw = (int)reader["btw"];
+
+
+                //Overload van class product voor al bestaande bestellingen.... ( opgezet zodat code runt )
+                Product product = new Product(BesteldProduct_id, Categorie_id, Prijs, Voorraad, Btw, Omschrijving);
+
+                lijst_NietActiveroducten.Add(product);
+
+                reader.Close();
+                conn.Close();
+
+            }
+            reader.Close();
+            conn.Close();
+            return lijst_NietActiveroducten;
         }
     }
 }

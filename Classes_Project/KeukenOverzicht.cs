@@ -16,71 +16,45 @@ namespace Classes_Project
         {
             InitializeComponent();
 
-            List<Product> ActiveProducten = new List<Product>();
-
-            int tafelID = 2;
+            List<Product> Lijst_ActiveProducten = new List<Product>();
 
             KeukenDAO keukenDAO = new KeukenDAO();
-            ActiveProducten = keukenDAO.GetActiveBesteldeProducten(tafelID);
-
-
+            Lijst_ActiveProducten = keukenDAO.GetActiveBesteldeProducten();
             
 
             lbl_IngelogdeMedewerker.Text = m.Voornaam;
 
-            //Bestellingen
-            List<int> bestelling = new List<int>();
 
-            int test = 1;
             int teller = 1;
 
-            for (int i = 0; i < 10; i++)
-            {
-                bestelling.Add(test);
-                test++;
-            }
 
             int y = 0;
             int yToe = 40;
             int YLBL = 10;
 
-            foreach (int item in bestelling)
-            {
-                Maakknoppen(ref teller, ref y, yToe, ref YLBL, item);
-               
-            }
 
-            //BestellingenKlaar
-            List<int> bestellingklaar = new List<int>();
-
-            test = 1;
-            teller = 1;
-
-            for (int i = 0; i < 4; i++)
-            {
-                bestellingklaar.Add(test);
-                test++;
-            }
+            List<Product> lijst_NietActiveroducten = new List<Product>();
+            lijst_NietActiveroducten = keukenDAO.GetKLAARBesteldeProducten();
 
             y = 0;
             yToe = 40;
             YLBL = 10;
 
-            foreach (int item in bestellingklaar)
+            foreach (Product p in lijst_NietActiveroducten)
             {
-                KlaarKnoppen(ref teller, ref y, yToe, ref YLBL, item);
+                KlaarKnoppen(ref teller, ref y, yToe, ref YLBL, p);
             }
 
-            foreach (Product p in ActiveProducten)
+            foreach (Product p in Lijst_ActiveProducten)
             {
-                //Bestel_lbl.txt = 
+                Maakknoppen(ref teller, ref y, yToe, ref YLBL, p);
             }
 
         }
 
        
 
-        private void KlaarKnoppen(ref int teller, ref int y, int yToe, ref int YLBL, int item)
+        private void KlaarKnoppen(ref int teller, ref int y, int yToe, ref int YLBL, Product p)
         {
             y += yToe;
             Button buttonKlaar = new System.Windows.Forms.Button();
@@ -96,7 +70,7 @@ namespace Classes_Project
             BestelKlaar_lbl.Name = "Bestelklaar_lbl" + teller;
             BestelKlaar_lbl.Size = new System.Drawing.Size(35, 13);
             BestelKlaar_lbl.TabIndex = 22;
-            BestelKlaar_lbl.Text = "label1";
+            BestelKlaar_lbl.Text = p.ToString();
 
             Button NietKlaar_btn = new System.Windows.Forms.Button();
             NietKlaar_btn.BackColor = System.Drawing.Color.Red;
@@ -107,7 +81,7 @@ namespace Classes_Project
             NietKlaar_btn.Text = "Niet Klaar";
             NietKlaar_btn.UseVisualStyleBackColor = true;
 
-            BestelKlaar_lbl.Text = item.ToString();
+            
 
             if (teller % 2 == 0)
             {
@@ -121,7 +95,7 @@ namespace Classes_Project
             Geschiedenis.Controls.Add(buttonKlaar);
         }
 
-        public void Maakknoppen(ref int teller, ref int y, int yToe, ref int YLBL, int item)
+        public void Maakknoppen(ref int teller, ref int y, int yToe, ref int YLBL, Product p)
         {
             y += yToe;
             Button button = new System.Windows.Forms.Button();
@@ -137,7 +111,7 @@ namespace Classes_Project
             Bestel_lbl.Name = "Bestel_lbl" + teller;
             Bestel_lbl.Size = new System.Drawing.Size(35, 13);
             Bestel_lbl.TabIndex = 22;
-            Bestel_lbl.Text = "label1";
+            Bestel_lbl.Text = p.ToString();
 
             Button Klaar_btn = new System.Windows.Forms.Button();
             Klaar_btn.Location = new System.Drawing.Point(798, y);
@@ -147,9 +121,9 @@ namespace Classes_Project
             Klaar_btn.Text = "Klaar";
             Klaar_btn.UseVisualStyleBackColor = true;
             Klaar_btn.Click += new EventHandler(handleClick);
-            Klaar_btn.Tag = item;
+            Klaar_btn.Tag = p;
 
-            Bestel_lbl.Text = item.ToString();
+            
 
             if (teller % 2 == 0)
             {
