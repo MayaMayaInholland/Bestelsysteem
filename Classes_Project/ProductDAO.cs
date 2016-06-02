@@ -55,15 +55,17 @@ namespace Classes_Project
 
             while (reader.Read())
             {
+                Product product;
+
                 int id = (int)reader["id"];
                 int categorie_id = (int)reader["categorie_id"];
                 string omschrijving = (string)reader["omschrijving"];
-                //ProductStatus status = (ProductStatus)reader["status"];
+                ProductStatus status;
                 int prijs = (int)reader["prijs"];
                 int voorraad = (int)reader["voorraad"];
                 int btw = (int)reader["btw"];
 
-                Product product = new Product(id, categorie_id, 10, voorraad, btw, omschrijving);
+                product = new Product(id,categorie_id,prijs,voorraad,btw,omschrijving);
 
                 Lijst_Producten.Add(product);
             }

@@ -7,18 +7,26 @@ namespace Classes_Project
 {
     public class Rekening
     {
-        public int Id { get; set; }
-        public int TotaalBedrag { get; set; }
+        public int TotaalBedrag { get; set; } //incl. fooi
         public string Betaalwijze { get; set; }
         public int Fooi { get; set; }
-        public Tafel Tafel { get; set; }
-        public Medewerker Medewerker { get; set; }
+        public Bestelling Bestelling { get; set; }
 
-        public Rekening(int id, Tafel tafel, Medewerker medewerker)
+        public Rekening(Bestelling bestelling)
         {
-            this.Id = id;
-            this.Tafel = tafel;
-            this.Medewerker = medewerker;
+            this.Bestelling = bestelling;
+        }
+
+        public int Bereken_Totaal()
+        {
+            int totaal = 0;
+
+            for (int i = 0; i < Bestelling.Bestelde_producten.Count(); i++)
+            {
+                totaal = totaal + Bestelling.Bestelde_producten[i].Prijs;
+            }
+
+            return totaal;
         }
     }
 }

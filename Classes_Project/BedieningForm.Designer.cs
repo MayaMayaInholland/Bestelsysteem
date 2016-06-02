@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BedieningForm));
             this.tabB_volledig = new System.Windows.Forms.TabControl();
             this.tabB_Bestellen1 = new System.Windows.Forms.TabPage();
-            this.btn_bevestig_Bestelling = new System.Windows.Forms.Button();
+            this.btn_bevestig = new System.Windows.Forms.Button();
             this.btn_returnOverzicht = new System.Windows.Forms.Button();
             this.listB_producten = new System.Windows.Forms.ListBox();
             this.listview_producten = new System.Windows.Forms.ListView();
@@ -72,7 +72,7 @@
             // 
             // tabB_Bestellen1
             // 
-            this.tabB_Bestellen1.Controls.Add(this.btn_bevestig_Bestelling);
+            this.tabB_Bestellen1.Controls.Add(this.btn_bevestig);
             this.tabB_Bestellen1.Controls.Add(this.btn_returnOverzicht);
             this.tabB_Bestellen1.Controls.Add(this.listB_producten);
             this.tabB_Bestellen1.Controls.Add(this.listview_producten);
@@ -86,15 +86,14 @@
             this.tabB_Bestellen1.Text = "Bestellen";
             this.tabB_Bestellen1.UseVisualStyleBackColor = true;
             // 
-            // btn_bevestig_Bestelling
+            // btn_bevestig
             // 
-            this.btn_bevestig_Bestelling.Location = new System.Drawing.Point(386, 498);
-            this.btn_bevestig_Bestelling.Name = "btn_bevestig_Bestelling";
-            this.btn_bevestig_Bestelling.Size = new System.Drawing.Size(117, 33);
-            this.btn_bevestig_Bestelling.TabIndex = 9;
-            this.btn_bevestig_Bestelling.Text = "Bevestig";
-            this.btn_bevestig_Bestelling.UseVisualStyleBackColor = true;
-            this.btn_bevestig_Bestelling.Click += new System.EventHandler(this.btn_bevestig_Bestelling_Click);
+            this.btn_bevestig.Location = new System.Drawing.Point(386, 498);
+            this.btn_bevestig.Name = "btn_bevestig";
+            this.btn_bevestig.Size = new System.Drawing.Size(117, 33);
+            this.btn_bevestig.TabIndex = 9;
+            this.btn_bevestig.Text = "Bevestig";
+            this.btn_bevestig.UseVisualStyleBackColor = true;
             // 
             // btn_returnOverzicht
             // 
@@ -401,7 +400,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ListBox listB_producten;
         private System.Windows.Forms.Button btn_returnOverzicht;
-        private System.Windows.Forms.Button btn_bevestig_Bestelling;
+        private System.Windows.Forms.Button btn_bevestig;
         private System.Windows.Forms.Button btn_Loguit;
         private System.Windows.Forms.Label lbl_IngelogdeMedewerker;
     }
