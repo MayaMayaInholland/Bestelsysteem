@@ -22,7 +22,7 @@ namespace Classes_Project
 
             //uncomment dit en maak de regel hierboven een comment om het inlogscherm te omzeilen en direct ingelogd te zijn als een manager
             //Application.Run(new MainForm(new Manager(0, 0, "Developer", "", MedewerkerRol.Bediening)));
-            Application.Run(new BedieningForm(new Manager(0, 0, "Developer", "", MedewerkerRol.Bediening)));
+            Application.Run(new BedieningForm(new Manager(8, 0, "Developer", "", MedewerkerRol.Bediening)));
             //Application.Run();
         }
     }

@@ -14,8 +14,9 @@ namespace Classes_Project
 {
     public partial class BedieningForm : Form
     {
-
+        BestellingDAO bestellingDAO = new BestellingDAO();
         private Medewerker ingelogdemedewerker;
+        private Bestelling bestelling;
         private List<Product> besteldeProducten = new List<Product>();
         private List<Tafel> tafels;
 
@@ -86,8 +87,6 @@ namespace Classes_Project
                 }
             }
         }
-
-
 
         //tellen aantal van product??
         public void tel_AantalProducten(Bestelling bestelling)
@@ -175,7 +174,6 @@ namespace Classes_Project
             {
                 listview_producten.Items.Remove(eachItem);
                 besteldeProducten.Remove(besteldeProducten.Where((p => p.Id == eachItem.id)).FirstOrDefault());
-
             }
         }
 
@@ -184,8 +182,8 @@ namespace Classes_Project
         {
             string omschrijving = listB_producten.SelectedItems[0].ToString();
             Product product = listB_producten.SelectedItem as Product;
-
-            CustomListViewItem item = new CustomListViewItem(product.Omschrijving, product.Id);
+            
+            CustomListViewItem item = new CustomListViewItem(product.Omschrijving, product.Id, product.Categorie_id, product.Prijs, product.Voorraad, product.Btw);
             besteldeProducten.Add(product);
 
             listview_producten.Items.Add(item);
@@ -197,16 +195,13 @@ namespace Classes_Project
         //Tafel 1 wordt geopend.
         private void btn_Tafel1_Click(object sender, EventArgs e)
         {
-            Bestelling bestelling = Bestelling_bijTafel(1);
+            bestelling = Bestelling_bijTafel(1);
             tafelClick(1);
-
         }
-
 
         public void tafelClick(int tafelnr)
         {
             tabB_volledig.SelectedTab = tabB_Bestellen1;
-
         }
 
         //Het terug halen van de bijhorende bestelling.
@@ -216,28 +211,38 @@ namespace Classes_Project
             TafelDAO tafelDAO = new TafelDAO();
             Tafel tafel = tafelDAO.GetByTafelNummer(Tafelnr);
             Bestelling bestelling;
+            tafel.Status = TafelStatus.VRIJ;
 
             if (tafel.Status == TafelStatus.VRIJ)
             {
-                List<Product> nieuw_productLijst = new List<Product>();
-                bestelling = new Bestelling(tafel, ingelogdemedewerker.Id, DateTime.Now, BestellingStatus.Open, nieuw_productLijst);
-                return bestelling;
+                bestelling = new Bestelling(Tafelnr, ingelogdemedewerker.Id, DateTime.Now, 1, " ",1, 0);
+                return bestelling;          
             }
             else if (tafel.Status == TafelStatus.BEZET)
-            {
+            {             
                 bestelling = bestellingDAO.GetByTafelId(Tafelnr);
                 return bestelling;
             }
             return null;
         }
 
-
+        //Maak nieuwe bestelling aan.
         private void btn_bevestig_Bestelling_Click(object sender, EventArgs e)
         {
+            
+            bestelling.Tafel_id = 2;
+            bestelling.Medewerker_id = ingelogdemedewerker.Id;
+            bestelling.opmerking = " ";
+            bestelling.Status = 1;
+            bestelling.Tijd = DateTime.Now;
+            bestelling.Totaalbedrag = 0;
+            bestelling.fooi = 0;
+            bestelling.Bestelde_producten = besteldeProducten;
 
+            bestellingDAO.Nieuwe_bestelling(bestelling);
         }
 
-
+        //loguit button
         private void btn_Loguit_Click(object sender, EventArgs e)
         {
             LoginForm f = new LoginForm();
@@ -245,6 +250,7 @@ namespace Classes_Project
             f.Show();
             this.Hide();
         }
+
 
         private void btn_Tafel1_MouseEnter(object sender, EventArgs e)
         {
@@ -303,5 +309,46 @@ namespace Classes_Project
         {
             ShowTooltip(sender, 1);
         }
+
+        private void btn_Tafel3_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 3);
+        }
+
+        private void btn_Tafel4_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 4);
+        }
+
+        private void btn_Tafel5_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 5);
+        }
+
+        private void btn_Tafel6_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 6);
+        }
+
+        private void btn_Tafel7_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 7);
+        }
+
+        private void btn_Tafel8_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 8);
+        }
+
+        private void btn_Tafel9_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 9);
+        }
+
+        private void btn_Tafel10_MouseHover(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 10);
+        }
+
     }
 }

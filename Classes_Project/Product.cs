@@ -10,7 +10,7 @@ namespace Classes_Project
         //veiligheid controleren ( properties correct toegepast ? )
         public int Id { get; set; }
         public int Categorie_id { get; set; }
-        public float Prijs { get; set; }
+        public int Prijs { get; set; }
         public int Btw { get; set; }
         public int Voorraad { get; set; }
         public string Omschrijving { get; set; }
@@ -18,7 +18,7 @@ namespace Classes_Project
         public ProductStatus status { get; set; }
 
 
-        public Product(int id, int categorie_id, float prijs, int voorraad, int btw, string omschrijving)
+        public Product(int id, int categorie_id, int prijs, int voorraad, int btw, string omschrijving)
         {
             this.Btw = btw;
             this.Categorie_id = categorie_id;
@@ -28,7 +28,7 @@ namespace Classes_Project
             this.Omschrijving = omschrijving;
         }
 
-        public Product(int id, int categorie_id, float prijs, int voorraad, int btw, string omschrijving, ProductStatus status)
+        public Product(int id, int categorie_id, int prijs, int voorraad, int btw, string omschrijving, ProductStatus status)
         {
             this.Btw = btw;
             this.Categorie_id = categorie_id;
