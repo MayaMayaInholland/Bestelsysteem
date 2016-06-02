@@ -21,6 +21,9 @@ namespace Classes_Project
 
         //------------------------------------------DATA RETRIEVAL________________________________________________________
 
+
+
+
         public Bestelling GetLopendeBestellingByTafelID(int tafelID)
         {
             conn = new SqlConnection(Helper.ConnectionString);

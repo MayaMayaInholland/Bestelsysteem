@@ -120,6 +120,7 @@
             this.Controls.Add(this.Overzichtbar);
             this.Name = "KeukenOverzicht";
             this.Text = "KeukenOverzicht";
+            this.Load += new System.EventHandler(this.KeukenOverzicht_Load);
             this.Overzichtbar.ResumeLayout(false);
             this.Geschiedenis.ResumeLayout(false);
             this.Geschiedenis.PerformLayout();
