@@ -47,20 +47,20 @@ namespace Classes_Project
 
             while (reader.Read())
             {
-                int BesteldProduct_id = (int)reader["Besteld_product.id"];
+                int BesteldProduct_id = (int)reader["id"];
                 int Bestelling_id = (int)reader["bestelling_id"];
                 int Product_id = (int)reader["product_id"];
                 int Status = (int)reader["status"];
                 int Aantal = (int)reader["aantal"];
-                string Opmerkingen = "";
-                if (reader["opmerkingen"] != DBNull.Value)
-                {
-                    Opmerkingen = (string)reader["opmerkingen"];
-                }
-                int ProductId = (int)reader["Product.id"];
+               // string Opmerkingen = "";
+                //if (reader["opmerkingen"] != DBNull.Value)
+                //{
+                //    Opmerkingen = (string)reader["opmerkingen"];
+                //}
+                int ProductId = (int)reader["id"];
                 int Categorie_id = (int)reader["categorie_id"];
                 string Omschrijving = (string)reader["omschrijving"];
-                float Prijs = (float)reader["prijs"];
+                int Prijs = (int)reader["prijs"];
                 int Voorraad = (int)reader["voorraad"];
                 int Btw = (int)reader["btw"];
 
