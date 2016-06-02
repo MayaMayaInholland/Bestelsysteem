@@ -14,9 +14,8 @@ namespace Classes_Project
 {
     public partial class BedieningForm : Form
     {
-        BestellingDAO bestellingDAO = new BestellingDAO();
+
         private Medewerker ingelogdemedewerker;
-        private Bestelling bestelling;
         private List<Product> besteldeProducten = new List<Product>();
         private List<Tafel> tafels;
 
@@ -88,6 +87,8 @@ namespace Classes_Project
             }
         }
 
+
+
         //tellen aantal van product??
         public void tel_AantalProducten(Bestelling bestelling)
         {
@@ -105,7 +106,7 @@ namespace Classes_Project
         }
 
 
-        //Er moet een methode hiervan gemaakt kunnen worden, alleen de categorie_id vershilt per click.
+        //Er moet een methode hiervan gemaakt kunnen worden, alleen de categorie_id verschilt per click.
         //tonen van alle lunch opties op listview
         private void lunchToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -174,6 +175,7 @@ namespace Classes_Project
             {
                 listview_producten.Items.Remove(eachItem);
                 besteldeProducten.Remove(besteldeProducten.Where((p => p.Id == eachItem.id)).FirstOrDefault());
+
             }
         }
 
@@ -182,8 +184,8 @@ namespace Classes_Project
         {
             string omschrijving = listB_producten.SelectedItems[0].ToString();
             Product product = listB_producten.SelectedItem as Product;
-            
-            CustomListViewItem item = new CustomListViewItem(product.Omschrijving, product.Id, product.Categorie_id, product.Prijs, product.Voorraad, product.Btw);
+
+            CustomListViewItem item = new CustomListViewItem(product.Omschrijving, product.Id);
             besteldeProducten.Add(product);
 
             listview_producten.Items.Add(item);
@@ -195,13 +197,16 @@ namespace Classes_Project
         //Tafel 1 wordt geopend.
         private void btn_Tafel1_Click(object sender, EventArgs e)
         {
-            bestelling = Bestelling_bijTafel(1);
+            Bestelling bestelling = Bestelling_bijTafel(1);
             tafelClick(1);
+
         }
+
 
         public void tafelClick(int tafelnr)
         {
             tabB_volledig.SelectedTab = tabB_Bestellen1;
+
         }
 
         //Het terug halen van de bijhorende bestelling.
@@ -211,38 +216,21 @@ namespace Classes_Project
             TafelDAO tafelDAO = new TafelDAO();
             Tafel tafel = tafelDAO.GetByTafelNummer(Tafelnr);
             Bestelling bestelling;
-            tafel.Status = TafelStatus.VRIJ;
 
             if (tafel.Status == TafelStatus.VRIJ)
             {
-                bestelling = new Bestelling(Tafelnr, ingelogdemedewerker.Id, DateTime.Now, 1, " ",1, 0);
-                return bestelling;          
+                List<Product> nieuw_productLijst = new List<Product>();
+                bestelling = new Bestelling(tafel, ingelogdemedewerker.Id, DateTime.Now, BestellingStatus.Open, nieuw_productLijst);
+                return bestelling;
             }
             else if (tafel.Status == TafelStatus.BEZET)
-            {             
+            {
                 bestelling = bestellingDAO.GetByTafelId(Tafelnr);
                 return bestelling;
             }
             return null;
         }
 
-        //Maak nieuwe bestelling aan.
-        private void btn_bevestig_Bestelling_Click(object sender, EventArgs e)
-        {
-            
-            bestelling.Tafel_id = 2;
-            bestelling.Medewerker_id = ingelogdemedewerker.Id;
-            bestelling.opmerking = " ";
-            bestelling.Status = 1;
-            bestelling.Tijd = DateTime.Now;
-            bestelling.Totaalbedrag = 0;
-            bestelling.fooi = 0;
-            bestelling.Bestelde_producten = besteldeProducten;
-
-            bestellingDAO.Nieuwe_bestelling(bestelling);
-        }
-
-        //loguit button
         private void btn_Loguit_Click(object sender, EventArgs e)
         {
             LoginForm f = new LoginForm();
@@ -250,7 +238,6 @@ namespace Classes_Project
             f.Show();
             this.Hide();
         }
-
 
         private void btn_Tafel1_MouseEnter(object sender, EventArgs e)
         {
@@ -349,6 +336,5 @@ namespace Classes_Project
         {
             ShowTooltip(sender, 10);
         }
-
     }
 }

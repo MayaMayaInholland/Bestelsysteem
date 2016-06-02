@@ -70,7 +70,8 @@ namespace Classes_Project
 
                 lijst_Activeroducten.Add(product);
 
-                
+                reader.Close();
+                conn.Close();
                 
             }
             reader.Close();
@@ -92,17 +93,17 @@ namespace Classes_Project
 
             while (reader.Read())
             {
-                int BesteldProduct_id = (int)reader["id"];
+                int BesteldProduct_id = (int)reader["Besteld_product.id"];
                 int Bestelling_id = (int)reader["bestelling_id"];
                 int Product_id = (int)reader["product_id"];
                 int Status = (int)reader["status"];
                 int Aantal = (int)reader["aantal"];
                 string Opmerkingen = "";
                 if (reader["opmerkingen"] != DBNull.Value)
-               {
+                {
                     Opmerkingen = (string)reader["opmerkingen"];
                 }
-                int ProductId = (int)reader["id"];
+                int ProductId = (int)reader["Product.id"];
                 int Categorie_id = (int)reader["categorie_id"];
                 string Omschrijving = (string)reader["omschrijving"];
                 int Prijs = (int)reader["prijs"];
@@ -115,7 +116,8 @@ namespace Classes_Project
 
                 lijst_NietActiveroducten.Add(product);
 
-       
+                reader.Close();
+                conn.Close();
 
             }
             reader.Close();
