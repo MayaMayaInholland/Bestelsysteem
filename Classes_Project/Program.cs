@@ -16,8 +16,8 @@ namespace Classes_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            LoginForm loginForm = new LoginForm();
-            loginForm.StartPosition = FormStartPosition.CenterScreen;
+            //LoginForm loginForm = new LoginForm();
+            //loginForm.StartPosition = FormStartPosition.CenterScreen;
             //Application.Run(loginForm);
 
             //uncomment dit en maak de regel hierboven een comment om het inlogscherm te omzeilen en direct ingelogd te zijn als een manager

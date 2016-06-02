@@ -14,14 +14,16 @@ namespace Classes_Project
         public int prijs { get; set; }
         public int voorraad { get; set; }
         public int btw { get; set; }
+        public int Aantal { get; set; }
 
-        public CustomListViewItem(string omschrijving, int id, int categorie_id, int prijs, int voorraad, int btw) : base(omschrijving)
+        public CustomListViewItem(string omschrijving, int id, int categorie_id, int prijs, int voorraad, int btw, int aantal) : base(omschrijving)
         {
             this.id = id;
             this.categorie_id = categorie_id;
             this.prijs = prijs;
             this.voorraad = voorraad;
             this.btw = btw;
+            this.Aantal = aantal;
         }
 
     }

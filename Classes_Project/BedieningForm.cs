@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Classes_Project.Properties;
-
+using System.Text.RegularExpressions;
 
 namespace Classes_Project
 {
@@ -75,7 +75,7 @@ namespace Classes_Project
                             {
                                 img = (Image)Resources.ResourceManager.GetObject("TafelBezet");
                                 text = i + "\n BEZET";
-                                
+
                             }
                             c.Text = text;
                             c.BackgroundImage = img;
@@ -180,13 +180,46 @@ namespace Classes_Project
         // Hierbij wordt de geselecteerde producten overgezet naar de listview
         private void listB_producten_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string omschrijving = listB_producten.SelectedItems[0].ToString();
-            Product product = listB_producten.SelectedItem as Product;
-            
-            CustomListViewItem item = new CustomListViewItem(product.Omschrijving, product.Id, product.Categorie_id, product.Prijs, product.Voorraad, product.Btw);
-            besteldeProducten.Add(product);
 
-            listview_producten.Items.Add(item);
+            Product product = listB_producten.SelectedItem as Product;
+            if (product.Aantal == 0)
+            {
+                product.Aantal = 1;
+            }
+            besteldeProducten.Add(product);
+            showBesteldeProducten();
+        }
+
+        private void showBesteldeProducten()
+        {
+            string omschrijving = listB_producten.SelectedItems[0].ToString();
+
+            for (int i = 0; i < besteldeProducten.Count; i++)
+            {
+                for (int j = 0; j < besteldeProducten.Count; j++)
+                {
+                    if (besteldeProducten[i].Id == besteldeProducten[j].Id)
+                    {
+                        if (i != j)
+                        {
+                            besteldeProducten[i].Aantal += 1;
+                            besteldeProducten.Remove(besteldeProducten[j]);
+                        }
+                    }
+                }
+            }
+
+            foreach (ListViewItem item in listview_producten.Items)
+            {
+                item.Remove();
+            }
+            foreach (Product productInList in besteldeProducten)
+            {
+                productInList.Omschrijving = Regex.Replace(productInList.Omschrijving, @"[\d-]", string.Empty);
+                productInList.Omschrijving += productInList.Aantal.ToString();
+                CustomListViewItem item = new CustomListViewItem(productInList.Omschrijving, productInList.Id, productInList.Categorie_id, productInList.Prijs, productInList.Voorraad, productInList.Btw, productInList.Aantal);
+                listview_producten.Items.Add(item);
+            }
         }
 
         //Medewerker kan terug naar tafeloverzicht ( als er niks besteld is, is er niks veranderd.) 
@@ -215,11 +248,11 @@ namespace Classes_Project
 
             if (tafel.Status == TafelStatus.VRIJ)
             {
-                bestelling = new Bestelling(Tafelnr, ingelogdemedewerker.Id, DateTime.Now, 1, " ",1, 0);
-                return bestelling;          
+                bestelling = new Bestelling(Tafelnr, ingelogdemedewerker.Id, DateTime.Now, 1, " ", 1, 0);
+                return bestelling;
             }
             else if (tafel.Status == TafelStatus.BEZET)
-            {             
+            {
                 bestelling = bestellingDAO.GetByTafelId(Tafelnr);
                 return bestelling;
             }
@@ -229,7 +262,7 @@ namespace Classes_Project
         //Maak nieuwe bestelling aan.
         private void btn_bevestig_Bestelling_Click(object sender, EventArgs e)
         {
-            
+
             bestelling.Tafel_id = 2;
             bestelling.Medewerker_id = ingelogdemedewerker.Id;
             bestelling.opmerking = " ";
