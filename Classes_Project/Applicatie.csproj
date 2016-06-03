@@ -81,6 +81,7 @@
     <Compile Include="BedieningForm.Designer.cs">
       <DependentUpon>BedieningForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Besteld_product.cs" />
     <Compile Include="Bestelling.cs" />
     <Compile Include="BestellingDAO.cs" />
     <Compile Include="CustomListViewItem.cs" />
