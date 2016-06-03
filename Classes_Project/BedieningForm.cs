@@ -170,8 +170,23 @@ namespace Classes_Project
         //verwijderen product uit listview ( nog zonder aantal.... )
         private void listview_producten_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            
             foreach (CustomListViewItem eachItem in listview_producten.SelectedItems)
             {
+                if(eachItem.Aantal > 1)
+                {
+                    eachItem.Aantal--;
+                    Product product = new Product(eachItem.id, eachItem.categorie_id, eachItem.prijs, eachItem.voorraad, eachItem.btw, eachItem.Omschrijving);
+                    for(int i = 0; i < besteldeProducten.Count(); i++)
+                    {
+                        if(besteldeProducten[i].Id == eachItem.id)
+                        {
+                            besteldeProducten[i].Aantal--;
+                        }
+                    }
+                    showBesteldeProducten();
+                    return;
+                }
                 listview_producten.Items.Remove(eachItem);
                 besteldeProducten.Remove(besteldeProducten.Where((p => p.Id == eachItem.id)).FirstOrDefault());
             }
@@ -220,6 +235,11 @@ namespace Classes_Project
                 CustomListViewItem item = new CustomListViewItem(productInList.Omschrijving, productInList.Id, productInList.Categorie_id, productInList.Prijs, productInList.Voorraad, productInList.Btw, productInList.Aantal);
                 listview_producten.Items.Add(item);
             }
+        }
+
+        public void aantalverminderen()
+        {
+            
         }
 
         //Medewerker kan terug naar tafeloverzicht ( als er niks besteld is, is er niks veranderd.) 
