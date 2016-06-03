@@ -155,6 +155,49 @@ namespace Classes_Project
         //-------------------------INSERT DATA____________________________________
         //tafel-bestelling kan worden opgenomen...
 
+        public void Nieuwe_bestelling(Bestelling bestelling)
+        {
+            conn = new SqlConnection(Helper.ConnectionString);
+            conn.Open();
+
+            SqlCommand command = new SqlCommand(string.Format("INSERT INTO Bestelling (tafel_id, medewerker_id, tijd, totaalbedrag, opmerkingen, status, fooi)" +
+                "VALUES(@tafel_id, @medewerker_id, @tijd, @totaalbedrag, @opmerkingen, @status, @fooi)"), conn);
+
+            command.Parameters.AddWithValue("@tafel_id", bestelling.Tafel_id);
+            command.Parameters.AddWithValue("@medewerker_id", bestelling.Medewerker_id);
+            command.Parameters.AddWithValue("@tijd", bestelling.Tijd);
+            command.Parameters.AddWithValue("@totaalbedrag", bestelling.Totaalbedrag);
+            command.Parameters.AddWithValue("@opmerkingen", bestelling.opmerking);
+            command.Parameters.AddWithValue("@status", bestelling.Status);
+            command.Parameters.AddWithValue("@fooi", bestelling.Fooi);
+
+
+            int rowseffected = command.ExecuteNonQuery();
+
+            if (rowseffected > 0)
+            {
+                command.CommandText = " SELECT @@Identity";
+                bestelling.Id = Convert.ToInt32(command.ExecuteScalar());
+            }
+
+
+            for (int i = 0; i < bestelling.Bestelde_producten.Count(); i++)
+            {
+                SqlCommand Command = new SqlCommand("INSERT INTO Besteld_product (bestelling_id, product_id, status, aantal, opmerking)" +
+                "VALUES(@bestelling_id, @product_id, @status, @aantal, @opmerkingen)", conn);
+
+                Command.Parameters.AddWithValue("@bestelling_id", bestelling.Id);
+                Command.Parameters.AddWithValue("@product_id", bestelling.Bestelde_producten[i].Id);
+                Command.Parameters.AddWithValue("@status", bestelling.Status);
+                Command.Parameters.AddWithValue("@aantal", bestelling.Bestelde_producten[i].Aantal);
+                Command.Parameters.AddWithValue("@opmerkingen", bestelling.opmerking);
+
+                Command.ExecuteNonQuery();
+
+            }
+            conn.Close();
+        }
+
         public void INSERT_Besteld_producten(Bestelling bestelling)
         {
 

@@ -248,7 +248,7 @@ namespace Classes_Project
 
             if (tafel.Status == TafelStatus.VRIJ)
             {
-                bestelling = new Bestelling(Tafelnr, ingelogdemedewerker.Id, DateTime.Now, 1, " ", 1, 0);
+                bestelling = new Bestelling(tafel, ingelogdemedewerker.Id, DateTime.Now, BestellingStatus.Open, new List<Product>());
                 return bestelling;
             }
             else if (tafel.Status == TafelStatus.BEZET)
@@ -266,10 +266,10 @@ namespace Classes_Project
             bestelling.Tafel_id = 2;
             bestelling.Medewerker_id = ingelogdemedewerker.Id;
             bestelling.opmerking = " ";
-            bestelling.Status = 1;
+            bestelling.Status = BestellingStatus.Open;
             bestelling.Tijd = DateTime.Now;
             bestelling.Totaalbedrag = 0;
-            bestelling.fooi = 0;
+            bestelling.Fooi = 0;
             bestelling.Bestelde_producten = besteldeProducten;
 
             bestellingDAO.Nieuwe_bestelling(bestelling);
@@ -383,5 +383,18 @@ namespace Classes_Project
             ShowTooltip(sender, 10);
         }
 
+        private void btn_bevestig_Click(object sender, EventArgs e)
+        {
+            bestelling.Tafel_id = 2;
+            bestelling.Medewerker_id = ingelogdemedewerker.Id;
+            bestelling.opmerking = " ";
+            bestelling.Status = BestellingStatus.Open;
+            bestelling.Tijd = DateTime.Now;
+            bestelling.Totaalbedrag = 0;
+            bestelling.Fooi = 0;
+            bestelling.Bestelde_producten = besteldeProducten;
+
+            bestellingDAO.Nieuwe_bestelling(bestelling);
+        }
     }
 }
