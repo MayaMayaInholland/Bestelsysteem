@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.label42 = new System.Windows.Forms.Label();
-            this.Overzichtbar = new System.Windows.Forms.TabControl();
+            this.OverzichtKeuken = new System.Windows.Forms.TabControl();
             this.BarNu = new System.Windows.Forms.TabPage();
             this.Geschiedenis = new System.Windows.Forms.TabPage();
             this.label23 = new System.Windows.Forms.Label();
             this.btn_Loguit = new System.Windows.Forms.Button();
             this.lbl_IngelogdeMedewerker = new System.Windows.Forms.Label();
-            this.Overzichtbar.SuspendLayout();
+            this.OverzichtKeuken.SuspendLayout();
             this.Geschiedenis.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,15 +49,15 @@
             this.label42.TabIndex = 104;
             this.label42.Text = "Keuken";
             // 
-            // Overzichtbar
+            // OverzichtKeuken
             // 
-            this.Overzichtbar.Controls.Add(this.BarNu);
-            this.Overzichtbar.Controls.Add(this.Geschiedenis);
-            this.Overzichtbar.Location = new System.Drawing.Point(12, 60);
-            this.Overzichtbar.Name = "Overzichtbar";
-            this.Overzichtbar.SelectedIndex = 0;
-            this.Overzichtbar.Size = new System.Drawing.Size(929, 650);
-            this.Overzichtbar.TabIndex = 103;
+            this.OverzichtKeuken.Controls.Add(this.BarNu);
+            this.OverzichtKeuken.Controls.Add(this.Geschiedenis);
+            this.OverzichtKeuken.Location = new System.Drawing.Point(12, 60);
+            this.OverzichtKeuken.Name = "OverzichtKeuken";
+            this.OverzichtKeuken.SelectedIndex = 0;
+            this.OverzichtKeuken.Size = new System.Drawing.Size(929, 650);
+            this.OverzichtKeuken.TabIndex = 103;
             // 
             // BarNu
             // 
@@ -117,11 +117,11 @@
             this.Controls.Add(this.lbl_IngelogdeMedewerker);
             this.Controls.Add(this.btn_Loguit);
             this.Controls.Add(this.label42);
-            this.Controls.Add(this.Overzichtbar);
+            this.Controls.Add(this.OverzichtKeuken);
             this.Name = "KeukenOverzicht";
             this.Text = "KeukenOverzicht";
             this.Load += new System.EventHandler(this.KeukenOverzicht_Load);
-            this.Overzichtbar.ResumeLayout(false);
+            this.OverzichtKeuken.ResumeLayout(false);
             this.Geschiedenis.ResumeLayout(false);
             this.Geschiedenis.PerformLayout();
             this.ResumeLayout(false);
@@ -131,7 +131,7 @@
 
         #endregion
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TabControl Overzichtbar;
+        private System.Windows.Forms.TabControl OverzichtKeuken;
         private System.Windows.Forms.TabPage BarNu;
         private System.Windows.Forms.TabPage Geschiedenis;
         private System.Windows.Forms.Label label23;
