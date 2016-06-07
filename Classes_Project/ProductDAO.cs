@@ -20,7 +20,7 @@ namespace Classes_Project
         {
             List<Product> producten = new List<Product>();
             conn = new SqlConnection(Helper.ConnectionString);
-            conn.Open();
+            conn.Open();//Error met handshake
             SqlCommand cmd = new SqlCommand(String.Format(("SELECT Product.id AS ID, Product.Omschrijving AS Omschrijving, Product.categorie_id AS cID, Product.prijs AS Prijs, Product.voorraad AS Voorraad, Product.btw AS BTW FROM Besteld_Product INNER JOIN Product ON Besteld_Product.product_id = Product.id WHERE Besteld_Product.bestelling_id = {0} AND Besteld_Product.status = 2"), bestellingID), conn);
             SqlDataReader reader = cmd.ExecuteReader();
 

@@ -7,7 +7,6 @@ namespace Classes_Project
 {
     public class Menu
     {
-        private int id;
         public string Naam { get; set; }
         public string Categorie_id { get; set; }
 

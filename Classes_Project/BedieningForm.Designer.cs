@@ -51,9 +51,9 @@
             this.btn_Tafel4 = new System.Windows.Forms.Button();
             this.btn_Tafel3 = new System.Windows.Forms.Button();
             this.btn_Tafel2 = new System.Windows.Forms.Button();
-            this.btn_Tafel1 = new System.Windows.Forms.Button();
             this.btn_Loguit = new System.Windows.Forms.Button();
             this.lbl_IngelogdeMedewerker = new System.Windows.Forms.Label();
+            this.btn_Tafel1 = new System.Windows.Forms.Button();
             this.tabB_volledig.SuspendLayout();
             this.tabB_Bestellen1.SuspendLayout();
             this.menuStrip_bestelling.SuspendLayout();
@@ -88,7 +88,7 @@
             // 
             // btn_bevestig
             // 
-            this.btn_bevestig.Location = new System.Drawing.Point(386, 498);
+            this.btn_bevestig.Location = new System.Drawing.Point(386, 525);
             this.btn_bevestig.Name = "btn_bevestig";
             this.btn_bevestig.Size = new System.Drawing.Size(117, 33);
             this.btn_bevestig.TabIndex = 9;
@@ -98,7 +98,7 @@
             // 
             // btn_returnOverzicht
             // 
-            this.btn_returnOverzicht.Location = new System.Drawing.Point(386, 30);
+            this.btn_returnOverzicht.Location = new System.Drawing.Point(386, 39);
             this.btn_returnOverzicht.Name = "btn_returnOverzicht";
             this.btn_returnOverzicht.Size = new System.Drawing.Size(117, 32);
             this.btn_returnOverzicht.TabIndex = 8;
@@ -108,15 +108,15 @@
             // 
             // listB_producten
             // 
-            this.listB_producten.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.listB_producten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listB_producten.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listB_producten.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listB_producten.FormattingEnabled = true;
-            this.listB_producten.ItemHeight = 16;
-            this.listB_producten.Location = new System.Drawing.Point(6, 68);
+            this.listB_producten.ItemHeight = 18;
+            this.listB_producten.Location = new System.Drawing.Point(0, 90);
+            this.listB_producten.MultiColumn = true;
             this.listB_producten.Name = "listB_producten";
-            this.listB_producten.Size = new System.Drawing.Size(500, 196);
+            this.listB_producten.Size = new System.Drawing.Size(507, 184);
             this.listB_producten.TabIndex = 7;
-            this.listB_producten.UseWaitCursor = true;
             this.listB_producten.SelectedIndexChanged += new System.EventHandler(this.listB_producten_SelectedIndexChanged);
             // 
             // listview_producten
@@ -124,10 +124,11 @@
             this.listview_producten.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
+            this.listview_producten.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listview_producten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listview_producten.Location = new System.Drawing.Point(6, 270);
+            this.listview_producten.Location = new System.Drawing.Point(1, 312);
             this.listview_producten.Name = "listview_producten";
-            this.listview_producten.Size = new System.Drawing.Size(500, 191);
+            this.listview_producten.Size = new System.Drawing.Size(506, 191);
             this.listview_producten.TabIndex = 5;
             this.listview_producten.UseCompatibleStateImageBehavior = false;
             this.listview_producten.View = System.Windows.Forms.View.Details;
@@ -136,7 +137,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Gekozen producten";
-            this.columnHeader1.Width = 350;
+            this.columnHeader1.Width = 402;
             // 
             // columnHeader2
             // 
@@ -145,6 +146,7 @@
             // 
             // menuStrip_bestelling
             // 
+            this.menuStrip_bestelling.BackColor = System.Drawing.Color.IndianRed;
             this.menuStrip_bestelling.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lunchToolStripMenuItem,
             this.dinnerToolStripMenuItem,
@@ -178,6 +180,7 @@
             // 
             // tabB_TafelOverzicht
             // 
+            this.tabB_TafelOverzicht.Controls.Add(this.btn_Tafel1);
             this.tabB_TafelOverzicht.Controls.Add(this.btn_Tafel10);
             this.tabB_TafelOverzicht.Controls.Add(this.btn_Tafel9);
             this.tabB_TafelOverzicht.Controls.Add(this.btn_Tafel8);
@@ -187,7 +190,6 @@
             this.tabB_TafelOverzicht.Controls.Add(this.btn_Tafel4);
             this.tabB_TafelOverzicht.Controls.Add(this.btn_Tafel3);
             this.tabB_TafelOverzicht.Controls.Add(this.btn_Tafel2);
-            this.tabB_TafelOverzicht.Controls.Add(this.btn_Tafel1);
             this.tabB_TafelOverzicht.Location = new System.Drawing.Point(4, 22);
             this.tabB_TafelOverzicht.Name = "tabB_TafelOverzicht";
             this.tabB_TafelOverzicht.Padding = new System.Windows.Forms.Padding(3);
@@ -323,21 +325,6 @@
             this.btn_Tafel2.MouseEnter += new System.EventHandler(this.btn_Tafel2_MouseEnter);
             this.btn_Tafel2.MouseHover += new System.EventHandler(this.btn_Tafel2_MouseHover);
             // 
-            // btn_Tafel1
-            // 
-            this.btn_Tafel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Tafel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Tafel1.Location = new System.Drawing.Point(45, 18);
-            this.btn_Tafel1.Name = "btn_Tafel1";
-            this.btn_Tafel1.Size = new System.Drawing.Size(105, 96);
-            this.btn_Tafel1.TabIndex = 11;
-            this.btn_Tafel1.Tag = "tafel1";
-            this.btn_Tafel1.Text = "1";
-            this.btn_Tafel1.UseVisualStyleBackColor = true;
-            this.btn_Tafel1.Click += new System.EventHandler(this.btn_Tafel1_Click);
-            this.btn_Tafel1.MouseEnter += new System.EventHandler(this.btn_Tafel1_MouseEnter);
-            this.btn_Tafel1.MouseHover += new System.EventHandler(this.btn_Tafel1_MouseHover);
-            // 
             // btn_Loguit
             // 
             this.btn_Loguit.Location = new System.Drawing.Point(2, 595);
@@ -355,6 +342,19 @@
             this.lbl_IngelogdeMedewerker.Name = "lbl_IngelogdeMedewerker";
             this.lbl_IngelogdeMedewerker.Size = new System.Drawing.Size(0, 13);
             this.lbl_IngelogdeMedewerker.TabIndex = 2;
+            // 
+            // btn_Tafel1
+            // 
+            this.btn_Tafel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel1.BackgroundImage")));
+            this.btn_Tafel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Tafel1.Location = new System.Drawing.Point(45, 18);
+            this.btn_Tafel1.Name = "btn_Tafel1";
+            this.btn_Tafel1.Size = new System.Drawing.Size(105, 96);
+            this.btn_Tafel1.TabIndex = 21;
+            this.btn_Tafel1.Text = "1";
+            this.btn_Tafel1.UseVisualStyleBackColor = true;
+            this.btn_Tafel1.Click += new System.EventHandler(this.btn_Tafel1_Click_1);
             // 
             // BedieningForm
             // 
@@ -382,7 +382,6 @@
         private System.Windows.Forms.TabControl tabB_volledig;
         private System.Windows.Forms.TabPage tabB_Bestellen1;
         private System.Windows.Forms.TabPage tabB_TafelOverzicht;
-        private System.Windows.Forms.Button btn_Tafel1;
         private System.Windows.Forms.Button btn_Tafel2;
         private System.Windows.Forms.Button btn_Tafel3;
         private System.Windows.Forms.Button btn_Tafel4;
@@ -404,5 +403,6 @@
         private System.Windows.Forms.Button btn_bevestig;
         private System.Windows.Forms.Button btn_Loguit;
         private System.Windows.Forms.Label lbl_IngelogdeMedewerker;
+        private System.Windows.Forms.Button btn_Tafel1;
     }
 }

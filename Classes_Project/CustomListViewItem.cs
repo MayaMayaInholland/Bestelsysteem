@@ -28,5 +28,10 @@ namespace Classes_Project
             this.Omschrijving = omschrijving;
         }
 
+        public CustomListViewItem(int aantal)
+        {
+            this.Aantal = aantal;
+        }
+
     }
 }

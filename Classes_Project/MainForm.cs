@@ -105,11 +105,11 @@ namespace Classes_Project
             if (tafel.Status == TafelStatus.VRIJ)
             {
                 List<Product> besteld_productLijst = new List<Product>();
-                Bestelling bestelling = new Bestelling(tafel, ingelogdeMedewerker.Id, DateTime.Now, BestellingStatus.Open, besteld_productLijst);
+                Bestelling bestelling = new Bestelling(tafel.Id, ingelogdeMedewerker.Id, DateTime.Now, 0, " ", 1, 0, besteld_productLijst );
             }
             else if (tafel.Status == TafelStatus.BEZET)
             {
-                bestellingDAO.GetByTafelId(Tafelnr);
+                bestellingDAO.GetBestellingByTafelId(Tafelnr);
             }
             tabControl.SelectedTab = tab_Bestellen;
         }

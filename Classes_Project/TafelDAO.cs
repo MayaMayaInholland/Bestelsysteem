@@ -9,9 +9,6 @@ namespace Classes_Project
 {
     class TafelDAO
     {
-        private int Id;
-        private int nummer;
-        private TafelStatus tafelStatus;
 
         SqlConnection conn;
 
@@ -20,8 +17,6 @@ namespace Classes_Project
             conn = new SqlConnection(Helper.ConnectionString);
             conn.Open();
         }
-
-
 
         public Tafel GetByTafelNummer(int TafelNummer)
         {
