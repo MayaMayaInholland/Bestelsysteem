@@ -385,5 +385,11 @@ namespace Classes_Project
             ShowTooltip(sender, 10);
         }
 
+        private void btn_Betalen_Click(object sender, EventArgs e)
+        {
+            RekeningForm form = new RekeningForm(ingelogdemedewerker, bestelling.Tafel_id);
+            form.Show();
+            this.Hide();
+        }
     }
 }
