@@ -299,6 +299,7 @@ namespace Classes_Project
             keukenDAO.KeukenBestellingKlaar(product.Tafel_nummer);
 
             BarNu.Controls.Clear();
+            Geschiedenis.Controls.Clear();
 
             MaakAlleKnoppen();
 
@@ -311,6 +312,13 @@ namespace Classes_Project
             Button button = (Button)sender;
             Besteld_product product = (Besteld_product)button.Tag;
             keukenDAO.KeukenBestellingNIETKlaar(product.Tafel_nummer);
+
+            Geschiedenis.Controls.Clear();
+            BarNu.Controls.Clear();
+
+            MaakAlleKnoppen();
+
+            ActiveForm.Refresh();
         }
 
         private void button42_Click(object sender, EventArgs e)
