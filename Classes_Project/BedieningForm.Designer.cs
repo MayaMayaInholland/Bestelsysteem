@@ -52,18 +52,27 @@
             this.btn_Tafel4 = new System.Windows.Forms.Button();
             this.btn_Tafel3 = new System.Windows.Forms.Button();
             this.btn_Tafel2 = new System.Windows.Forms.Button();
+            this.tabB_GeAdvanceerd = new System.Windows.Forms.TabPage();
+            this.cmbB_productenShow = new System.Windows.Forms.ComboBox();
+            this.txtB_opmerkingen = new System.Windows.Forms.TextBox();
+            this.btnB_OpmerkingToevoegen = new System.Windows.Forms.Button();
+            this.btnB_Verwijderen = new System.Windows.Forms.Button();
+            this.btnB_Afrekenen = new System.Windows.Forms.Button();
             this.btn_Loguit = new System.Windows.Forms.Button();
             this.lbl_IngelogdeMedewerker = new System.Windows.Forms.Label();
+            this.btn_Rekening = new System.Windows.Forms.Button();
             this.tabB_volledig.SuspendLayout();
             this.tabB_Bestellen1.SuspendLayout();
             this.menuStrip_bestelling.SuspendLayout();
             this.tabB_TafelOverzicht.SuspendLayout();
+            this.tabB_GeAdvanceerd.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabB_volledig
             // 
             this.tabB_volledig.Controls.Add(this.tabB_Bestellen1);
             this.tabB_volledig.Controls.Add(this.tabB_TafelOverzicht);
+            this.tabB_volledig.Controls.Add(this.tabB_GeAdvanceerd);
             this.tabB_volledig.Location = new System.Drawing.Point(2, 3);
             this.tabB_volledig.Name = "tabB_volledig";
             this.tabB_volledig.SelectedIndex = 0;
@@ -72,6 +81,7 @@
             // 
             // tabB_Bestellen1
             // 
+            this.tabB_Bestellen1.Controls.Add(this.btn_Rekening);
             this.tabB_Bestellen1.Controls.Add(this.btn_bevestig);
             this.tabB_Bestellen1.Controls.Add(this.btn_returnOverzicht);
             this.tabB_Bestellen1.Controls.Add(this.listB_producten);
@@ -351,6 +361,70 @@
             this.btn_Tafel2.MouseEnter += new System.EventHandler(this.btn_Tafel2_MouseEnter);
             this.btn_Tafel2.MouseHover += new System.EventHandler(this.btn_Tafel2_MouseHover);
             // 
+            // tabB_GeAdvanceerd
+            // 
+            this.tabB_GeAdvanceerd.Controls.Add(this.cmbB_productenShow);
+            this.tabB_GeAdvanceerd.Controls.Add(this.txtB_opmerkingen);
+            this.tabB_GeAdvanceerd.Controls.Add(this.btnB_OpmerkingToevoegen);
+            this.tabB_GeAdvanceerd.Controls.Add(this.btnB_Verwijderen);
+            this.tabB_GeAdvanceerd.Controls.Add(this.btnB_Afrekenen);
+            this.tabB_GeAdvanceerd.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabB_GeAdvanceerd.Location = new System.Drawing.Point(4, 22);
+            this.tabB_GeAdvanceerd.Name = "tabB_GeAdvanceerd";
+            this.tabB_GeAdvanceerd.Size = new System.Drawing.Size(507, 564);
+            this.tabB_GeAdvanceerd.TabIndex = 2;
+            this.tabB_GeAdvanceerd.Text = "Geadvanceerd";
+            this.tabB_GeAdvanceerd.UseVisualStyleBackColor = true;
+            // 
+            // cmbB_productenShow
+            // 
+            this.cmbB_productenShow.FormattingEnabled = true;
+            this.cmbB_productenShow.Location = new System.Drawing.Point(146, 131);
+            this.cmbB_productenShow.Name = "cmbB_productenShow";
+            this.cmbB_productenShow.Size = new System.Drawing.Size(205, 24);
+            this.cmbB_productenShow.TabIndex = 4;
+            this.cmbB_productenShow.SelectedIndexChanged += new System.EventHandler(this.cmbB_productenShow_SelectedIndexChanged);
+            // 
+            // txtB_opmerkingen
+            // 
+            this.txtB_opmerkingen.Location = new System.Drawing.Point(146, 32);
+            this.txtB_opmerkingen.Multiline = true;
+            this.txtB_opmerkingen.Name = "txtB_opmerkingen";
+            this.txtB_opmerkingen.Size = new System.Drawing.Size(205, 71);
+            this.txtB_opmerkingen.TabIndex = 3;
+            this.txtB_opmerkingen.Text = "Hier en opmerking toevoegen";
+            // 
+            // btnB_OpmerkingToevoegen
+            // 
+            this.btnB_OpmerkingToevoegen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnB_OpmerkingToevoegen.Location = new System.Drawing.Point(146, 213);
+            this.btnB_OpmerkingToevoegen.Name = "btnB_OpmerkingToevoegen";
+            this.btnB_OpmerkingToevoegen.Size = new System.Drawing.Size(205, 56);
+            this.btnB_OpmerkingToevoegen.TabIndex = 2;
+            this.btnB_OpmerkingToevoegen.Text = "Opmerking Toevoegen";
+            this.btnB_OpmerkingToevoegen.UseVisualStyleBackColor = true;
+            this.btnB_OpmerkingToevoegen.Click += new System.EventHandler(this.btnB_OpmerkingToevoegen_Click);
+            // 
+            // btnB_Verwijderen
+            // 
+            this.btnB_Verwijderen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnB_Verwijderen.Location = new System.Drawing.Point(146, 346);
+            this.btnB_Verwijderen.Name = "btnB_Verwijderen";
+            this.btnB_Verwijderen.Size = new System.Drawing.Size(205, 56);
+            this.btnB_Verwijderen.TabIndex = 1;
+            this.btnB_Verwijderen.Text = "Bestelling Verwijderen";
+            this.btnB_Verwijderen.UseVisualStyleBackColor = true;
+            // 
+            // btnB_Afrekenen
+            // 
+            this.btnB_Afrekenen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnB_Afrekenen.Location = new System.Drawing.Point(146, 458);
+            this.btnB_Afrekenen.Name = "btnB_Afrekenen";
+            this.btnB_Afrekenen.Size = new System.Drawing.Size(205, 56);
+            this.btnB_Afrekenen.TabIndex = 0;
+            this.btnB_Afrekenen.Text = "Afrekenen";
+            this.btnB_Afrekenen.UseVisualStyleBackColor = true;
+            // 
             // btn_Loguit
             // 
             this.btn_Loguit.Location = new System.Drawing.Point(2, 595);
@@ -369,6 +443,16 @@
             this.lbl_IngelogdeMedewerker.Size = new System.Drawing.Size(0, 13);
             this.lbl_IngelogdeMedewerker.TabIndex = 2;
             // 
+            // btn_Rekening
+            // 
+            this.btn_Rekening.Location = new System.Drawing.Point(6, 33);
+            this.btn_Rekening.Name = "btn_Rekening";
+            this.btn_Rekening.Size = new System.Drawing.Size(101, 51);
+            this.btn_Rekening.TabIndex = 10;
+            this.btn_Rekening.Text = "Rekening";
+            this.btn_Rekening.UseVisualStyleBackColor = true;
+            this.btn_Rekening.Click += new System.EventHandler(this.btn_Rekening_Click);
+            // 
             // BedieningForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,6 +469,8 @@
             this.menuStrip_bestelling.ResumeLayout(false);
             this.menuStrip_bestelling.PerformLayout();
             this.tabB_TafelOverzicht.ResumeLayout(false);
+            this.tabB_GeAdvanceerd.ResumeLayout(false);
+            this.tabB_GeAdvanceerd.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,5 +503,12 @@
         private System.Windows.Forms.Button btn_Loguit;
         private System.Windows.Forms.Label lbl_IngelogdeMedewerker;
         private System.Windows.Forms.Button btn_Tafel1;
+        private System.Windows.Forms.TabPage tabB_GeAdvanceerd;
+        private System.Windows.Forms.ComboBox cmbB_productenShow;
+        private System.Windows.Forms.TextBox txtB_opmerkingen;
+        private System.Windows.Forms.Button btnB_OpmerkingToevoegen;
+        private System.Windows.Forms.Button btnB_Verwijderen;
+        private System.Windows.Forms.Button btnB_Afrekenen;
+        private System.Windows.Forms.Button btn_Rekening;
     }
 }

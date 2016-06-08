@@ -19,6 +19,7 @@ namespace Classes_Project
         private Bestelling bestelling;
         private List<Product> besteldeProducten = new List<Product>();
         private List<Tafel> tafels;
+        private Tafel geselecteerdeTafel;
 
         //constructor form
         public BedieningForm(Medewerker m)
@@ -188,6 +189,7 @@ namespace Classes_Project
             }
             besteldeProducten.Add(product);
             showBesteldeProducten();
+            cmbB_productenShow.DataSource = besteldeProducten;
         }
 
         //Methode voor het samenvoegen van listviewitems en het tonen van de juiste aantal.
@@ -312,7 +314,7 @@ namespace Classes_Project
         //Bestelling/ bestelde producten worden naar database geschreven
         private void btn_bevestig_Click(object sender, EventArgs e)
         {
-            bestelling.Tafel_id = 2;
+            bestelling.Tafel_id = tafel
             bestelling.Medewerker_id = ingelogdemedewerker.Id;
             bestelling.Opmerking = " ";
             bestelling.Status = BestellingStatus.Open;
@@ -438,6 +440,36 @@ namespace Classes_Project
             RekeningForm form = new RekeningForm(ingelogdemedewerker, bestelling.Tafel_id);
             form.Show();
             this.Hide();
+        }
+
+        //combo box selecteren product voor comment
+        private void cmbB_productenShow_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+        
+        
+        private void btnB_OpmerkingToevoegen_Click(object sender, EventArgs e)
+        {
+            Product product = (Product)cmbB_productenShow.SelectedItem;
+
+            for(int i = 0; i < besteldeProducten.Count; i++)
+            {
+                if(besteldeProducten[i].Id == product.Id)
+                {
+                    besteldeProducten[i].Opmerking = txtB_opmerkingen.Text;
+                    break;
+                }
+            }
+
+        }
+
+        private void btn_Rekening_Click(object sender, EventArgs e)
+        {
+            RekeningForm form = new RekeningForm(ingelogdemedewerker, 3);
+            form.Show();
+            this.Hide();
+
         }
     }
 }

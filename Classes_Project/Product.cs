@@ -15,6 +15,7 @@ namespace Classes_Project
         public int Voorraad { get; set; }
         public string Omschrijving { get; set; }
         public int Aantal { get; set; }
+        public string Opmerking { get; set; }
         public ProductStatus status { get; set; }
 
 
@@ -28,7 +29,7 @@ namespace Classes_Project
             this.Omschrijving = omschrijving;
         }
 
-        public Product(int id, int categorie_id, int prijs, int voorraad, int btw, string omschrijving, ProductStatus status)
+        public Product(int id, int categorie_id, int prijs, int voorraad, int btw, string omschrijving, ProductStatus status, string opmerking)
         {
             this.Btw = btw;
             this.Categorie_id = categorie_id;

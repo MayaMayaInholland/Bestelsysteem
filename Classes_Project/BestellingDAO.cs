@@ -210,6 +210,7 @@ namespace Classes_Project
                 }
             }
             
+            
             conn = new SqlConnection(Helper.ConnectionString);
             conn.Open();
 
@@ -223,7 +224,7 @@ namespace Classes_Project
                 command.Parameters.AddWithValue("@product_id", bestelling.Bestelde_producten[i].Id);
                 command.Parameters.AddWithValue("@status", bestelling.StatusInt);
                 command.Parameters.AddWithValue("@aantal", bestelling.Bestelde_producten[i].Aantal);
-                command.Parameters.AddWithValue("@opmerkingen", bestelling.Opmerking);
+                command.Parameters.AddWithValue("@opmerkingen", bestelling.Bestelde_producten[i].Opmerking);
 
             }
 
