@@ -17,9 +17,11 @@ namespace Classes_Project
         private List<Product> besteldeProducten = new List<Product>();
         private int tafelID;
 
-        public RekeningForm(Medewerker m)
+        public RekeningForm(Medewerker m, int tafelid)
         {
             InitializeComponent();
+
+            tafelID = tafelid;
 
             ingelogdeMedewerker = m;
             lbl_IngelogdeMedewerker.Text = m.Voornaam;

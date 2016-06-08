@@ -12,28 +12,32 @@ namespace Classes_Project
 {
     public partial class KeukenOverzicht : Form
     {
+        private Medewerker medewerker;
         public KeukenOverzicht(Medewerker m)
         {
             InitializeComponent();
 
-            List<Besteld_product> Lijst_ActiveProducten = new List<Besteld_product>();
-
-            KeukenDAO keukenDAO = new KeukenDAO();
-            Lijst_ActiveProducten = keukenDAO.GetActiveBesteldeProducten();
-
+            
 
             lbl_IngelogdeMedewerker.Text = m.Voornaam;
 
+         
 
+            MaakAlleKnoppen();
+
+           
+
+        }
+
+        private void MaakAlleKnoppen()
+        {
             int teller = 1;
-
 
             int y = 0;
             int yToe = 40;
             int YLBL = 0;
             int NieuweTafel = 0;
             int Nieuwekleur = 1;
-
 
             List<Besteld_product> lijst_NietActiveroducten = new List<Besteld_product>();
 
@@ -58,13 +62,16 @@ namespace Classes_Project
             NieuweTafel = 0;
             Nieuwekleur = 1;
 
+            List<Besteld_product> Lijst_ActiveProducten = new List<Besteld_product>();
+
+            KeukenDAO keukenDAO = new KeukenDAO();
+            Lijst_ActiveProducten = keukenDAO.GetActiveBesteldeProducten();
+
             foreach (Besteld_product p in Lijst_ActiveProducten)
             {
                 Maakknoppen(ref Nieuwekleur, ref NieuweTafel, ref teller, ref y, yToe, ref YLBL, p);
             }
-
         }
-
 
 
         private void KlaarKnoppen(ref int Nieuwekleur, ref int NieuweTafel, ref int teller, ref int y, int yToe, ref int YLBL, Besteld_product p)
@@ -290,8 +297,12 @@ namespace Classes_Project
             Button button = (Button)sender;
             Besteld_product product = (Besteld_product)button.Tag;
             keukenDAO.KeukenBestellingKlaar(product.Tafel_nummer);
-            // OverzichtKeuken.TabPages.Clear();
+            foreach(Control c in OverzichtKeuken.Controls)
+            {
+                c.Dispose();
+            }
 
+            MaakAlleKnoppen();
 
             ActiveForm.Refresh();
         }
