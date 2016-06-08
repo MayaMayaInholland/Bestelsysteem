@@ -297,10 +297,8 @@ namespace Classes_Project
             Button button = (Button)sender;
             Besteld_product product = (Besteld_product)button.Tag;
             keukenDAO.KeukenBestellingKlaar(product.Tafel_nummer);
-            foreach(Control c in OverzichtKeuken.Controls)
-            {
-                c.Dispose();
-            }
+
+            BarNu.Controls.Clear();
 
             MaakAlleKnoppen();
 
