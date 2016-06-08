@@ -108,6 +108,7 @@
             this.lbl_IngelogdeMedewerker.Name = "lbl_IngelogdeMedewerker";
             this.lbl_IngelogdeMedewerker.Size = new System.Drawing.Size(0, 13);
             this.lbl_IngelogdeMedewerker.TabIndex = 106;
+            this.lbl_IngelogdeMedewerker.Tag = "Mederwerker";
             // 
             // KeukenOverzicht
             // 
