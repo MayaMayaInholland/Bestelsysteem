@@ -341,6 +341,7 @@ namespace Classes_Project
                 besteldeProducten.Clear();
                 showBesteldeProducten();
 
+                ChangeTafelStatus(geselecteerdeTafel, TafelStatus.BEZET);
                 //tabB_volledig.SelectedTab = tabB_TafelOverzicht;
             }
             else
@@ -515,11 +516,6 @@ namespace Classes_Project
                 besteldeProducten.Clear();
                 tabB_volledig.SelectedTab = tabB_TafelOverzicht;
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            tabB_volledig.SelectedTab = tabB_GeAdvanceerd;
         }
 
         private void btn_Tafel1_MouseHover_1(object sender, EventArgs e)

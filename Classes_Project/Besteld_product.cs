@@ -33,5 +33,19 @@ namespace Classes_Project
             this.Categorie_id = Categorie_id;
             this.Tafel_nummer = Tafel_nummer;
         }
+
+
+        // test constructor
+        public Besteld_product(int id, int Bestelling_id, int Product_id, int status, int Aantal, string Opmerking, int categorie_id, string Omschrijving)
+        {
+            this.id = id;
+            this.Bestelling_id = Bestelling_id;
+            this.Product_id = Product_id;
+            this.Status = status;
+            this.Aantal = Aantal;
+            this.Opmerking = Opmerking;
+            this.Omschrijving = Omschrijving;
+            this.Categorie_id = categorie_id;
+        } 
     }
 }

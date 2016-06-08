@@ -119,6 +119,7 @@ namespace Classes_Project
 
             // 2a Maken van elk besteld product om in een product object.
             Product Product;
+            Besteld_product besteldProduct;
 
             while (reader.Read())
             {
@@ -137,8 +138,9 @@ namespace Classes_Project
                     opmerking = (string)reader["opmerking"];
                 }
 
-                Product = new Product(id, categorie_id, prijs, voorraad, btw, omschrijving);
-
+                //Hier constructor product gewijzigd ivm conflict besteldproduct class enzo..
+                Product = new Product(id, categorie_id, prijs, btw, omschrijving, aantal);
+               
                 Besteld_producten.Add(Product); // Toevoegen product aan Besteld_product list.          
             }
             reader.Close();
