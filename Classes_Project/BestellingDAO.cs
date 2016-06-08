@@ -96,7 +96,7 @@ namespace Classes_Project
                 lijst_Producten = GetProductenByBestellingId(Id);
 
                 //Overload van class bestelling voor al bestaande bestellingen.... ( opgezet zodat code runt )
-                Bestelling Lopende_bestelling = new Bestelling(Medewerker_id, Tijd, (int)status, Opmerking, lijst_Producten);
+                Bestelling Lopende_bestelling = new Bestelling(Id, Medewerker_id, Tijd, (int)status, Opmerking, lijst_Producten);
 
                 return Lopende_bestelling;
             }

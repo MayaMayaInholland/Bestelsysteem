@@ -43,5 +43,15 @@ namespace Classes_Project
             this.Bestelde_producten = producten;
         }
 
+        public Bestelling(int id, int medewerker_id, DateTime tijd, int status, string opmerking, List<Product> producten)
+        {
+            this.Id = id;
+            this.Medewerker_id = medewerker_id;
+            this.Tijd = tijd;
+            this.StatusInt = status;
+            this.Opmerking = opmerking;
+            this.Bestelde_producten = producten;
+        }
+
     }
 }

@@ -18,6 +18,7 @@ namespace Classes_Project
         private List<Product> besteldeProducten = new List<Product>();
         private List<Tafel> tafels;
         private Tafel geselecteerdeTafel;
+        private List<ToolTip> tooltips = new List<ToolTip>();
 
         //constructor form
         public BedieningForm(Medewerker m)
@@ -221,7 +222,7 @@ namespace Classes_Project
         {
             tabB_volledig.SelectedTab = tabB_TafelOverzicht;
             RefreshTafels();
-        } 
+        }
 
         // Tafel button clicks 1t/m 12
         private void btn_Tafel1_Click_1(object sender, EventArgs e)
@@ -345,12 +346,21 @@ namespace Classes_Project
             // ShowTooltip(sender, 2);
         }
 
+       
+
         private void ShowTooltip(object sender, int tafelNummer)
         {
             BestellingDAO bDAO = new BestellingDAO();
             Tafel huidigeTafel = tafels.Where(ht => ht.Nummer == tafelNummer).FirstOrDefault();
             Bestelling bestelling = bDAO.GetLopendeBestellingByTafelID(huidigeTafel.Id);
+
+            foreach (ToolTip toolTip in tooltips)
+            {
+                toolTip.Dispose();
+            }
+
             ToolTip t = new ToolTip();
+            tooltips.Add(t);
 
             if (bestelling != null)
             {
@@ -381,6 +391,7 @@ namespace Classes_Project
                     }
                 }
                 t.Show(sb.ToString(), (Button)sender);
+
             }
             else
             {
