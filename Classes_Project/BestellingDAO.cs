@@ -171,7 +171,7 @@ namespace Classes_Project
 
             if (rowseffected > 0)
             {
-                command.CommandText = " SELECT @@Identity";
+                command.CommandText = "SELECT @@Identity";
                 bestelling.Id = Convert.ToInt32(command.ExecuteScalar());
             }
 
@@ -179,13 +179,13 @@ namespace Classes_Project
             for (int i = 0; i < bestelling.Bestelde_producten.Count(); i++)
             {
                 SqlCommand Command = new SqlCommand("INSERT INTO Besteld_product (bestelling_id, product_id, status, aantal, opmerking)" +
-                "VALUES(@bestelling_id, @product_id, @status, @aantal, @opmerkingen)", conn);
+                "VALUES(@bestelling_id, @product_id, @status, @aantal, @opmerking)", conn);
 
                 Command.Parameters.AddWithValue("@bestelling_id", bestelling.Id);
                 Command.Parameters.AddWithValue("@product_id", bestelling.Bestelde_producten[i].Id);
                 Command.Parameters.AddWithValue("@status", bestelling.Status);
                 Command.Parameters.AddWithValue("@aantal", bestelling.Bestelde_producten[i].Aantal);
-                Command.Parameters.AddWithValue("@opmerkingen", bestelling.Opmerking);
+                Command.Parameters.AddWithValue("@opmerking", bestelling.Bestelde_producten[i].Opmerking);
 
                 Command.ExecuteNonQuery();
 

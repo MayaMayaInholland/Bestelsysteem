@@ -156,16 +156,16 @@ namespace Classes_Project
         //verwijderen product uit listview 
         private void listview_producten_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            
+
             foreach (CustomListViewItem eachItem in listview_producten.SelectedItems)
             {
-                if(eachItem.Aantal > 1)
+                if (eachItem.Aantal > 1)
                 {
                     eachItem.Aantal--;
-                   
-                    for(int i = 0; i < besteldeProducten.Count(); i++)
+
+                    for (int i = 0; i < besteldeProducten.Count(); i++)
                     {
-                        if(besteldeProducten[i].Id == eachItem.id)
+                        if (besteldeProducten[i].Id == eachItem.id)
                         {
                             besteldeProducten[i].Aantal--;
                         }
@@ -183,13 +183,20 @@ namespace Classes_Project
         {
 
             Product product = listB_producten.SelectedItem as Product;
+
             if (product.Aantal == 0)
             {
                 product.Aantal = 1;
             }
+
             besteldeProducten.Add(product);
             showBesteldeProducten();
-            cmbB_productenShow.DataSource = besteldeProducten;
+
+            if (true)
+            {
+                cmbB_productenShow.DataSource = null;
+                cmbB_productenShow.DataSource = besteldeProducten;
+            }
         }
 
         //Methode voor het samenvoegen van listviewitems en het tonen van de juiste aantal.
@@ -224,9 +231,6 @@ namespace Classes_Project
                 listview_producten.Items.Add(item);
             }
         }
-     
-        //Medewerker kan terug naar tafeloverzicht ( als er niks besteld is, is er niks veranderd.) 
-        private void btn_returnOverzicht_Click(object sender, EventArgs e) => tabB_volledig.SelectedTab = tabB_TafelOverzicht;
 
         // Tafel button clicks 1t/m 12
         private void btn_Tafel1_Click_1(object sender, EventArgs e)
@@ -314,16 +318,37 @@ namespace Classes_Project
         //Bestelling/ bestelde producten worden naar database geschreven
         private void btn_bevestig_Click(object sender, EventArgs e)
         {
-            bestelling.Tafel_id = tafel
-            bestelling.Medewerker_id = ingelogdemedewerker.Id;
-            bestelling.Opmerking = " ";
-            bestelling.Status = BestellingStatus.Open;
-            bestelling.Tijd = DateTime.Now;
-            bestelling.Totaalbedrag = 0;
-            bestelling.Fooi = 0;
-            bestelling.Bestelde_producten = besteldeProducten;
+            //controleren of bestelling echt geplaatst moet worden.
+            if(MessageBox.Show("Wil je deze bestelling plaatsen ?", "Bestelling plaatsen", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                bestelling.Tafel_id = bestelling.Tafel_id;
+                bestelling.Medewerker_id = ingelogdemedewerker.Id;
+                bestelling.Opmerking = " ";
+                bestelling.Status = BestellingStatus.Open;
+                bestelling.Tijd = DateTime.Now;
+                bestelling.Totaalbedrag = 0;
+                bestelling.Fooi = 0;
+                bestelling.Bestelde_producten = besteldeProducten;
 
-            bestellingDAO.Nieuwe_bestelling(bestelling);
+                foreach(Product p in bestelling.Bestelde_producten)
+                {
+                    if(p.Opmerking == null)
+                    {
+                        p.Opmerking = " ";
+                    }
+                }
+
+                bestellingDAO.Nieuwe_bestelling(bestelling);
+                besteldeProducten.Clear();
+                showBesteldeProducten();
+
+
+                //tabB_volledig.SelectedTab = tabB_TafelOverzicht;
+            }
+            else
+            {
+                return;
+            }          
         }
 
 
@@ -358,7 +383,7 @@ namespace Classes_Project
             if (bestelling != null)
             {
                 StringBuilder sb = new StringBuilder();
-                
+
                 if (bestelling.Bestelde_producten != null)
                 {
                     sb.AppendLine("Bestellingnummer: " + bestelling.Id);
@@ -442,34 +467,53 @@ namespace Classes_Project
             this.Hide();
         }
 
-        //combo box selecteren product voor comment
+        //combo box selecteren product voor opmerking.
         private void cmbB_productenShow_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
-        
-        
+
         private void btnB_OpmerkingToevoegen_Click(object sender, EventArgs e)
         {
             Product product = (Product)cmbB_productenShow.SelectedItem;
 
-            for(int i = 0; i < besteldeProducten.Count; i++)
+            for (int i = 0; i < besteldeProducten.Count; i++)
             {
-                if(besteldeProducten[i].Id == product.Id)
+                if (besteldeProducten[i].Id == product.Id)
                 {
                     besteldeProducten[i].Opmerking = txtB_opmerkingen.Text;
                     break;
                 }
+                else
+                {
+                    besteldeProducten[i].Opmerking = " ";
+                }
             }
+
+            tabB_volledig.SelectedTab = tabB_Bestellen1;
 
         }
 
         private void btn_Rekening_Click(object sender, EventArgs e)
         {
-            RekeningForm form = new RekeningForm(ingelogdemedewerker, 3);
+            RekeningForm form = new RekeningForm(ingelogdemedewerker, bestelling.Tafel_id);
             form.Show();
             this.Hide();
+        }
 
+        private void btnB_Verwijderen_Click(object sender, EventArgs e)
+        {
+            if(bestelling != null)
+            {
+                bestelling = null;
+                besteldeProducten.Clear();
+                tabB_volledig.SelectedTab = tabB_TafelOverzicht;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabB_volledig.SelectedTab = tabB_GeAdvanceerd;
         }
     }
 }

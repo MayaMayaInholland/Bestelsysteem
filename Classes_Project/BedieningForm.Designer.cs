@@ -32,7 +32,6 @@
             this.tabB_volledig = new System.Windows.Forms.TabControl();
             this.tabB_Bestellen1 = new System.Windows.Forms.TabPage();
             this.btn_bevestig = new System.Windows.Forms.Button();
-            this.btn_returnOverzicht = new System.Windows.Forms.Button();
             this.listB_producten = new System.Windows.Forms.ListBox();
             this.listview_producten = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -61,6 +60,11 @@
             this.btn_Loguit = new System.Windows.Forms.Button();
             this.lbl_IngelogdeMedewerker = new System.Windows.Forms.Label();
             this.btn_Rekening = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabB_volledig.SuspendLayout();
             this.tabB_Bestellen1.SuspendLayout();
             this.menuStrip_bestelling.SuspendLayout();
@@ -73,50 +77,42 @@
             this.tabB_volledig.Controls.Add(this.tabB_Bestellen1);
             this.tabB_volledig.Controls.Add(this.tabB_TafelOverzicht);
             this.tabB_volledig.Controls.Add(this.tabB_GeAdvanceerd);
+            this.tabB_volledig.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabB_volledig.Location = new System.Drawing.Point(2, 3);
             this.tabB_volledig.Name = "tabB_volledig";
             this.tabB_volledig.SelectedIndex = 0;
             this.tabB_volledig.Size = new System.Drawing.Size(515, 590);
+            this.tabB_volledig.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabB_volledig.TabIndex = 0;
             // 
             // tabB_Bestellen1
             // 
+            this.tabB_Bestellen1.BackColor = System.Drawing.Color.White;
+            this.tabB_Bestellen1.Controls.Add(this.button1);
             this.tabB_Bestellen1.Controls.Add(this.btn_Rekening);
             this.tabB_Bestellen1.Controls.Add(this.btn_bevestig);
-            this.tabB_Bestellen1.Controls.Add(this.btn_returnOverzicht);
             this.tabB_Bestellen1.Controls.Add(this.listB_producten);
             this.tabB_Bestellen1.Controls.Add(this.listview_producten);
             this.tabB_Bestellen1.Controls.Add(this.menuStrip_bestelling);
             this.tabB_Bestellen1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabB_Bestellen1.Location = new System.Drawing.Point(4, 22);
+            this.tabB_Bestellen1.Location = new System.Drawing.Point(4, 28);
             this.tabB_Bestellen1.Name = "tabB_Bestellen1";
-            this.tabB_Bestellen1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabB_Bestellen1.Size = new System.Drawing.Size(507, 564);
+            this.tabB_Bestellen1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabB_Bestellen1.Size = new System.Drawing.Size(507, 558);
             this.tabB_Bestellen1.TabIndex = 0;
             this.tabB_Bestellen1.Text = "Bestellen";
-            this.tabB_Bestellen1.UseVisualStyleBackColor = true;
             // 
             // btn_bevestig
             // 
-            this.btn_bevestig.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_bevestig.Location = new System.Drawing.Point(386, 509);
+            this.btn_bevestig.BackColor = System.Drawing.Color.Lime;
+            this.btn_bevestig.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_bevestig.Location = new System.Drawing.Point(374, 509);
             this.btn_bevestig.Name = "btn_bevestig";
-            this.btn_bevestig.Size = new System.Drawing.Size(117, 49);
+            this.btn_bevestig.Size = new System.Drawing.Size(129, 49);
             this.btn_bevestig.TabIndex = 9;
             this.btn_bevestig.Text = "Bevestig";
-            this.btn_bevestig.UseVisualStyleBackColor = true;
+            this.btn_bevestig.UseVisualStyleBackColor = false;
             this.btn_bevestig.Click += new System.EventHandler(this.btn_bevestig_Click);
-            // 
-            // btn_returnOverzicht
-            // 
-            this.btn_returnOverzicht.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_returnOverzicht.Location = new System.Drawing.Point(386, 33);
-            this.btn_returnOverzicht.Name = "btn_returnOverzicht";
-            this.btn_returnOverzicht.Size = new System.Drawing.Size(117, 51);
-            this.btn_returnOverzicht.TabIndex = 8;
-            this.btn_returnOverzicht.Text = "TafelOverzicht";
-            this.btn_returnOverzicht.UseVisualStyleBackColor = true;
-            this.btn_returnOverzicht.Click += new System.EventHandler(this.btn_returnOverzicht_Click);
             // 
             // listB_producten
             // 
@@ -158,7 +154,7 @@
             // 
             // menuStrip_bestelling
             // 
-            this.menuStrip_bestelling.BackColor = System.Drawing.Color.IndianRed;
+            this.menuStrip_bestelling.BackColor = System.Drawing.Color.YellowGreen;
             this.menuStrip_bestelling.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip_bestelling.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lunchToolStripMenuItem,
@@ -204,10 +200,10 @@
             this.tabB_TafelOverzicht.Controls.Add(this.btn_Tafel4);
             this.tabB_TafelOverzicht.Controls.Add(this.btn_Tafel3);
             this.tabB_TafelOverzicht.Controls.Add(this.btn_Tafel2);
-            this.tabB_TafelOverzicht.Location = new System.Drawing.Point(4, 22);
+            this.tabB_TafelOverzicht.Location = new System.Drawing.Point(4, 28);
             this.tabB_TafelOverzicht.Name = "tabB_TafelOverzicht";
-            this.tabB_TafelOverzicht.Padding = new System.Windows.Forms.Padding(3);
-            this.tabB_TafelOverzicht.Size = new System.Drawing.Size(507, 564);
+            this.tabB_TafelOverzicht.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabB_TafelOverzicht.Size = new System.Drawing.Size(507, 558);
             this.tabB_TafelOverzicht.TabIndex = 1;
             this.tabB_TafelOverzicht.Text = "TafelOverzicht";
             this.tabB_TafelOverzicht.UseVisualStyleBackColor = true;
@@ -363,15 +359,19 @@
             // 
             // tabB_GeAdvanceerd
             // 
+            this.tabB_GeAdvanceerd.Controls.Add(this.label2);
+            this.tabB_GeAdvanceerd.Controls.Add(this.label1);
+            this.tabB_GeAdvanceerd.Controls.Add(this.panel2);
+            this.tabB_GeAdvanceerd.Controls.Add(this.panel1);
             this.tabB_GeAdvanceerd.Controls.Add(this.cmbB_productenShow);
             this.tabB_GeAdvanceerd.Controls.Add(this.txtB_opmerkingen);
             this.tabB_GeAdvanceerd.Controls.Add(this.btnB_OpmerkingToevoegen);
             this.tabB_GeAdvanceerd.Controls.Add(this.btnB_Verwijderen);
             this.tabB_GeAdvanceerd.Controls.Add(this.btnB_Afrekenen);
             this.tabB_GeAdvanceerd.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabB_GeAdvanceerd.Location = new System.Drawing.Point(4, 22);
+            this.tabB_GeAdvanceerd.Location = new System.Drawing.Point(4, 28);
             this.tabB_GeAdvanceerd.Name = "tabB_GeAdvanceerd";
-            this.tabB_GeAdvanceerd.Size = new System.Drawing.Size(507, 564);
+            this.tabB_GeAdvanceerd.Size = new System.Drawing.Size(507, 558);
             this.tabB_GeAdvanceerd.TabIndex = 2;
             this.tabB_GeAdvanceerd.Text = "Geadvanceerd";
             this.tabB_GeAdvanceerd.UseVisualStyleBackColor = true;
@@ -387,17 +387,16 @@
             // 
             // txtB_opmerkingen
             // 
-            this.txtB_opmerkingen.Location = new System.Drawing.Point(146, 32);
+            this.txtB_opmerkingen.Location = new System.Drawing.Point(146, 38);
             this.txtB_opmerkingen.Multiline = true;
             this.txtB_opmerkingen.Name = "txtB_opmerkingen";
             this.txtB_opmerkingen.Size = new System.Drawing.Size(205, 71);
             this.txtB_opmerkingen.TabIndex = 3;
-            this.txtB_opmerkingen.Text = "Hier en opmerking toevoegen";
             // 
             // btnB_OpmerkingToevoegen
             // 
             this.btnB_OpmerkingToevoegen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnB_OpmerkingToevoegen.Location = new System.Drawing.Point(146, 213);
+            this.btnB_OpmerkingToevoegen.Location = new System.Drawing.Point(146, 226);
             this.btnB_OpmerkingToevoegen.Name = "btnB_OpmerkingToevoegen";
             this.btnB_OpmerkingToevoegen.Size = new System.Drawing.Size(205, 56);
             this.btnB_OpmerkingToevoegen.TabIndex = 2;
@@ -408,12 +407,13 @@
             // btnB_Verwijderen
             // 
             this.btnB_Verwijderen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnB_Verwijderen.Location = new System.Drawing.Point(146, 346);
+            this.btnB_Verwijderen.Location = new System.Drawing.Point(146, 342);
             this.btnB_Verwijderen.Name = "btnB_Verwijderen";
             this.btnB_Verwijderen.Size = new System.Drawing.Size(205, 56);
             this.btnB_Verwijderen.TabIndex = 1;
             this.btnB_Verwijderen.Text = "Bestelling Verwijderen";
             this.btnB_Verwijderen.UseVisualStyleBackColor = true;
+            this.btnB_Verwijderen.Click += new System.EventHandler(this.btnB_Verwijderen_Click);
             // 
             // btnB_Afrekenen
             // 
@@ -445,24 +445,75 @@
             // 
             // btn_Rekening
             // 
-            this.btn_Rekening.Location = new System.Drawing.Point(6, 33);
+            this.btn_Rekening.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Rekening.Location = new System.Drawing.Point(382, 33);
             this.btn_Rekening.Name = "btn_Rekening";
-            this.btn_Rekening.Size = new System.Drawing.Size(101, 51);
+            this.btn_Rekening.Size = new System.Drawing.Size(121, 51);
             this.btn_Rekening.TabIndex = 10;
             this.btn_Rekening.Text = "Rekening";
             this.btn_Rekening.UseVisualStyleBackColor = true;
             this.btn_Rekening.Click += new System.EventHandler(this.btn_Rekening_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel1.Location = new System.Drawing.Point(-12, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(127, 568);
+            this.panel1.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel2.Location = new System.Drawing.Point(390, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(121, 568);
+            this.panel2.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(146, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 16);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Selecteer besteld product:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(146, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 16);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Voer opmerking in :";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Yellow;
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(239, 509);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 49);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Opmerking ";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // BedieningForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 624);
+            this.BackColor = System.Drawing.Color.FloralWhite;
+            this.ClientSize = new System.Drawing.Size(518, 626);
             this.Controls.Add(this.lbl_IngelogdeMedewerker);
             this.Controls.Add(this.btn_Loguit);
             this.Controls.Add(this.tabB_volledig);
             this.Name = "BedieningForm";
             this.Text = "BedieningForm";
+            this.TransparencyKey = System.Drawing.Color.Yellow;
             this.tabB_volledig.ResumeLayout(false);
             this.tabB_Bestellen1.ResumeLayout(false);
             this.tabB_Bestellen1.PerformLayout();
@@ -498,7 +549,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ListBox listB_producten;
-        private System.Windows.Forms.Button btn_returnOverzicht;
         private System.Windows.Forms.Button btn_bevestig;
         private System.Windows.Forms.Button btn_Loguit;
         private System.Windows.Forms.Label lbl_IngelogdeMedewerker;
@@ -510,5 +560,10 @@
         private System.Windows.Forms.Button btnB_Verwijderen;
         private System.Windows.Forms.Button btnB_Afrekenen;
         private System.Windows.Forms.Button btn_Rekening;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
