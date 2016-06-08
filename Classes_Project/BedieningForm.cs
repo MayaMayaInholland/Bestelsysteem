@@ -1,20 +1,18 @@
-﻿using System;
+﻿using Classes_Project.Properties;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Classes_Project.Properties;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Classes_Project
 {
     public partial class BedieningForm : Form
     {
-        BestellingDAO bestellingDAO = new BestellingDAO();
+        private BestellingDAO bestellingDAO = new BestellingDAO();
         private Medewerker ingelogdemedewerker;
         private Bestelling bestelling;
         private List<Product> besteldeProducten = new List<Product>();
@@ -31,14 +29,15 @@ namespace Classes_Project
             lbl_IngelogdeMedewerker.Text = m.Voornaam;
             TafelDAO tafelDao = new TafelDAO();
             tafels = tafelDao.GetAllTafels();
-            SetTafelImages();
+            RefreshTafels();
         }
 
-        private void SetTafelImages()
+        private void RefreshTafels()
         {
+            TafelDAO tafelDao = new TafelDAO();
+            tafels = tafelDao.GetAllTafels();
             for (int i = 1; i <= tafels.Count; i++)
             {
-                Control.ControlCollection controls2 = tabB_TafelOverzicht.Controls;
                 foreach (Control c in tabB_TafelOverzicht.Controls)
                 {
                     if ((string)c.Tag == string.Format("tafel{0}", i))
@@ -78,19 +77,14 @@ namespace Classes_Project
                             {
                                 img = (Image)Resources.ResourceManager.GetObject("TafelBezet");
                                 text = i + "\n BEZET";
-
                             }
                             c.Text = text;
                             c.BackgroundImage = img;
                         }
                     }
-
-
-
                 }
             }
         }
-
 
         //tonen van alle lunch opties op listview
         private void lunchToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -152,20 +146,18 @@ namespace Classes_Project
             listB_producten.SelectedIndexChanged += listB_producten_SelectedIndexChanged;
         }
 
-
-        //verwijderen product uit listview 
+        //verwijderen product uit listview
         private void listview_producten_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            
             foreach (CustomListViewItem eachItem in listview_producten.SelectedItems)
             {
-                if(eachItem.Aantal > 1)
+                if (eachItem.Aantal > 1)
                 {
                     eachItem.Aantal--;
-                   
-                    for(int i = 0; i < besteldeProducten.Count(); i++)
+
+                    for (int i = 0; i < besteldeProducten.Count(); i++)
                     {
-                        if(besteldeProducten[i].Id == eachItem.id)
+                        if (besteldeProducten[i].Id == eachItem.id)
                         {
                             besteldeProducten[i].Aantal--;
                         }
@@ -181,7 +173,6 @@ namespace Classes_Project
         // Hierbij wordt de geselecteerde producten overgezet naar de listview
         private void listB_producten_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             Product product = listB_producten.SelectedItem as Product;
             if (product.Aantal == 0)
             {
@@ -224,70 +215,80 @@ namespace Classes_Project
                 listview_producten.Items.Add(item);
             }
         }
-     
-        //Medewerker kan terug naar tafeloverzicht ( als er niks besteld is, is er niks veranderd.) 
-        private void btn_returnOverzicht_Click(object sender, EventArgs e) => tabB_volledig.SelectedTab = tabB_TafelOverzicht;
+
+        //Medewerker kan terug naar tafeloverzicht ( als er niks besteld is, is er niks veranderd.)
+        private void btn_returnOverzicht_Click(object sender, EventArgs e)
+        {
+            tabB_volledig.SelectedTab = tabB_TafelOverzicht;
+            RefreshTafels();
+        } 
 
         // Tafel button clicks 1t/m 12
         private void btn_Tafel1_Click_1(object sender, EventArgs e)
         {
-            bestelling = Bestelling_bijTafel(1);
-            tabB_volledig.SelectedTab = tabB_Bestellen1;
+            tafelClick(1);
         }
+
         private void btn_Tafel2_Click(object sender, EventArgs e)
         {
-            bestelling = Bestelling_bijTafel(2);
-            tabB_volledig.SelectedTab = tabB_Bestellen1;
+            tafelClick(2);
         }
 
         private void btn_Tafel3_Click(object sender, EventArgs e)
         {
-            bestelling = Bestelling_bijTafel(3);
-            tabB_volledig.SelectedTab = tabB_Bestellen1;
+            tafelClick(3);
+
         }
 
         private void btn_Tafel4_Click(object sender, EventArgs e)
         {
-            bestelling = Bestelling_bijTafel(4);
-            tabB_volledig.SelectedTab = tabB_Bestellen1;
+            tafelClick(4);
+
         }
 
         private void btn_Tafel5_Click(object sender, EventArgs e)
         {
-            bestelling = Bestelling_bijTafel(5);
-            tabB_volledig.SelectedTab = tabB_Bestellen1;
+            tafelClick(5);
+
         }
 
         private void btn_Tafel6_Click(object sender, EventArgs e)
         {
-            bestelling = Bestelling_bijTafel(6);
-            tabB_volledig.SelectedTab = tabB_Bestellen1;
+            tafelClick(6);
+
         }
 
         private void btn_Tafel7_Click(object sender, EventArgs e)
         {
-            bestelling = Bestelling_bijTafel(7);
-            tabB_volledig.SelectedTab = tabB_Bestellen1;
+            tafelClick(7);
+
         }
 
         private void btn_Tafel8_Click(object sender, EventArgs e)
         {
-            bestelling = Bestelling_bijTafel(8);
-            tabB_volledig.SelectedTab = tabB_Bestellen1;
+            tafelClick(8);
+
         }
 
         private void btn_Tafel9_Click(object sender, EventArgs e)
         {
-            bestelling = Bestelling_bijTafel(9);
-            tabB_volledig.SelectedTab = tabB_Bestellen1;
+            tafelClick(9);
+
         }
 
         private void btn_Tafel10_Click(object sender, EventArgs e)
         {
-            bestelling = Bestelling_bijTafel(10);
-            tabB_volledig.SelectedTab = tabB_Bestellen1;
+            tafelClick(10);
+
         }
 
+        private void tafelClick(int tafelNummer)
+        {
+            bestelling = Bestelling_bijTafel(tafelNummer);
+            tabB_volledig.SelectedTab = tabB_Bestellen1;
+            geselecteerdeTafel = tafels.Where(t => t.Nummer == tafelNummer).FirstOrDefault();
+
+        }
         //Het terug halen van de bijhorende bestelling.
         public Bestelling Bestelling_bijTafel(int Tafelnr)
         {
@@ -314,7 +315,7 @@ namespace Classes_Project
         //Bestelling/ bestelde producten worden naar database geschreven
         private void btn_bevestig_Click(object sender, EventArgs e)
         {
-            bestelling.Tafel_id = tafel
+            bestelling.Tafel_id = geselecteerdeTafel.Id;
             bestelling.Medewerker_id = ingelogdemedewerker.Id;
             bestelling.Opmerking = " ";
             bestelling.Status = BestellingStatus.Open;
@@ -326,7 +327,6 @@ namespace Classes_Project
             bestellingDAO.Nieuwe_bestelling(bestelling);
         }
 
-
         //loguit button
         private void btn_Loguit_Click(object sender, EventArgs e)
         {
@@ -336,16 +336,13 @@ namespace Classes_Project
             this.Hide();
         }
 
-
         private void btn_Tafel1_MouseEnter(object sender, EventArgs e)
         {
-
         }
 
         private void btn_Tafel2_MouseEnter(object sender, EventArgs e)
         {
             // ShowTooltip(sender, 2);
-
         }
 
         private void ShowTooltip(object sender, int tafelNummer)
@@ -358,15 +355,22 @@ namespace Classes_Project
             if (bestelling != null)
             {
                 StringBuilder sb = new StringBuilder();
-                
+
                 if (bestelling.Bestelde_producten != null)
                 {
-                    sb.AppendLine("Bestellingnummer: " + bestelling.Id);
-                    sb.AppendLine("Tijd: " + bestelling.Tijd.ToShortTimeString());
-                    sb.AppendLine("Bestelde producten:");
-                    foreach (Product p in bestelling.Bestelde_producten)
+                    if (bestelling.Bestelde_producten.Count > 0)
                     {
-                        sb.AppendLine(p.Omschrijving);
+                        sb.AppendLine("Bestellingnummer: " + bestelling.Id);
+                        sb.AppendLine("Tijd: " + bestelling.Tijd.ToShortTimeString());
+                        sb.AppendLine("Bestelde producten:");
+                        foreach (Product p in bestelling.Bestelde_producten)
+                        {
+                            sb.AppendLine(p.Omschrijving);
+                        }
+                    }
+                    else
+                    {
+                        sb.AppendLine("Er zijn nog geen producten besteld bij deze tafel.");
                     }
                 }
                 else
@@ -382,7 +386,6 @@ namespace Classes_Project
             {
                 t.Show("Er is geen lopende bestelling bij deze tafel", (Button)sender);
             }
-
         }
 
         private void btn_Tafel2_MouseHover(object sender, EventArgs e)
@@ -445,23 +448,20 @@ namespace Classes_Project
         //combo box selecteren product voor comment
         private void cmbB_productenShow_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
         }
-        
-        
+
         private void btnB_OpmerkingToevoegen_Click(object sender, EventArgs e)
         {
             Product product = (Product)cmbB_productenShow.SelectedItem;
 
-            for(int i = 0; i < besteldeProducten.Count; i++)
+            for (int i = 0; i < besteldeProducten.Count; i++)
             {
-                if(besteldeProducten[i].Id == product.Id)
+                if (besteldeProducten[i].Id == product.Id)
                 {
                     besteldeProducten[i].Opmerking = txtB_opmerkingen.Text;
                     break;
                 }
             }
-
         }
 
         private void btn_Rekening_Click(object sender, EventArgs e)
@@ -469,7 +469,27 @@ namespace Classes_Project
             RekeningForm form = new RekeningForm(ingelogdemedewerker, 3);
             form.Show();
             this.Hide();
+        }
 
+        private void btn_Tafel1_MouseHover_1(object sender, EventArgs e)
+        {
+            ShowTooltip(sender, 1);
+        }
+
+        private void btn_Vrij_Click(object sender, EventArgs e)
+        {
+            ChangeTafelStatus(geselecteerdeTafel, TafelStatus.VRIJ);
+        }
+
+        private void btn_Bezet_Click(object sender, EventArgs e)
+        {
+            ChangeTafelStatus(geselecteerdeTafel, TafelStatus.BEZET);
+        }
+
+        private void ChangeTafelStatus(Tafel tafel, TafelStatus status)
+        {
+            TafelDAO tDao = new TafelDAO();
+            tDao.SetTafelStatus(tafel, status);
         }
     }
 }

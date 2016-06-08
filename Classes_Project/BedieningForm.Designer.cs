@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BedieningForm));
             this.tabB_volledig = new System.Windows.Forms.TabControl();
             this.tabB_Bestellen1 = new System.Windows.Forms.TabPage();
+            this.btn_Rekening = new System.Windows.Forms.Button();
             this.btn_bevestig = new System.Windows.Forms.Button();
             this.btn_returnOverzicht = new System.Windows.Forms.Button();
             this.listB_producten = new System.Windows.Forms.ListBox();
@@ -60,7 +61,8 @@
             this.btnB_Afrekenen = new System.Windows.Forms.Button();
             this.btn_Loguit = new System.Windows.Forms.Button();
             this.lbl_IngelogdeMedewerker = new System.Windows.Forms.Label();
-            this.btn_Rekening = new System.Windows.Forms.Button();
+            this.btn_Vrij = new System.Windows.Forms.Button();
+            this.btn_Bezet = new System.Windows.Forms.Button();
             this.tabB_volledig.SuspendLayout();
             this.tabB_Bestellen1.SuspendLayout();
             this.menuStrip_bestelling.SuspendLayout();
@@ -81,6 +83,8 @@
             // 
             // tabB_Bestellen1
             // 
+            this.tabB_Bestellen1.Controls.Add(this.btn_Bezet);
+            this.tabB_Bestellen1.Controls.Add(this.btn_Vrij);
             this.tabB_Bestellen1.Controls.Add(this.btn_Rekening);
             this.tabB_Bestellen1.Controls.Add(this.btn_bevestig);
             this.tabB_Bestellen1.Controls.Add(this.btn_returnOverzicht);
@@ -95,6 +99,16 @@
             this.tabB_Bestellen1.TabIndex = 0;
             this.tabB_Bestellen1.Text = "Bestellen";
             this.tabB_Bestellen1.UseVisualStyleBackColor = true;
+            // 
+            // btn_Rekening
+            // 
+            this.btn_Rekening.Location = new System.Drawing.Point(6, 33);
+            this.btn_Rekening.Name = "btn_Rekening";
+            this.btn_Rekening.Size = new System.Drawing.Size(101, 51);
+            this.btn_Rekening.TabIndex = 10;
+            this.btn_Rekening.Text = "Rekening";
+            this.btn_Rekening.UseVisualStyleBackColor = true;
+            this.btn_Rekening.Click += new System.EventHandler(this.btn_Rekening_Click);
             // 
             // btn_bevestig
             // 
@@ -221,9 +235,11 @@
             this.btn_Tafel1.Name = "btn_Tafel1";
             this.btn_Tafel1.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel1.TabIndex = 21;
+            this.btn_Tafel1.Tag = "tafel1";
             this.btn_Tafel1.Text = "1";
             this.btn_Tafel1.UseVisualStyleBackColor = true;
             this.btn_Tafel1.Click += new System.EventHandler(this.btn_Tafel1_Click_1);
+            this.btn_Tafel1.MouseHover += new System.EventHandler(this.btn_Tafel1_MouseHover_1);
             // 
             // btn_Tafel10
             // 
@@ -443,15 +459,25 @@
             this.lbl_IngelogdeMedewerker.Size = new System.Drawing.Size(0, 13);
             this.lbl_IngelogdeMedewerker.TabIndex = 2;
             // 
-            // btn_Rekening
+            // btn_Vrij
             // 
-            this.btn_Rekening.Location = new System.Drawing.Point(6, 33);
-            this.btn_Rekening.Name = "btn_Rekening";
-            this.btn_Rekening.Size = new System.Drawing.Size(101, 51);
-            this.btn_Rekening.TabIndex = 10;
-            this.btn_Rekening.Text = "Rekening";
-            this.btn_Rekening.UseVisualStyleBackColor = true;
-            this.btn_Rekening.Click += new System.EventHandler(this.btn_Rekening_Click);
+            this.btn_Vrij.Location = new System.Drawing.Point(142, 34);
+            this.btn_Vrij.Name = "btn_Vrij";
+            this.btn_Vrij.Size = new System.Drawing.Size(101, 51);
+            this.btn_Vrij.TabIndex = 11;
+            this.btn_Vrij.Text = "Maak vrij";
+            this.btn_Vrij.UseVisualStyleBackColor = true;
+            this.btn_Vrij.Click += new System.EventHandler(this.btn_Vrij_Click);
+            // 
+            // btn_Bezet
+            // 
+            this.btn_Bezet.Location = new System.Drawing.Point(249, 33);
+            this.btn_Bezet.Name = "btn_Bezet";
+            this.btn_Bezet.Size = new System.Drawing.Size(101, 51);
+            this.btn_Bezet.TabIndex = 12;
+            this.btn_Bezet.Text = "Maak bezet";
+            this.btn_Bezet.UseVisualStyleBackColor = true;
+            this.btn_Bezet.Click += new System.EventHandler(this.btn_Bezet_Click);
             // 
             // BedieningForm
             // 
@@ -510,5 +536,7 @@
         private System.Windows.Forms.Button btnB_Verwijderen;
         private System.Windows.Forms.Button btnB_Afrekenen;
         private System.Windows.Forms.Button btn_Rekening;
+        private System.Windows.Forms.Button btn_Bezet;
+        private System.Windows.Forms.Button btn_Vrij;
     }
 }

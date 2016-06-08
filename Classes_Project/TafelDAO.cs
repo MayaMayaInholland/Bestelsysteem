@@ -18,6 +18,13 @@ namespace Classes_Project
             conn.Open();
         }
 
+        public void SetTafelStatus(Tafel tafel, TafelStatus status)
+        {
+            SqlCommand cmd = new SqlCommand(String.Format("UPDATE Tafel SET status = {0} WHERE id = {1}", (int)status, tafel.Id), conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
         public Tafel GetByTafelNummer(int TafelNummer)
         {
             SqlCommand cmd = new SqlCommand(String.Format("SELECT * FROM Tafel WHERE nummer = {0} ", TafelNummer), conn);

@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Configuration;
+﻿using System.Data.SqlClient;
 
 namespace Classes_Project
 {
-    class RekeningDAO
+    internal class RekeningDAO
     {
-        SqlConnection conn;
+        private SqlConnection conn;
 
         public RekeningDAO()
         {
-
         }
 
         public Rekening GetByTafelID(int tafelID)
