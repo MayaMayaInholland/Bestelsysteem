@@ -125,7 +125,6 @@
     </Compile>
     <Compile Include="Tafel.cs" />
     <Compile Include="TafelDAO.cs" />
-    <Compile Include="TafelStatus.cs" />
     <Compile Include="Voorraad.cs" />
     <EmbeddedResource Include="BarOverzicht.resx">
       <DependentUpon>BarOverzicht.cs</DependentUpon>

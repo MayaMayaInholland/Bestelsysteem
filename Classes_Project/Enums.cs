@@ -28,4 +28,10 @@ namespace Classes_Project
         Gereed = 2,
         Geserveerd = 3
     }
+
+    public enum TafelStatus
+    {
+        BEZET = 0,
+        VRIJ
+    }
 }
