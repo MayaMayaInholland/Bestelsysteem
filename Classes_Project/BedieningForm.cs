@@ -53,7 +53,9 @@ namespace Classes_Project
                         {
                             BestellingDAO bDAO = new BestellingDAO();
                             ProductDAO pDAO = new ProductDAO();
-                            Bestelling bestelling = bDAO.GetByTafelId(huidigeTafel.Id);
+
+                            //pas bestelling constructor aan ?
+                            Bestelling bestelling = bDAO.GetBestellingByTafelId(huidigeTafel.Id);
                             List<Product> gereedGemeldeProducten = new List<Product>();
                             Image img;
                             string text = "";
@@ -88,24 +90,7 @@ namespace Classes_Project
             }
         }
 
-        //tellen aantal van product??
-        public void tel_AantalProducten(Bestelling bestelling)
-        {
-            for (int i = 0; i < bestelling.Bestelde_producten.Count(); i++)
-            {
-                for (int j = 0; j < bestelling.Bestelde_producten.Count(); i++)
-                {
-                    if (bestelling.Bestelde_producten[i].Id == bestelling.Bestelde_producten[j].Id)
-                    {
-                        bestelling.Bestelde_producten[i].Aantal++;
-                    }
 
-                }
-            }
-        }
-
-
-        //Er moet een methode hiervan gemaakt kunnen worden, alleen de categorie_id vershilt per click.
         //tonen van alle lunch opties op listview
         private void lunchToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -176,7 +161,7 @@ namespace Classes_Project
                 if(eachItem.Aantal > 1)
                 {
                     eachItem.Aantal--;
-                    Product product = new Product(eachItem.id, eachItem.categorie_id, eachItem.prijs, eachItem.voorraad, eachItem.btw, eachItem.Omschrijving);
+                   
                     for(int i = 0; i < besteldeProducten.Count(); i++)
                     {
                         if(besteldeProducten[i].Id == eachItem.id)
@@ -231,8 +216,8 @@ namespace Classes_Project
             foreach (Product productInList in besteldeProducten)
             {
                 productInList.Omschrijving = Regex.Replace(productInList.Omschrijving, @"[\d-]", string.Empty);
-                productInList.Omschrijving += productInList.Aantal.ToString();
                 CustomListViewItem item = new CustomListViewItem(productInList.Omschrijving, productInList.Id, productInList.Categorie_id, productInList.Prijs, productInList.Voorraad, productInList.Btw, productInList.Aantal);
+                item.SubItems.Add(productInList.Aantal.ToString());
                 listview_producten.Items.Add(item);
             }
         }
@@ -246,16 +231,12 @@ namespace Classes_Project
         private void btn_returnOverzicht_Click(object sender, EventArgs e) => tabB_volledig.SelectedTab = tabB_TafelOverzicht;
 
         //Tafel 1 wordt geopend.
-        private void btn_Tafel1_Click(object sender, EventArgs e)
+        private void btn_Tafel1_Click_1(object sender, EventArgs e)
         {
             bestelling = Bestelling_bijTafel(1);
-            tafelClick(1);
-        }
-
-        public void tafelClick(int tafelnr)
-        {
             tabB_volledig.SelectedTab = tabB_Bestellen1;
         }
+
 
         //Het terug halen van de bijhorende bestelling.
         public Bestelling Bestelling_bijTafel(int Tafelnr)
@@ -268,24 +249,24 @@ namespace Classes_Project
 
             if (tafel.Status == TafelStatus.VRIJ)
             {
-                bestelling = new Bestelling(tafel, ingelogdemedewerker.Id, DateTime.Now, BestellingStatus.Open, new List<Product>());
+                besteldeProducten.Clear();
+                bestelling = new Bestelling(tafel.Id, ingelogdemedewerker.Id, DateTime.Now, 0, " ", 1, 0, besteldeProducten);
                 return bestelling;
             }
             else if (tafel.Status == TafelStatus.BEZET)
             {
-                bestelling = bestellingDAO.GetByTafelId(Tafelnr);
+                bestelling = bestellingDAO.GetBestellingByTafelId(Tafelnr);
                 return bestelling;
             }
             return null;
         }
 
-        //Maak nieuwe bestelling aan.
-        private void btn_bevestig_Bestelling_Click(object sender, EventArgs e)
+        //Bestelling/ bestelde producten worden naar database geschreven
+        private void btn_bevestig_Click(object sender, EventArgs e)
         {
-
             bestelling.Tafel_id = 2;
             bestelling.Medewerker_id = ingelogdemedewerker.Id;
-            bestelling.opmerking = " ";
+            bestelling.Opmerking = " ";
             bestelling.Status = BestellingStatus.Open;
             bestelling.Tijd = DateTime.Now;
             bestelling.Totaalbedrag = 0;
@@ -294,6 +275,7 @@ namespace Classes_Project
 
             bestellingDAO.Nieuwe_bestelling(bestelling);
         }
+
 
         //loguit button
         private void btn_Loguit_Click(object sender, EventArgs e)
@@ -326,22 +308,22 @@ namespace Classes_Project
             if (bestelling != null)
             {
                 StringBuilder sb = new StringBuilder();
-                List<Product> producten = bestelling.Bestelde_producten;
-                if (producten != null)
+                
+                if (bestelling.Bestelde_producten != null)
                 {
                     sb.AppendLine("Bestellingnummer: " + bestelling.Id);
                     sb.AppendLine("Tijd: " + bestelling.Tijd.ToShortTimeString());
                     sb.AppendLine("Bestelde producten:");
-                    foreach (Product p in producten)
+                    foreach (Product p in bestelling.Bestelde_producten)
                     {
                         sb.AppendLine(p.Omschrijving);
                     }
                 }
                 else
                 {
-                    if (producten.Count < 1)
+                    if (bestelling.Bestelde_producten == null || bestelling.Bestelde_producten.Count == 0)
                     {
-                        //sb.AppendLine("Er is geen lopende bestelling bij deze tafel");
+                        sb.AppendLine("Er is geen lopende bestelling bij deze tafel");
                     }
                 }
                 t.Show(sb.ToString(), (Button)sender);
@@ -403,18 +385,5 @@ namespace Classes_Project
             ShowTooltip(sender, 10);
         }
 
-        private void btn_bevestig_Click(object sender, EventArgs e)
-        {
-            bestelling.Tafel_id = 2;
-            bestelling.Medewerker_id = ingelogdemedewerker.Id;
-            bestelling.opmerking = " ";
-            bestelling.Status = BestellingStatus.Open;
-            bestelling.Tijd = DateTime.Now;
-            bestelling.Totaalbedrag = 0;
-            bestelling.Fooi = 0;
-            bestelling.Bestelde_producten = besteldeProducten;
-
-            bestellingDAO.Nieuwe_bestelling(bestelling);
-        }
     }
 }

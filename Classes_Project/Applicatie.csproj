@@ -85,6 +85,7 @@
     <Compile Include="Bestelling.cs" />
     <Compile Include="BestellingDAO.cs" />
     <Compile Include="CustomListViewItem.cs" />
+    <Compile Include="Enums.cs" />
     <Compile Include="KeukenDAO.cs" />
     <Compile Include="KeukenOverzicht.cs">
       <SubType>Form</SubType>
