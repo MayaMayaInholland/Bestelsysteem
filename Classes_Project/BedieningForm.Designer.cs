@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BedieningForm));
             this.tabB_volledig = new System.Windows.Forms.TabControl();
             this.tabB_Bestellen1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Rekening = new System.Windows.Forms.Button();
             this.btn_bevestig = new System.Windows.Forms.Button();
             this.listB_producten = new System.Windows.Forms.ListBox();
             this.listview_producten = new System.Windows.Forms.ListView();
@@ -52,6 +54,10 @@
             this.btn_Tafel3 = new System.Windows.Forms.Button();
             this.btn_Tafel2 = new System.Windows.Forms.Button();
             this.tabB_GeAdvanceerd = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.cmbB_productenShow = new System.Windows.Forms.ComboBox();
             this.txtB_opmerkingen = new System.Windows.Forms.TextBox();
             this.btnB_OpmerkingToevoegen = new System.Windows.Forms.Button();
@@ -59,12 +65,8 @@
             this.btnB_Afrekenen = new System.Windows.Forms.Button();
             this.btn_Loguit = new System.Windows.Forms.Button();
             this.lbl_IngelogdeMedewerker = new System.Windows.Forms.Label();
-            this.btn_Rekening = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Vrij = new System.Windows.Forms.Button();
+            this.btn_Bezet = new System.Windows.Forms.Button();
             this.tabB_volledig.SuspendLayout();
             this.tabB_Bestellen1.SuspendLayout();
             this.menuStrip_bestelling.SuspendLayout();
@@ -84,10 +86,13 @@
             this.tabB_volledig.Size = new System.Drawing.Size(515, 590);
             this.tabB_volledig.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabB_volledig.TabIndex = 0;
+            this.tabB_volledig.SelectedIndexChanged += new System.EventHandler(this.tabB_volledig_SelectedIndexChanged);
             // 
             // tabB_Bestellen1
             // 
             this.tabB_Bestellen1.BackColor = System.Drawing.Color.White;
+            this.tabB_Bestellen1.Controls.Add(this.btn_Bezet);
+            this.tabB_Bestellen1.Controls.Add(this.btn_Vrij);
             this.tabB_Bestellen1.Controls.Add(this.button1);
             this.tabB_Bestellen1.Controls.Add(this.btn_Rekening);
             this.tabB_Bestellen1.Controls.Add(this.btn_bevestig);
@@ -97,10 +102,33 @@
             this.tabB_Bestellen1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabB_Bestellen1.Location = new System.Drawing.Point(4, 28);
             this.tabB_Bestellen1.Name = "tabB_Bestellen1";
-            this.tabB_Bestellen1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabB_Bestellen1.Padding = new System.Windows.Forms.Padding(3);
             this.tabB_Bestellen1.Size = new System.Drawing.Size(507, 558);
             this.tabB_Bestellen1.TabIndex = 0;
             this.tabB_Bestellen1.Text = "Bestellen";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Yellow;
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(239, 509);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 49);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Opmerking ";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_Rekening
+            // 
+            this.btn_Rekening.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Rekening.Location = new System.Drawing.Point(382, 33);
+            this.btn_Rekening.Name = "btn_Rekening";
+            this.btn_Rekening.Size = new System.Drawing.Size(121, 51);
+            this.btn_Rekening.TabIndex = 10;
+            this.btn_Rekening.Text = "Rekening";
+            this.btn_Rekening.UseVisualStyleBackColor = true;
+            this.btn_Rekening.Click += new System.EventHandler(this.btn_Rekening_Click);
             // 
             // btn_bevestig
             // 
@@ -202,7 +230,7 @@
             this.tabB_TafelOverzicht.Controls.Add(this.btn_Tafel2);
             this.tabB_TafelOverzicht.Location = new System.Drawing.Point(4, 28);
             this.tabB_TafelOverzicht.Name = "tabB_TafelOverzicht";
-            this.tabB_TafelOverzicht.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabB_TafelOverzicht.Padding = new System.Windows.Forms.Padding(3);
             this.tabB_TafelOverzicht.Size = new System.Drawing.Size(507, 558);
             this.tabB_TafelOverzicht.TabIndex = 1;
             this.tabB_TafelOverzicht.Text = "TafelOverzicht";
@@ -212,19 +240,23 @@
             // 
             this.btn_Tafel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel1.BackgroundImage")));
             this.btn_Tafel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Tafel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Tafel1.Location = new System.Drawing.Point(65, 18);
             this.btn_Tafel1.Name = "btn_Tafel1";
             this.btn_Tafel1.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel1.TabIndex = 21;
+            this.btn_Tafel1.Tag = "tafel1";
             this.btn_Tafel1.Text = "1";
             this.btn_Tafel1.UseVisualStyleBackColor = true;
             this.btn_Tafel1.Click += new System.EventHandler(this.btn_Tafel1_Click_1);
+            this.btn_Tafel1.MouseHover += new System.EventHandler(this.btn_Tafel1_MouseHover_1);
             // 
             // btn_Tafel10
             // 
             this.btn_Tafel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel10.BackgroundImage")));
             this.btn_Tafel10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel10.Font = new System.Drawing.Font("Arial", 9.75F);
             this.btn_Tafel10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Tafel10.Location = new System.Drawing.Point(322, 426);
             this.btn_Tafel10.Name = "btn_Tafel10";
@@ -240,6 +272,7 @@
             // 
             this.btn_Tafel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel9.BackgroundImage")));
             this.btn_Tafel9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel9.Font = new System.Drawing.Font("Arial", 9.75F);
             this.btn_Tafel9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Tafel9.Location = new System.Drawing.Point(65, 426);
             this.btn_Tafel9.Name = "btn_Tafel9";
@@ -255,6 +288,7 @@
             // 
             this.btn_Tafel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel8.BackgroundImage")));
             this.btn_Tafel8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel8.Font = new System.Drawing.Font("Arial", 9.75F);
             this.btn_Tafel8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Tafel8.Location = new System.Drawing.Point(322, 324);
             this.btn_Tafel8.Name = "btn_Tafel8";
@@ -270,6 +304,7 @@
             // 
             this.btn_Tafel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel7.BackgroundImage")));
             this.btn_Tafel7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel7.Font = new System.Drawing.Font("Arial", 9.75F);
             this.btn_Tafel7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Tafel7.Location = new System.Drawing.Point(65, 324);
             this.btn_Tafel7.Name = "btn_Tafel7";
@@ -285,6 +320,7 @@
             // 
             this.btn_Tafel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel6.BackgroundImage")));
             this.btn_Tafel6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel6.Font = new System.Drawing.Font("Arial", 9.75F);
             this.btn_Tafel6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Tafel6.Location = new System.Drawing.Point(322, 222);
             this.btn_Tafel6.Name = "btn_Tafel6";
@@ -300,6 +336,7 @@
             // 
             this.btn_Tafel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel5.BackgroundImage")));
             this.btn_Tafel5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel5.Font = new System.Drawing.Font("Arial", 9.75F);
             this.btn_Tafel5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Tafel5.Location = new System.Drawing.Point(65, 222);
             this.btn_Tafel5.Name = "btn_Tafel5";
@@ -315,6 +352,7 @@
             // 
             this.btn_Tafel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel4.BackgroundImage")));
             this.btn_Tafel4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel4.Font = new System.Drawing.Font("Arial", 9.75F);
             this.btn_Tafel4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Tafel4.Location = new System.Drawing.Point(322, 120);
             this.btn_Tafel4.Name = "btn_Tafel4";
@@ -330,6 +368,7 @@
             // 
             this.btn_Tafel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel3.BackgroundImage")));
             this.btn_Tafel3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel3.Font = new System.Drawing.Font("Arial", 9.75F);
             this.btn_Tafel3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Tafel3.Location = new System.Drawing.Point(65, 120);
             this.btn_Tafel3.Name = "btn_Tafel3";
@@ -345,6 +384,7 @@
             // 
             this.btn_Tafel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel2.BackgroundImage")));
             this.btn_Tafel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel2.Font = new System.Drawing.Font("Arial", 9.75F);
             this.btn_Tafel2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Tafel2.Location = new System.Drawing.Point(322, 18);
             this.btn_Tafel2.Name = "btn_Tafel2";
@@ -375,6 +415,42 @@
             this.tabB_GeAdvanceerd.TabIndex = 2;
             this.tabB_GeAdvanceerd.Text = "Geadvanceerd";
             this.tabB_GeAdvanceerd.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(146, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 16);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Voer opmerking in :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(146, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 16);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Selecteer besteld product:";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel2.Location = new System.Drawing.Point(390, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(121, 568);
+            this.panel2.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel1.Location = new System.Drawing.Point(-12, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(127, 568);
+            this.panel1.TabIndex = 5;
             // 
             // cmbB_productenShow
             // 
@@ -443,64 +519,27 @@
             this.lbl_IngelogdeMedewerker.Size = new System.Drawing.Size(0, 13);
             this.lbl_IngelogdeMedewerker.TabIndex = 2;
             // 
-            // btn_Rekening
+            // btn_Vrij
             // 
-            this.btn_Rekening.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Rekening.Location = new System.Drawing.Point(382, 33);
-            this.btn_Rekening.Name = "btn_Rekening";
-            this.btn_Rekening.Size = new System.Drawing.Size(121, 51);
-            this.btn_Rekening.TabIndex = 10;
-            this.btn_Rekening.Text = "Rekening";
-            this.btn_Rekening.UseVisualStyleBackColor = true;
-            this.btn_Rekening.Click += new System.EventHandler(this.btn_Rekening_Click);
+            this.btn_Vrij.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Vrij.Location = new System.Drawing.Point(85, 33);
+            this.btn_Vrij.Name = "btn_Vrij";
+            this.btn_Vrij.Size = new System.Drawing.Size(121, 51);
+            this.btn_Vrij.TabIndex = 12;
+            this.btn_Vrij.Text = "Maak vrij";
+            this.btn_Vrij.UseVisualStyleBackColor = true;
+            this.btn_Vrij.Click += new System.EventHandler(this.btn_Vrij_Click);
             // 
-            // panel1
+            // btn_Bezet
             // 
-            this.panel1.BackColor = System.Drawing.Color.YellowGreen;
-            this.panel1.Location = new System.Drawing.Point(-12, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(127, 568);
-            this.panel1.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.YellowGreen;
-            this.panel2.Location = new System.Drawing.Point(390, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(121, 568);
-            this.panel2.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(146, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 16);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Selecteer besteld product:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(146, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 16);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Voer opmerking in :";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Yellow;
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(239, 509);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 49);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Opmerking ";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Bezet.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Bezet.Location = new System.Drawing.Point(212, 33);
+            this.btn_Bezet.Name = "btn_Bezet";
+            this.btn_Bezet.Size = new System.Drawing.Size(121, 51);
+            this.btn_Bezet.TabIndex = 13;
+            this.btn_Bezet.Text = "maak Bezet";
+            this.btn_Bezet.UseVisualStyleBackColor = true;
+            this.btn_Bezet.Click += new System.EventHandler(this.btn_Bezet_Click);
             // 
             // BedieningForm
             // 
@@ -565,5 +604,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Vrij;
+        private System.Windows.Forms.Button btn_Bezet;
     }
 }
