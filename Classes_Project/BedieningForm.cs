@@ -152,7 +152,7 @@ namespace Classes_Project
         }
 
 
-        //verwijderen product uit listview ( nog zonder aantal.... )
+        //verwijderen product uit listview 
         private void listview_producten_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             
@@ -190,6 +190,7 @@ namespace Classes_Project
             showBesteldeProducten();
         }
 
+        //Methode voor het samenvoegen van listviewitems en het tonen van de juiste aantal.
         private void showBesteldeProducten()
         {
             string omschrijving = listB_producten.SelectedItems[0].ToString();
@@ -221,22 +222,69 @@ namespace Classes_Project
                 listview_producten.Items.Add(item);
             }
         }
-
-        public void aantalverminderen()
-        {
-            
-        }
-
+     
         //Medewerker kan terug naar tafeloverzicht ( als er niks besteld is, is er niks veranderd.) 
         private void btn_returnOverzicht_Click(object sender, EventArgs e) => tabB_volledig.SelectedTab = tabB_TafelOverzicht;
 
-        //Tafel 1 wordt geopend.
+        // Tafel button clicks 1t/m 12
         private void btn_Tafel1_Click_1(object sender, EventArgs e)
         {
             bestelling = Bestelling_bijTafel(1);
             tabB_volledig.SelectedTab = tabB_Bestellen1;
         }
+        private void btn_Tafel2_Click(object sender, EventArgs e)
+        {
+            bestelling = Bestelling_bijTafel(2);
+            tabB_volledig.SelectedTab = tabB_Bestellen1;
+        }
 
+        private void btn_Tafel3_Click(object sender, EventArgs e)
+        {
+            bestelling = Bestelling_bijTafel(3);
+            tabB_volledig.SelectedTab = tabB_Bestellen1;
+        }
+
+        private void btn_Tafel4_Click(object sender, EventArgs e)
+        {
+            bestelling = Bestelling_bijTafel(4);
+            tabB_volledig.SelectedTab = tabB_Bestellen1;
+        }
+
+        private void btn_Tafel5_Click(object sender, EventArgs e)
+        {
+            bestelling = Bestelling_bijTafel(5);
+            tabB_volledig.SelectedTab = tabB_Bestellen1;
+        }
+
+        private void btn_Tafel6_Click(object sender, EventArgs e)
+        {
+            bestelling = Bestelling_bijTafel(6);
+            tabB_volledig.SelectedTab = tabB_Bestellen1;
+        }
+
+        private void btn_Tafel7_Click(object sender, EventArgs e)
+        {
+            bestelling = Bestelling_bijTafel(7);
+            tabB_volledig.SelectedTab = tabB_Bestellen1;
+        }
+
+        private void btn_Tafel8_Click(object sender, EventArgs e)
+        {
+            bestelling = Bestelling_bijTafel(8);
+            tabB_volledig.SelectedTab = tabB_Bestellen1;
+        }
+
+        private void btn_Tafel9_Click(object sender, EventArgs e)
+        {
+            bestelling = Bestelling_bijTafel(9);
+            tabB_volledig.SelectedTab = tabB_Bestellen1;
+        }
+
+        private void btn_Tafel10_Click(object sender, EventArgs e)
+        {
+            bestelling = Bestelling_bijTafel(10);
+            tabB_volledig.SelectedTab = tabB_Bestellen1;
+        }
 
         //Het terug halen van de bijhorende bestelling.
         public Bestelling Bestelling_bijTafel(int Tafelnr)

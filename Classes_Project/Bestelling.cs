@@ -21,7 +21,7 @@ namespace Classes_Project
         public int Totaalbedrag { get; set; }
 
         // Algemene constructor.
-        public Bestelling( int tafel_id, int medewerker_id, DateTime tijd, int totaalbedrag, string opmerking, int status, int fooi, List<Product> Besteld_producten)
+        public Bestelling( int tafel_id, int medewerker_id, DateTime tijd, int totaalbedrag, string opmerking, int status, int fooi, List<Product> besteld_producten)
         {
             this.Tafel_id = tafel_id;
             this.Medewerker_id = medewerker_id;
@@ -30,6 +30,7 @@ namespace Classes_Project
             this.Opmerking = opmerking;
             this.StatusInt = status;
             this.Fooi = fooi;
+            this.Bestelde_producten = besteld_producten;
         }
 
         // BestellingDAO bestelling constructor.

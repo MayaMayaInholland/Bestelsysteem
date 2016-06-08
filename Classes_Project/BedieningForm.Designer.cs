@@ -42,6 +42,7 @@
             this.dinnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabB_TafelOverzicht = new System.Windows.Forms.TabPage();
+            this.btn_Tafel1 = new System.Windows.Forms.Button();
             this.btn_Tafel10 = new System.Windows.Forms.Button();
             this.btn_Tafel9 = new System.Windows.Forms.Button();
             this.btn_Tafel8 = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@
             this.btn_Tafel2 = new System.Windows.Forms.Button();
             this.btn_Loguit = new System.Windows.Forms.Button();
             this.lbl_IngelogdeMedewerker = new System.Windows.Forms.Label();
-            this.btn_Tafel1 = new System.Windows.Forms.Button();
             this.tabB_volledig.SuspendLayout();
             this.tabB_Bestellen1.SuspendLayout();
             this.menuStrip_bestelling.SuspendLayout();
@@ -88,9 +88,10 @@
             // 
             // btn_bevestig
             // 
-            this.btn_bevestig.Location = new System.Drawing.Point(386, 525);
+            this.btn_bevestig.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_bevestig.Location = new System.Drawing.Point(386, 509);
             this.btn_bevestig.Name = "btn_bevestig";
-            this.btn_bevestig.Size = new System.Drawing.Size(117, 33);
+            this.btn_bevestig.Size = new System.Drawing.Size(117, 49);
             this.btn_bevestig.TabIndex = 9;
             this.btn_bevestig.Text = "Bevestig";
             this.btn_bevestig.UseVisualStyleBackColor = true;
@@ -98,9 +99,10 @@
             // 
             // btn_returnOverzicht
             // 
-            this.btn_returnOverzicht.Location = new System.Drawing.Point(386, 39);
+            this.btn_returnOverzicht.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_returnOverzicht.Location = new System.Drawing.Point(386, 33);
             this.btn_returnOverzicht.Name = "btn_returnOverzicht";
-            this.btn_returnOverzicht.Size = new System.Drawing.Size(117, 32);
+            this.btn_returnOverzicht.Size = new System.Drawing.Size(117, 51);
             this.btn_returnOverzicht.TabIndex = 8;
             this.btn_returnOverzicht.Text = "TafelOverzicht";
             this.btn_returnOverzicht.UseVisualStyleBackColor = true;
@@ -109,9 +111,9 @@
             // listB_producten
             // 
             this.listB_producten.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listB_producten.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listB_producten.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listB_producten.FormattingEnabled = true;
-            this.listB_producten.ItemHeight = 18;
+            this.listB_producten.ItemHeight = 20;
             this.listB_producten.Location = new System.Drawing.Point(0, 90);
             this.listB_producten.MultiColumn = true;
             this.listB_producten.Name = "listB_producten";
@@ -125,7 +127,7 @@
             this.columnHeader1,
             this.columnHeader2});
             this.listview_producten.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listview_producten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listview_producten.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listview_producten.Location = new System.Drawing.Point(1, 312);
             this.listview_producten.Name = "listview_producten";
             this.listview_producten.Size = new System.Drawing.Size(506, 191);
@@ -147,34 +149,36 @@
             // menuStrip_bestelling
             // 
             this.menuStrip_bestelling.BackColor = System.Drawing.Color.IndianRed;
+            this.menuStrip_bestelling.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip_bestelling.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lunchToolStripMenuItem,
             this.dinnerToolStripMenuItem,
             this.drankToolStripMenuItem});
             this.menuStrip_bestelling.Location = new System.Drawing.Point(3, 3);
             this.menuStrip_bestelling.Name = "menuStrip_bestelling";
-            this.menuStrip_bestelling.Size = new System.Drawing.Size(501, 24);
+            this.menuStrip_bestelling.Size = new System.Drawing.Size(501, 27);
             this.menuStrip_bestelling.TabIndex = 3;
             this.menuStrip_bestelling.Text = "menuStrip1";
             // 
             // lunchToolStripMenuItem
             // 
             this.lunchToolStripMenuItem.Name = "lunchToolStripMenuItem";
-            this.lunchToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.lunchToolStripMenuItem.Size = new System.Drawing.Size(70, 23);
             this.lunchToolStripMenuItem.Text = "Lunch";
             this.lunchToolStripMenuItem.Click += new System.EventHandler(this.lunchToolStripMenuItem_Click_1);
             // 
             // dinnerToolStripMenuItem
             // 
             this.dinnerToolStripMenuItem.Name = "dinnerToolStripMenuItem";
-            this.dinnerToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.dinnerToolStripMenuItem.Size = new System.Drawing.Size(72, 23);
             this.dinnerToolStripMenuItem.Text = "Dinner";
             this.dinnerToolStripMenuItem.Click += new System.EventHandler(this.dinnerToolStripMenuItem_Click_1);
             // 
             // drankToolStripMenuItem
             // 
+            this.drankToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.drankToolStripMenuItem.Name = "drankToolStripMenuItem";
-            this.drankToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.drankToolStripMenuItem.Size = new System.Drawing.Size(67, 23);
             this.drankToolStripMenuItem.Text = "Drank";
             this.drankToolStripMenuItem.Click += new System.EventHandler(this.drankToolStripMenuItem_Click_1);
             // 
@@ -198,18 +202,32 @@
             this.tabB_TafelOverzicht.Text = "TafelOverzicht";
             this.tabB_TafelOverzicht.UseVisualStyleBackColor = true;
             // 
+            // btn_Tafel1
+            // 
+            this.btn_Tafel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel1.BackgroundImage")));
+            this.btn_Tafel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tafel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Tafel1.Location = new System.Drawing.Point(65, 18);
+            this.btn_Tafel1.Name = "btn_Tafel1";
+            this.btn_Tafel1.Size = new System.Drawing.Size(105, 96);
+            this.btn_Tafel1.TabIndex = 21;
+            this.btn_Tafel1.Text = "1";
+            this.btn_Tafel1.UseVisualStyleBackColor = true;
+            this.btn_Tafel1.Click += new System.EventHandler(this.btn_Tafel1_Click_1);
+            // 
             // btn_Tafel10
             // 
             this.btn_Tafel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel10.BackgroundImage")));
             this.btn_Tafel10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Tafel10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Tafel10.Location = new System.Drawing.Point(260, 426);
+            this.btn_Tafel10.Location = new System.Drawing.Point(322, 426);
             this.btn_Tafel10.Name = "btn_Tafel10";
             this.btn_Tafel10.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel10.TabIndex = 20;
             this.btn_Tafel10.Tag = "tafel10";
             this.btn_Tafel10.Text = "10";
             this.btn_Tafel10.UseVisualStyleBackColor = true;
+            this.btn_Tafel10.Click += new System.EventHandler(this.btn_Tafel10_Click);
             this.btn_Tafel10.MouseHover += new System.EventHandler(this.btn_Tafel10_MouseHover);
             // 
             // btn_Tafel9
@@ -217,13 +235,14 @@
             this.btn_Tafel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel9.BackgroundImage")));
             this.btn_Tafel9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Tafel9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Tafel9.Location = new System.Drawing.Point(45, 426);
+            this.btn_Tafel9.Location = new System.Drawing.Point(65, 426);
             this.btn_Tafel9.Name = "btn_Tafel9";
             this.btn_Tafel9.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel9.TabIndex = 19;
             this.btn_Tafel9.Tag = "tafel9";
             this.btn_Tafel9.Text = "9";
             this.btn_Tafel9.UseVisualStyleBackColor = true;
+            this.btn_Tafel9.Click += new System.EventHandler(this.btn_Tafel9_Click);
             this.btn_Tafel9.MouseHover += new System.EventHandler(this.btn_Tafel9_MouseHover);
             // 
             // btn_Tafel8
@@ -231,13 +250,14 @@
             this.btn_Tafel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel8.BackgroundImage")));
             this.btn_Tafel8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Tafel8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Tafel8.Location = new System.Drawing.Point(260, 324);
+            this.btn_Tafel8.Location = new System.Drawing.Point(322, 324);
             this.btn_Tafel8.Name = "btn_Tafel8";
             this.btn_Tafel8.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel8.TabIndex = 18;
             this.btn_Tafel8.Tag = "tafel8";
             this.btn_Tafel8.Text = "8";
             this.btn_Tafel8.UseVisualStyleBackColor = true;
+            this.btn_Tafel8.Click += new System.EventHandler(this.btn_Tafel8_Click);
             this.btn_Tafel8.MouseHover += new System.EventHandler(this.btn_Tafel8_MouseHover);
             // 
             // btn_Tafel7
@@ -245,13 +265,14 @@
             this.btn_Tafel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel7.BackgroundImage")));
             this.btn_Tafel7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Tafel7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Tafel7.Location = new System.Drawing.Point(45, 324);
+            this.btn_Tafel7.Location = new System.Drawing.Point(65, 324);
             this.btn_Tafel7.Name = "btn_Tafel7";
             this.btn_Tafel7.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel7.TabIndex = 17;
             this.btn_Tafel7.Tag = "tafel7";
             this.btn_Tafel7.Text = "7";
             this.btn_Tafel7.UseVisualStyleBackColor = true;
+            this.btn_Tafel7.Click += new System.EventHandler(this.btn_Tafel7_Click);
             this.btn_Tafel7.MouseHover += new System.EventHandler(this.btn_Tafel7_MouseHover);
             // 
             // btn_Tafel6
@@ -259,13 +280,14 @@
             this.btn_Tafel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel6.BackgroundImage")));
             this.btn_Tafel6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Tafel6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Tafel6.Location = new System.Drawing.Point(260, 222);
+            this.btn_Tafel6.Location = new System.Drawing.Point(322, 222);
             this.btn_Tafel6.Name = "btn_Tafel6";
             this.btn_Tafel6.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel6.TabIndex = 16;
             this.btn_Tafel6.Tag = "tafel6";
             this.btn_Tafel6.Text = "6";
             this.btn_Tafel6.UseVisualStyleBackColor = true;
+            this.btn_Tafel6.Click += new System.EventHandler(this.btn_Tafel6_Click);
             this.btn_Tafel6.MouseHover += new System.EventHandler(this.btn_Tafel6_MouseHover);
             // 
             // btn_Tafel5
@@ -273,13 +295,14 @@
             this.btn_Tafel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel5.BackgroundImage")));
             this.btn_Tafel5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Tafel5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Tafel5.Location = new System.Drawing.Point(45, 222);
+            this.btn_Tafel5.Location = new System.Drawing.Point(65, 222);
             this.btn_Tafel5.Name = "btn_Tafel5";
             this.btn_Tafel5.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel5.TabIndex = 15;
             this.btn_Tafel5.Tag = "tafel5";
             this.btn_Tafel5.Text = "5";
             this.btn_Tafel5.UseVisualStyleBackColor = true;
+            this.btn_Tafel5.Click += new System.EventHandler(this.btn_Tafel5_Click);
             this.btn_Tafel5.MouseHover += new System.EventHandler(this.btn_Tafel5_MouseHover);
             // 
             // btn_Tafel4
@@ -287,13 +310,14 @@
             this.btn_Tafel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel4.BackgroundImage")));
             this.btn_Tafel4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Tafel4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Tafel4.Location = new System.Drawing.Point(260, 120);
+            this.btn_Tafel4.Location = new System.Drawing.Point(322, 120);
             this.btn_Tafel4.Name = "btn_Tafel4";
             this.btn_Tafel4.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel4.TabIndex = 14;
             this.btn_Tafel4.Tag = "tafel4";
             this.btn_Tafel4.Text = "4";
             this.btn_Tafel4.UseVisualStyleBackColor = true;
+            this.btn_Tafel4.Click += new System.EventHandler(this.btn_Tafel4_Click);
             this.btn_Tafel4.MouseHover += new System.EventHandler(this.btn_Tafel4_MouseHover);
             // 
             // btn_Tafel3
@@ -301,13 +325,14 @@
             this.btn_Tafel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel3.BackgroundImage")));
             this.btn_Tafel3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Tafel3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Tafel3.Location = new System.Drawing.Point(45, 120);
+            this.btn_Tafel3.Location = new System.Drawing.Point(65, 120);
             this.btn_Tafel3.Name = "btn_Tafel3";
             this.btn_Tafel3.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel3.TabIndex = 13;
             this.btn_Tafel3.Tag = "tafel3";
             this.btn_Tafel3.Text = "3";
             this.btn_Tafel3.UseVisualStyleBackColor = true;
+            this.btn_Tafel3.Click += new System.EventHandler(this.btn_Tafel3_Click);
             this.btn_Tafel3.MouseHover += new System.EventHandler(this.btn_Tafel3_MouseHover);
             // 
             // btn_Tafel2
@@ -315,13 +340,14 @@
             this.btn_Tafel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel2.BackgroundImage")));
             this.btn_Tafel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Tafel2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Tafel2.Location = new System.Drawing.Point(260, 18);
+            this.btn_Tafel2.Location = new System.Drawing.Point(322, 18);
             this.btn_Tafel2.Name = "btn_Tafel2";
             this.btn_Tafel2.Size = new System.Drawing.Size(105, 96);
             this.btn_Tafel2.TabIndex = 12;
             this.btn_Tafel2.Tag = "tafel2";
             this.btn_Tafel2.Text = "2";
             this.btn_Tafel2.UseVisualStyleBackColor = true;
+            this.btn_Tafel2.Click += new System.EventHandler(this.btn_Tafel2_Click);
             this.btn_Tafel2.MouseEnter += new System.EventHandler(this.btn_Tafel2_MouseEnter);
             this.btn_Tafel2.MouseHover += new System.EventHandler(this.btn_Tafel2_MouseHover);
             // 
@@ -342,19 +368,6 @@
             this.lbl_IngelogdeMedewerker.Name = "lbl_IngelogdeMedewerker";
             this.lbl_IngelogdeMedewerker.Size = new System.Drawing.Size(0, 13);
             this.lbl_IngelogdeMedewerker.TabIndex = 2;
-            // 
-            // btn_Tafel1
-            // 
-            this.btn_Tafel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Tafel1.BackgroundImage")));
-            this.btn_Tafel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Tafel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Tafel1.Location = new System.Drawing.Point(45, 18);
-            this.btn_Tafel1.Name = "btn_Tafel1";
-            this.btn_Tafel1.Size = new System.Drawing.Size(105, 96);
-            this.btn_Tafel1.TabIndex = 21;
-            this.btn_Tafel1.Text = "1";
-            this.btn_Tafel1.UseVisualStyleBackColor = true;
-            this.btn_Tafel1.Click += new System.EventHandler(this.btn_Tafel1_Click_1);
             // 
             // BedieningForm
             // 
