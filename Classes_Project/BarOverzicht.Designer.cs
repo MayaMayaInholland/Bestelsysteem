@@ -119,7 +119,6 @@
             this.Controls.Add(this.btn_Loguit);
             this.Controls.Add(this.label42);
             this.Controls.Add(this.Overzichtbar);
-            this.Enabled = false;
             this.Name = "BarOverzicht";
             this.Text = "BarOverzicht";
             this.Overzichtbar.ResumeLayout(false);
