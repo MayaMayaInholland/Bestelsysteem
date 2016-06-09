@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms; 
 
 namespace Classes_Project
 {
@@ -17,28 +17,41 @@ namespace Classes_Project
         private List<Product> besteldeProducten = new List<Product>();
         private int tafelID;
 
-        public RekeningForm(Medewerker m)
+        public RekeningForm(Medewerker m, int tafelid)
         {
             InitializeComponent();
-
+            tafelID = tafelid;
             ingelogdeMedewerker = m;
             lbl_IngelogdeMedewerker.Text = m.Voornaam;
-            //init producten lijst
-
+            InitForm();
         }
 
-        private void InitForm()
+        public void InitForm()
         {
             RekeningDAO rekeningdao = new RekeningDAO();
             rekening = rekeningdao.GetByTafelID(tafelID);
-            lbl_Totaal.Text = rekening.Bereken_Totaal().ToString();
+            int totaalBedrag = 0;
             foreach (Product product in rekening.Bestelling.Bestelde_producten)
             {
-                ListViewItem item = new ListViewItem(product.Id.ToString());
-                item.SubItems.Add(product.Omschrijving);
+                int totaalProduct = product.Prijs * product.Btw * product.Aantal;
+                ListViewItem item = new ListViewItem(product.Omschrijving);
                 item.SubItems.Add(product.Prijs.ToString());
+                item.SubItems.Add(product.Btw.ToString());
                 item.SubItems.Add(product.Aantal.ToString());
+                item.SubItems.Add(totaalProduct.ToString());
+
+                totaalBedrag += totaalProduct;
+
+                listR_ViewRekening.Items.Add(item);
             }
+            lbl_Totaal.Text = totaalBedrag.ToString();
+        }
+
+        private void btnR_Return_Click(object sender, EventArgs e)
+        {
+            BedieningForm bedieningform = new BedieningForm(ingelogdeMedewerker);
+            bedieningform.Show();
+            this.Hide();
         }
     }
 }

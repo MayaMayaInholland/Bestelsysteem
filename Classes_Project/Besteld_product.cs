@@ -8,8 +8,9 @@ namespace Classes_Project
 {
     class Besteld_product
     {
-        //veiligheid controleren ( properties correct toegepast ? )
-        public int Id { get; set; }
+        private int id;
+        
+        public int Id { get; private set; }
         public int Bestelling_id { get; set; }
         public int Product_id { get; set; }
         public int Status { get; set; }
@@ -22,7 +23,7 @@ namespace Classes_Project
 
         public Besteld_product(int id, int Bestelling_id, int Product_id, int Status, int Aantal, string Opmerking, int Categorie_id, string Omschrijving, int Tafel_nummer)
         {
-            this.Id = id;
+            this.id = id;
             this.Bestelling_id = Bestelling_id;
             this.Product_id = Product_id;
             this.Status = Status;
@@ -32,5 +33,19 @@ namespace Classes_Project
             this.Categorie_id = Categorie_id;
             this.Tafel_nummer = Tafel_nummer;
         }
+
+
+        // test constructor
+        public Besteld_product(int id, int Bestelling_id, int Product_id, int status, int Aantal, string Opmerking, int categorie_id, string Omschrijving)
+        {
+            this.id = id;
+            this.Bestelling_id = Bestelling_id;
+            this.Product_id = Product_id;
+            this.Status = status;
+            this.Aantal = Aantal;
+            this.Opmerking = Opmerking;
+            this.Omschrijving = Omschrijving;
+            this.Categorie_id = categorie_id;
+        } 
     }
 }

@@ -11,6 +11,7 @@ namespace Classes_Project
         public string Betaalwijze { get; set; }
         public int Fooi { get; set; }
         public Bestelling Bestelling { get; set; }
+        public string Opmerkingen { get; set; }
 
         public Rekening(Bestelling bestelling)
         {
@@ -28,5 +29,6 @@ namespace Classes_Project
 
             return totaal;
         }
+
     }
 }

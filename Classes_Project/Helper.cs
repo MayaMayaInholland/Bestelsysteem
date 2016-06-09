@@ -11,33 +11,5 @@ namespace Classes_Project
     {
         public static string ConnectionString = ConfigurationManager.ConnectionStrings["ReserveringenConnectionStringsSQL"].ConnectionString;
     }
-
-    public enum MedewerkerRol
-    {
-        Keuken,
-        Bediening,
-        Manager,
-        Bar
-    }
-
-    public enum BestellingStatus
-    {
-        Open = 1,
-        Gereed,
-        Geserveerd,
-        Betaald
-    }
-    
-    public enum ProductStatus
-    {
-        Besteld = 1,
-        Gereed,
-        Geserveerd
-    }
-
-    public enum MenuCategorie
-    {
-        Lunch,
-        Dinner
-    }
+  
 }

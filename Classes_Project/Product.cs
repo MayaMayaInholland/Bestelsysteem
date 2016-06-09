@@ -15,6 +15,7 @@ namespace Classes_Project
         public int Voorraad { get; set; }
         public string Omschrijving { get; set; }
         public int Aantal { get; set; }
+        public string Opmerking { get; set; }
         public ProductStatus status { get; set; }
 
 
@@ -28,15 +29,15 @@ namespace Classes_Project
             this.Omschrijving = omschrijving;
         }
 
-        public Product(int id, int categorie_id, int prijs, int voorraad, int btw, string omschrijving, ProductStatus status)
+        //constructor test voor rekeningform listview.
+        public Product(int id, int categorie_id, int prijs, int btw, string omschrijving, int aantal)
         {
-            this.Btw = btw;
-            this.Categorie_id = categorie_id;
             this.Id = id;
+            this.Categorie_id = categorie_id;
             this.Prijs = prijs;
-            this.Voorraad = voorraad;
+            this.Btw = btw;
             this.Omschrijving = omschrijving;
-            this.status = status;
+            this.Aantal = aantal;
         }
 
         public override string ToString()

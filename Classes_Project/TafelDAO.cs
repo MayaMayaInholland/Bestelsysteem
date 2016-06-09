@@ -9,9 +9,6 @@ namespace Classes_Project
 {
     class TafelDAO
     {
-        private int Id;
-        private int nummer;
-        private TafelStatus tafelStatus;
 
         SqlConnection conn;
 
@@ -21,7 +18,12 @@ namespace Classes_Project
             conn.Open();
         }
 
-
+        public void SetTafelStatus(Tafel tafel, TafelStatus status)
+        {
+            SqlCommand cmd = new SqlCommand(String.Format("UPDATE Tafel SET status = {0} WHERE id = {1}", (int)status, tafel.Id), conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
 
         public Tafel GetByTafelNummer(int TafelNummer)
         {
@@ -38,7 +40,7 @@ namespace Classes_Project
                 return tafel;
             }
             conn.Close();
-            return null;          
+            return null;
         }
 
         public List<Tafel> GetAllTafels()
@@ -49,11 +51,11 @@ namespace Classes_Project
 
             while (reader.Read())
             {
-                int id = (int) reader["id"];
-                TafelStatus status = (TafelStatus) reader["status"];
-                int nummer = (int) reader["nummer"];
+                int id = (int)reader["id"];
+                TafelStatus status = (TafelStatus)reader["status"];
+                int nummer = (int)reader["nummer"];
 
-                Tafel tafel = new Tafel(id,nummer,status);
+                Tafel tafel = new Tafel(id, nummer, status);
                 tafels.Add(tafel);
 
             }

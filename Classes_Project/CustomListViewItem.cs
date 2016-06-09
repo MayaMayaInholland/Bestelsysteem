@@ -15,6 +15,7 @@ namespace Classes_Project
         public int voorraad { get; set; }
         public int btw { get; set; }
         public int Aantal { get; set; }
+        public string Omschrijving { get; set; }
 
         public CustomListViewItem(string omschrijving, int id, int categorie_id, int prijs, int voorraad, int btw, int aantal) : base(omschrijving)
         {
@@ -23,6 +24,12 @@ namespace Classes_Project
             this.prijs = prijs;
             this.voorraad = voorraad;
             this.btw = btw;
+            this.Aantal = aantal;
+            this.Omschrijving = omschrijving;
+        }
+
+        public CustomListViewItem(int aantal)
+        {
             this.Aantal = aantal;
         }
 

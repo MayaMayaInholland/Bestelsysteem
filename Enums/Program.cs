@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Classes_Project
+namespace Enums
 {
-    public enum TafelStatus
+    class Program
     {
-        BEZET,
-        VRIJ
+        static void Main(string[] args)
+        {
+        }
     }
 }
