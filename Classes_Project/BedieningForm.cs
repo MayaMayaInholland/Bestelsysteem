@@ -559,15 +559,18 @@ namespace Classes_Project
         private void btn_Serveer_Click(object sender, EventArgs e)
         {
             BestellingDAO dao = new BestellingDAO();
+            
             dao.ServeerProducten(bestelling.Bestelde_producten);
 
             foreach (Product p in bestelling.Bestelde_producten)
             {
                 if (p.status == ProductStatus.Gereed)
                 {
+                    p.status = ProductStatus.Geserveerd;
                     btn_Serveer.Visible = true;
                 }
             }
+            btn_Serveer.Visible = false;
         }
     }
 }
