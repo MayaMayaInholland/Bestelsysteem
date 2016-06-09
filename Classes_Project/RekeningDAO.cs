@@ -24,8 +24,9 @@ namespace Classes_Project
 
             int bestellingid = rekening.Bestelling.Id;
 
-            SqlCommand cmd = new SqlCommand(string.Format("UPDATE Bestelling SET status = 4, totaalbedrag = {1}, opmerking = {2}, fooi = {3}  WHERE id = {0}", rekening.Bestelling.Id, rekening.TotaalBedrag, rekening.Opmerkingen, rekening.Fooi), conn);
+            SqlCommand cmd = new SqlCommand(string.Format("UPDATE Bestelling SET status = 4, totaalbedrag = {1}, opmerkingen = '{2}', fooi = {3}  WHERE id = {0}", rekening.Bestelling.Id, rekening.Bestelling.Totaalbedrag, rekening.Bestelling.Opmerking, rekening.Bestelling.Fooi), conn);
             int resultaat = cmd.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Classes_Project
             List<Product> producten = new List<Product>();
             conn = new SqlConnection(Helper.ConnectionString);
             conn.Open();//Error met handshake
-            SqlCommand cmd = new SqlCommand(String.Format(("SELECT Product.id AS ID, Product.Omschrijving AS Omschrijving, Product.categorie_id AS cID, Product.prijs AS Prijs, Product.voorraad AS Voorraad, Product.btw AS BTW FROM Besteld_Product INNER JOIN Product ON Besteld_Product.product_id = Product.id WHERE Besteld_Product.bestelling_id = {0} AND Besteld_Product.status = 2"), bestellingID), conn);
+            SqlCommand cmd = new SqlCommand(String.Format(("SELECT Besteld_product.aantal AS aantal, Besteld_product.status AS status, Product.id AS ID, Product.Omschrijving AS Omschrijving, Product.categorie_id AS cID, Product.prijs AS Prijs, Product.voorraad AS Voorraad, Product.btw AS BTW FROM Besteld_Product INNER JOIN Product ON Besteld_Product.product_id = Product.id WHERE Besteld_Product.bestelling_id = {0} AND Besteld_Product.status = 2"), bestellingID), conn);
             SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
@@ -32,8 +32,11 @@ namespace Classes_Project
                 int prijs = (int)reader["Prijs"];
                 int voorraad = (int)reader["Voorraad"];
                 int BTW = (int)reader["BTW"];
+                ProductStatus status = (ProductStatus)reader["status"];
+                int aantal = (int)reader["aantal"];
 
-                Product product = new Product(id, cID, prijs, voorraad, BTW, omschrijving);
+                //Product product = new Product(id, cID, prijs, voorraad, BTW, omschrijving);
+                Product product = new Product(id, cID, prijs, BTW, omschrijving, aantal, status);
 
                 producten.Add(product);
             }

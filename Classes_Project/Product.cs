@@ -40,6 +40,17 @@ namespace Classes_Project
             this.Aantal = aantal;
         }
 
+        public Product(int id, int categorie_id, int prijs, int btw, string omschrijving, int aantal, ProductStatus status)
+        {
+            this.status = status;
+            this.Id = id;
+            this.Categorie_id = categorie_id;
+            this.Prijs = prijs;
+            this.Btw = btw;
+            this.Omschrijving = omschrijving;
+            this.Aantal = aantal;
+        }
+
         public override string ToString()
         {
             return Omschrijving;

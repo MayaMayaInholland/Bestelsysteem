@@ -52,8 +52,9 @@ namespace Classes_Project
                 lijst_Producten = GetProductenByBestellingId(Id);
 
                 //Overload van class bestelling voor al bestaande bestellingen.... ( opgezet zodat code runt )
-                Bestelling Lopende_bestelling = new Bestelling(Tafel_id, Medewerker_id, Tijd, totaalbedrag, opmerkingen, (int)status, fooi, lijst_Producten);
-                return Lopende_bestelling;
+                //Bestelling Lopende_bestelling = new Bestelling(Id, Tafel_id, Medewerker_id, Tijd, totaalbedrag, opmerkingen, (int)status, fooi, lijst_Producten);
+                Bestelling bestelling = new Bestelling(Id, Medewerker_id, Tijd, status, opmerkingen, lijst_Producten);
+                return bestelling;
             }
             reader.Close();
             conn.Close();
@@ -96,7 +97,7 @@ namespace Classes_Project
                 lijst_Producten = GetProductenByBestellingId(Id);
 
                 //Overload van class bestelling voor al bestaande bestellingen.... ( opgezet zodat code runt )
-                Bestelling Lopende_bestelling = new Bestelling(Id, Medewerker_id, Tijd, (int)status, Opmerking, lijst_Producten);
+                Bestelling Lopende_bestelling = new Bestelling(Id, Medewerker_id, Tijd, status, Opmerking, lijst_Producten);
 
                 return Lopende_bestelling;
             }
@@ -104,6 +105,8 @@ namespace Classes_Project
             conn.Close();
             return null;
         }
+
+
 
         //2. Haalt list met al bestelde producten op met bestelling_Id
         public List<Product> GetProductenByBestellingId(int Bestelling_Id)
@@ -137,9 +140,12 @@ namespace Classes_Project
                 {
                     opmerking = (string)reader["opmerking"];
                 }
+                ProductStatus status = (ProductStatus)reader["status"];
 
                 //Hier constructor product gewijzigd ivm conflict besteldproduct class enzo..
-                Product = new Product(id, categorie_id, prijs, btw, omschrijving, aantal);
+                //Product = new Product(id, categorie_id, prijs, btw, omschrijving, aantal);
+                Product = new Product(id, categorie_id, prijs, btw, omschrijving, aantal, status);
+                
                
                 Besteld_producten.Add(Product); // Toevoegen product aan Besteld_product list.          
             }
@@ -147,6 +153,18 @@ namespace Classes_Project
 
             return Besteld_producten;
 
+        }
+
+        public void ServeerProducten(List<Product> producten)
+        {
+            conn = new SqlConnection(Helper.ConnectionString);
+            conn.Open();
+            foreach(Product product in producten)
+            {
+                SqlCommand cmd = new SqlCommand(String.Format("UPDATE Besteld_product SET status = {0} WHERE id = {1}", (int)ProductStatus.Geserveerd, product.Id), conn);
+                cmd.ExecuteNonQuery();
+            }
+            conn.Close();
         }
 
         //-------------------------INSERT DATA____________________________________

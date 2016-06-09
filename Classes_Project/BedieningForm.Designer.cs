@@ -66,6 +66,7 @@
             this.btnB_Afrekenen = new System.Windows.Forms.Button();
             this.btn_Loguit = new System.Windows.Forms.Button();
             this.lbl_IngelogdeMedewerker = new System.Windows.Forms.Label();
+            this.btn_Serveer = new System.Windows.Forms.Button();
             this.tabB_volledig.SuspendLayout();
             this.tabB_Bestellen1.SuspendLayout();
             this.menuStrip_bestelling.SuspendLayout();
@@ -90,6 +91,7 @@
             // tabB_Bestellen1
             // 
             this.tabB_Bestellen1.BackColor = System.Drawing.Color.White;
+            this.tabB_Bestellen1.Controls.Add(this.btn_Serveer);
             this.tabB_Bestellen1.Controls.Add(this.btn_Bezet);
             this.tabB_Bestellen1.Controls.Add(this.btn_Vrij);
             this.tabB_Bestellen1.Controls.Add(this.btn_Rekening);
@@ -108,18 +110,18 @@
             // btn_Bezet
             // 
             this.btn_Bezet.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Bezet.Location = new System.Drawing.Point(212, 33);
+            this.btn_Bezet.Location = new System.Drawing.Point(255, 33);
             this.btn_Bezet.Name = "btn_Bezet";
             this.btn_Bezet.Size = new System.Drawing.Size(121, 51);
             this.btn_Bezet.TabIndex = 13;
-            this.btn_Bezet.Text = "maak Bezet";
+            this.btn_Bezet.Text = "Maak bezet";
             this.btn_Bezet.UseVisualStyleBackColor = true;
             this.btn_Bezet.Click += new System.EventHandler(this.btn_Bezet_Click);
             // 
             // btn_Vrij
             // 
             this.btn_Vrij.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Vrij.Location = new System.Drawing.Point(85, 33);
+            this.btn_Vrij.Location = new System.Drawing.Point(128, 33);
             this.btn_Vrij.Name = "btn_Vrij";
             this.btn_Vrij.Size = new System.Drawing.Size(121, 51);
             this.btn_Vrij.TabIndex = 12;
@@ -153,7 +155,7 @@
             // listB_producten
             // 
             this.listB_producten.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listB_producten.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listB_producten.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listB_producten.FormattingEnabled = true;
             this.listB_producten.ItemHeight = 20;
             this.listB_producten.Location = new System.Drawing.Point(0, 90);
@@ -169,7 +171,7 @@
             this.columnHeader1,
             this.columnHeader2});
             this.listview_producten.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listview_producten.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listview_producten.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listview_producten.Location = new System.Drawing.Point(1, 312);
             this.listview_producten.Name = "listview_producten";
             this.listview_producten.Size = new System.Drawing.Size(506, 191);
@@ -416,7 +418,7 @@
             this.tabB_GeAdvanceerd.Controls.Add(this.btnB_OpmerkingToevoegen);
             this.tabB_GeAdvanceerd.Controls.Add(this.btnB_Verwijderen);
             this.tabB_GeAdvanceerd.Controls.Add(this.btnB_Afrekenen);
-            this.tabB_GeAdvanceerd.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabB_GeAdvanceerd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabB_GeAdvanceerd.Location = new System.Drawing.Point(4, 28);
             this.tabB_GeAdvanceerd.Name = "tabB_GeAdvanceerd";
             this.tabB_GeAdvanceerd.Size = new System.Drawing.Size(507, 558);
@@ -527,6 +529,16 @@
             this.lbl_IngelogdeMedewerker.Size = new System.Drawing.Size(0, 13);
             this.lbl_IngelogdeMedewerker.TabIndex = 2;
             // 
+            // btn_Serveer
+            // 
+            this.btn_Serveer.Location = new System.Drawing.Point(6, 33);
+            this.btn_Serveer.Name = "btn_Serveer";
+            this.btn_Serveer.Size = new System.Drawing.Size(116, 51);
+            this.btn_Serveer.TabIndex = 14;
+            this.btn_Serveer.Text = "Serveer bestelling";
+            this.btn_Serveer.UseVisualStyleBackColor = true;
+            this.btn_Serveer.Click += new System.EventHandler(this.btn_Serveer_Click);
+            // 
             // BedieningForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -591,5 +603,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Vrij;
         private System.Windows.Forms.Button btn_Bezet;
+        private System.Windows.Forms.Button btn_Serveer;
     }
 }

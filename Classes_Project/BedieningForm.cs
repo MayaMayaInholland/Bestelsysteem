@@ -31,6 +31,7 @@ namespace Classes_Project
             TafelDAO tafelDao = new TafelDAO();
             tafels = tafelDao.GetAllTafels();
             RefreshTafels();
+            btn_Serveer.Visible = false;
         }
 
         private void RefreshTafels()
@@ -285,7 +286,18 @@ namespace Classes_Project
 
         private void tafelClick(int tafelNummer)
         {
+            geselecteerdeTafel = tafels.Where(t => t.Nummer == tafelNummer).First();
             bestelling = Bestelling_bijTafel(tafelNummer);
+            if (bestelling != null)
+            {
+                foreach (Product p in bestelling.Bestelde_producten)
+                {
+                    if (p.status == ProductStatus.Gereed)
+                    {
+                        btn_Serveer.Visible = true;
+                    }
+                }
+            }
             tabB_volledig.SelectedTab = tabB_Bestellen1;
             geselecteerdeTafel = tafels.Where(t => t.Nummer == tafelNummer).FirstOrDefault();
 
@@ -298,7 +310,7 @@ namespace Classes_Project
             TafelDAO tafelDAO = new TafelDAO();
             Tafel tafel = tafelDAO.GetByTafelNummer(Tafelnr);
             Bestelling bestelling;
-            tafel.Status = TafelStatus.VRIJ;
+            //tafel.Status = TafelStatus.VRIJ;
 
             if (tafel.Status == TafelStatus.VRIJ)
             {
@@ -308,7 +320,7 @@ namespace Classes_Project
             }
             else if (tafel.Status == TafelStatus.BEZET)
             {
-                bestelling = bestellingDAO.GetBestellingByTafelId(Tafelnr);
+                bestelling = bestellingDAO.GetBestellingByTafelId(geselecteerdeTafel.Id);
                 return bestelling;
             }
             return null;
@@ -471,7 +483,7 @@ namespace Classes_Project
 
         private void btn_Betalen_Click(object sender, EventArgs e)
         {
-            RekeningForm form = new RekeningForm(ingelogdemedewerker, bestelling.Tafel_id);
+            RekeningForm form = new RekeningForm(ingelogdemedewerker, geselecteerdeTafel);
             form.Show();
             this.Hide();
         }
@@ -503,7 +515,7 @@ namespace Classes_Project
 
         private void btn_Rekening_Click(object sender, EventArgs e)
         {
-            RekeningForm form = new RekeningForm(ingelogdemedewerker, bestelling.Tafel_id);
+            RekeningForm form = new RekeningForm(ingelogdemedewerker, geselecteerdeTafel);
             form.Show();
             this.Hide();
         }
@@ -542,6 +554,20 @@ namespace Classes_Project
         private void tabB_volledig_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshTafels();
+        }
+
+        private void btn_Serveer_Click(object sender, EventArgs e)
+        {
+            BestellingDAO dao = new BestellingDAO();
+            dao.ServeerProducten(bestelling.Bestelde_producten);
+
+            foreach (Product p in bestelling.Bestelde_producten)
+            {
+                if (p.status == ProductStatus.Gereed)
+                {
+                    btn_Serveer.Visible = true;
+                }
+            }
         }
     }
 }

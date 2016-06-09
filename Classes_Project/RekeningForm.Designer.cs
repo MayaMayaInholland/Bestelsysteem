@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.listR_ViewRekening = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbl_Opmerkingen = new System.Windows.Forms.Label();
             this.lbl_Fooi = new System.Windows.Forms.Label();
             this.txt_Opmerkingen = new System.Windows.Forms.TextBox();
@@ -39,11 +44,6 @@
             this.lbl_IngelogdeMedewerker = new System.Windows.Forms.Label();
             this.lbl_Toon_Totaal = new System.Windows.Forms.Label();
             this.lbl_Totaal = new System.Windows.Forms.Label();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnR_Return = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
@@ -63,6 +63,28 @@
             this.listR_ViewRekening.TabIndex = 0;
             this.listR_ViewRekening.UseCompatibleStateImageBehavior = false;
             this.listR_ViewRekening.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Naam";
+            this.columnHeader1.Width = 250;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Prijs";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Btw";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Aantal";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Totaal";
+            this.columnHeader5.Width = 74;
             // 
             // lbl_Opmerkingen
             // 
@@ -107,6 +129,7 @@
             this.btn_ContantBetalen.TabIndex = 5;
             this.btn_ContantBetalen.Text = "Contant";
             this.btn_ContantBetalen.UseVisualStyleBackColor = true;
+            this.btn_ContantBetalen.Click += new System.EventHandler(this.btn_ContantBetalen_Click);
             // 
             // btn_PinnenBetalen
             // 
@@ -116,6 +139,7 @@
             this.btn_PinnenBetalen.TabIndex = 6;
             this.btn_PinnenBetalen.Text = "Pinnen";
             this.btn_PinnenBetalen.UseVisualStyleBackColor = true;
+            this.btn_PinnenBetalen.Click += new System.EventHandler(this.btn_PinnenBetalen_Click);
             // 
             // btn_CreditcardBetalen
             // 
@@ -125,6 +149,7 @@
             this.btn_CreditcardBetalen.TabIndex = 7;
             this.btn_CreditcardBetalen.Text = "CreditCard";
             this.btn_CreditcardBetalen.UseVisualStyleBackColor = true;
+            this.btn_CreditcardBetalen.Click += new System.EventHandler(this.btn_CreditcardBetalen_Click);
             // 
             // lbl_IngelogdeMedewerker
             // 
@@ -154,28 +179,6 @@
             this.lbl_Totaal.Size = new System.Drawing.Size(47, 16);
             this.lbl_Totaal.TabIndex = 10;
             this.lbl_Totaal.Text = "label2";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Naam";
-            this.columnHeader1.Width = 250;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Prijs";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Btw";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Aantal";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Totaal";
-            this.columnHeader5.Width = 74;
             // 
             // btnR_Return
             // 
