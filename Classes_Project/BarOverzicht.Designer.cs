@@ -46,7 +46,7 @@
             this.Overzichtbar.Location = new System.Drawing.Point(12, 58);
             this.Overzichtbar.Name = "Overzichtbar";
             this.Overzichtbar.SelectedIndex = 0;
-            this.Overzichtbar.Size = new System.Drawing.Size(929, 633);
+            this.Overzichtbar.Size = new System.Drawing.Size(929, 500);
             this.Overzichtbar.TabIndex = 0;
             // 
             // BarNu
@@ -56,7 +56,7 @@
             this.BarNu.Location = new System.Drawing.Point(4, 22);
             this.BarNu.Name = "BarNu";
             this.BarNu.Padding = new System.Windows.Forms.Padding(3);
-            this.BarNu.Size = new System.Drawing.Size(921, 607);
+            this.BarNu.Size = new System.Drawing.Size(921, 474);
             this.BarNu.TabIndex = 0;
             this.BarNu.Text = "Nu";
             this.BarNu.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@
             // 
             // btn_Loguit
             // 
-            this.btn_Loguit.Location = new System.Drawing.Point(16, 697);
+            this.btn_Loguit.Location = new System.Drawing.Point(16, 564);
             this.btn_Loguit.Name = "btn_Loguit";
             this.btn_Loguit.Size = new System.Drawing.Size(75, 23);
             this.btn_Loguit.TabIndex = 103;
@@ -104,7 +104,7 @@
             // lbl_IngelogdeMedewerker
             // 
             this.lbl_IngelogdeMedewerker.AutoSize = true;
-            this.lbl_IngelogdeMedewerker.Location = new System.Drawing.Point(865, 707);
+            this.lbl_IngelogdeMedewerker.Location = new System.Drawing.Point(863, 569);
             this.lbl_IngelogdeMedewerker.Name = "lbl_IngelogdeMedewerker";
             this.lbl_IngelogdeMedewerker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl_IngelogdeMedewerker.Size = new System.Drawing.Size(0, 13);
@@ -114,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 728);
+            this.ClientSize = new System.Drawing.Size(953, 597);
             this.Controls.Add(this.lbl_IngelogdeMedewerker);
             this.Controls.Add(this.btn_Loguit);
             this.Controls.Add(this.label42);

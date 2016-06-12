@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BedieningForm));
             this.tabB_volledig = new System.Windows.Forms.TabControl();
             this.tabB_Bestellen1 = new System.Windows.Forms.TabPage();
+            this.btn_Serveer = new System.Windows.Forms.Button();
             this.btn_Bezet = new System.Windows.Forms.Button();
             this.btn_Vrij = new System.Windows.Forms.Button();
             this.btn_Rekening = new System.Windows.Forms.Button();
@@ -66,7 +67,7 @@
             this.btnB_Afrekenen = new System.Windows.Forms.Button();
             this.btn_Loguit = new System.Windows.Forms.Button();
             this.lbl_IngelogdeMedewerker = new System.Windows.Forms.Label();
-            this.btn_Serveer = new System.Windows.Forms.Button();
+            this.btnB_NaarOpmerkingen = new System.Windows.Forms.Button();
             this.tabB_volledig.SuspendLayout();
             this.tabB_Bestellen1.SuspendLayout();
             this.menuStrip_bestelling.SuspendLayout();
@@ -91,6 +92,7 @@
             // tabB_Bestellen1
             // 
             this.tabB_Bestellen1.BackColor = System.Drawing.Color.White;
+            this.tabB_Bestellen1.Controls.Add(this.btnB_NaarOpmerkingen);
             this.tabB_Bestellen1.Controls.Add(this.btn_Serveer);
             this.tabB_Bestellen1.Controls.Add(this.btn_Bezet);
             this.tabB_Bestellen1.Controls.Add(this.btn_Vrij);
@@ -106,6 +108,16 @@
             this.tabB_Bestellen1.Size = new System.Drawing.Size(507, 558);
             this.tabB_Bestellen1.TabIndex = 0;
             this.tabB_Bestellen1.Text = "Bestellen";
+            // 
+            // btn_Serveer
+            // 
+            this.btn_Serveer.Location = new System.Drawing.Point(6, 33);
+            this.btn_Serveer.Name = "btn_Serveer";
+            this.btn_Serveer.Size = new System.Drawing.Size(116, 51);
+            this.btn_Serveer.TabIndex = 14;
+            this.btn_Serveer.Text = "Serveer bestelling";
+            this.btn_Serveer.UseVisualStyleBackColor = true;
+            this.btn_Serveer.Click += new System.EventHandler(this.btn_Serveer_Click);
             // 
             // btn_Bezet
             // 
@@ -529,15 +541,17 @@
             this.lbl_IngelogdeMedewerker.Size = new System.Drawing.Size(0, 13);
             this.lbl_IngelogdeMedewerker.TabIndex = 2;
             // 
-            // btn_Serveer
+            // btnB_NaarOpmerkingen
             // 
-            this.btn_Serveer.Location = new System.Drawing.Point(6, 33);
-            this.btn_Serveer.Name = "btn_Serveer";
-            this.btn_Serveer.Size = new System.Drawing.Size(116, 51);
-            this.btn_Serveer.TabIndex = 14;
-            this.btn_Serveer.Text = "Serveer bestelling";
-            this.btn_Serveer.UseVisualStyleBackColor = true;
-            this.btn_Serveer.Click += new System.EventHandler(this.btn_Serveer_Click);
+            this.btnB_NaarOpmerkingen.BackColor = System.Drawing.Color.Gold;
+            this.btnB_NaarOpmerkingen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnB_NaarOpmerkingen.Location = new System.Drawing.Point(246, 509);
+            this.btnB_NaarOpmerkingen.Name = "btnB_NaarOpmerkingen";
+            this.btnB_NaarOpmerkingen.Size = new System.Drawing.Size(122, 46);
+            this.btnB_NaarOpmerkingen.TabIndex = 15;
+            this.btnB_NaarOpmerkingen.Text = "Opmerkingen";
+            this.btnB_NaarOpmerkingen.UseVisualStyleBackColor = false;
+            this.btnB_NaarOpmerkingen.Click += new System.EventHandler(this.btnB_NaarOpmerkingen_Click);
             // 
             // BedieningForm
             // 
@@ -604,5 +618,6 @@
         private System.Windows.Forms.Button btn_Vrij;
         private System.Windows.Forms.Button btn_Bezet;
         private System.Windows.Forms.Button btn_Serveer;
+        private System.Windows.Forms.Button btnB_NaarOpmerkingen;
     }
 }

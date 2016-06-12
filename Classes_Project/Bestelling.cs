@@ -7,14 +7,13 @@ namespace Classes_Project
 {
     public class Bestelling
     {
-
         public int Id { get; set; }
         public Tafel Tafel { get; set; }
         public int Medewerker_id { get; set; }
         public DateTime Tijd { get; set; }
         public List<Product> Bestelde_producten { get; set; }     
         public BestellingStatus Status { get; set; }
-        public int StatusInt { get; set; } // status naar de database
+        public int StatusInt { get; set; } // status als int naar de database
         public int Tafel_id { get; set; }
         public string Opmerking { get; set; }
         public int Fooi { get; set; }
@@ -33,16 +32,7 @@ namespace Classes_Project
             this.Bestelde_producten = besteld_producten;
         }
 
-        // BestellingDAO bestelling constructor.
-        public Bestelling(int medewerker_id, DateTime tijd, int status, string opmerking, List<Product> producten)
-        {
-            this.Medewerker_id = medewerker_id;
-            this.Tijd = tijd;
-            this.StatusInt = status;
-            this.Opmerking = opmerking;
-            this.Bestelde_producten = producten;
-        }
-
+        //BestellingDAO : Lopende_bestelling ophalen.
         public Bestelling(int id, int medewerker_id, DateTime tijd, BestellingStatus status, string opmerking, List<Product> producten)
         {
             this.Id = id;

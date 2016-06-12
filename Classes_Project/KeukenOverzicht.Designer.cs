@@ -32,11 +32,9 @@
             this.OverzichtKeuken = new System.Windows.Forms.TabControl();
             this.BarNu = new System.Windows.Forms.TabPage();
             this.Geschiedenis = new System.Windows.Forms.TabPage();
-            this.label23 = new System.Windows.Forms.Label();
             this.btn_Loguit = new System.Windows.Forms.Button();
             this.lbl_IngelogdeMedewerker = new System.Windows.Forms.Label();
             this.OverzichtKeuken.SuspendLayout();
-            this.Geschiedenis.SuspendLayout();
             this.SuspendLayout();
             // 
             // label42
@@ -56,7 +54,7 @@
             this.OverzichtKeuken.Location = new System.Drawing.Point(12, 60);
             this.OverzichtKeuken.Name = "OverzichtKeuken";
             this.OverzichtKeuken.SelectedIndex = 0;
-            this.OverzichtKeuken.Size = new System.Drawing.Size(929, 650);
+            this.OverzichtKeuken.Size = new System.Drawing.Size(929, 500);
             this.OverzichtKeuken.TabIndex = 103;
             // 
             // BarNu
@@ -73,27 +71,17 @@
             // Geschiedenis
             // 
             this.Geschiedenis.AutoScroll = true;
-            this.Geschiedenis.Controls.Add(this.label23);
             this.Geschiedenis.Location = new System.Drawing.Point(4, 22);
             this.Geschiedenis.Name = "Geschiedenis";
             this.Geschiedenis.Padding = new System.Windows.Forms.Padding(3);
-            this.Geschiedenis.Size = new System.Drawing.Size(921, 624);
+            this.Geschiedenis.Size = new System.Drawing.Size(921, 474);
             this.Geschiedenis.TabIndex = 2;
             this.Geschiedenis.Text = "Geschiedenis";
             this.Geschiedenis.UseVisualStyleBackColor = true;
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(93, 1030);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(41, 13);
-            this.label23.TabIndex = 70;
-            this.label23.Text = "label23";
-            // 
             // btn_Loguit
             // 
-            this.btn_Loguit.Location = new System.Drawing.Point(16, 716);
+            this.btn_Loguit.Location = new System.Drawing.Point(12, 566);
             this.btn_Loguit.Name = "btn_Loguit";
             this.btn_Loguit.Size = new System.Drawing.Size(75, 23);
             this.btn_Loguit.TabIndex = 105;
@@ -104,7 +92,7 @@
             // lbl_IngelogdeMedewerker
             // 
             this.lbl_IngelogdeMedewerker.AutoSize = true;
-            this.lbl_IngelogdeMedewerker.Location = new System.Drawing.Point(837, 716);
+            this.lbl_IngelogdeMedewerker.Location = new System.Drawing.Point(844, 576);
             this.lbl_IngelogdeMedewerker.Name = "lbl_IngelogdeMedewerker";
             this.lbl_IngelogdeMedewerker.Size = new System.Drawing.Size(0, 13);
             this.lbl_IngelogdeMedewerker.TabIndex = 106;
@@ -114,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 741);
+            this.ClientSize = new System.Drawing.Size(944, 590);
             this.Controls.Add(this.lbl_IngelogdeMedewerker);
             this.Controls.Add(this.btn_Loguit);
             this.Controls.Add(this.label42);
@@ -123,8 +111,6 @@
             this.Text = "KeukenOverzicht";
             this.Load += new System.EventHandler(this.KeukenOverzicht_Load);
             this.OverzichtKeuken.ResumeLayout(false);
-            this.Geschiedenis.ResumeLayout(false);
-            this.Geschiedenis.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,7 +121,6 @@
         private System.Windows.Forms.TabControl OverzichtKeuken;
         private System.Windows.Forms.TabPage BarNu;
         private System.Windows.Forms.TabPage Geschiedenis;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button btn_Loguit;
         private System.Windows.Forms.Label lbl_IngelogdeMedewerker;
     }

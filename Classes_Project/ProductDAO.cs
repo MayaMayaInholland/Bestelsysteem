@@ -20,7 +20,7 @@ namespace Classes_Project
         {
             List<Product> producten = new List<Product>();
             conn = new SqlConnection(Helper.ConnectionString);
-            conn.Open();//Error met handshake
+            conn.Open();
             SqlCommand cmd = new SqlCommand(String.Format(("SELECT Besteld_product.aantal AS aantal, Besteld_product.status AS status, Product.id AS ID, Product.Omschrijving AS Omschrijving, Product.categorie_id AS cID, Product.prijs AS Prijs, Product.voorraad AS Voorraad, Product.btw AS BTW FROM Besteld_Product INNER JOIN Product ON Besteld_Product.product_id = Product.id WHERE Besteld_Product.bestelling_id = {0} AND Besteld_Product.status = 2"), bestellingID), conn);
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -63,7 +63,7 @@ namespace Classes_Project
                 int id = (int)reader["id"];
                 int categorie_id = (int)reader["categorie_id"];
                 string omschrijving = (string)reader["omschrijving"];
-                ProductStatus status;
+
                 int prijs = (int)reader["prijs"];
                 int voorraad = (int)reader["voorraad"];
                 int btw = (int)reader["btw"];
@@ -92,7 +92,6 @@ namespace Classes_Project
                 int id = (int)reader["id"];
                 int categorie_id = (int)reader["categorie_id"];
                 string Omschrijving = (string)reader["omschrijving"];
-                //float prijs = (float)reader["prijs"];
                 int voorraad = (int)reader["voorraad"];
                 int btw = (int)reader["btw"];
 

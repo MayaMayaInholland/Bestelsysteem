@@ -109,7 +109,7 @@ namespace Classes_Project
             }
             else if (tafel.Status == TafelStatus.BEZET)
             {
-                bestellingDAO.GetBestellingByTafelId(Tafelnr);
+                bestellingDAO.GetLopendeBestellingByTafelID(Tafelnr);
             }
             tabControl.SelectedTab = tab_Bestellen;
         }

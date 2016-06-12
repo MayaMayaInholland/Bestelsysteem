@@ -20,17 +20,17 @@ namespace Classes_Project
         private Tafel geselecteerdeTafel;
         private List<ToolTip> tooltips = new List<ToolTip>();
 
-        //constructor form
+        //Initialiseren BedieningsForm met ingelogde medewerker als parameter.
         public BedieningForm(Medewerker m)
         {
             InitializeComponent();
-            tabB_volledig.SelectedTab = tabB_TafelOverzicht;
+            tabB_volledig.SelectedTab = tabB_TafelOverzicht;//Opent TafelOverzicht als eerste.
 
             ingelogdemedewerker = m;
             lbl_IngelogdeMedewerker.Text = m.Voornaam;
             TafelDAO tafelDao = new TafelDAO();
             tafels = tafelDao.GetAllTafels();
-            RefreshTafels();
+            RefreshTafels();// Laat the huidige status van tafels zien.
             btn_Serveer.Visible = false;
         }
 
@@ -56,8 +56,8 @@ namespace Classes_Project
                             BestellingDAO bDAO = new BestellingDAO();
                             ProductDAO pDAO = new ProductDAO();
 
-                            //pas bestelling constructor aan ?
-                            Bestelling bestelling = bDAO.GetBestellingByTafelId(huidigeTafel.Id);
+                            //pas bestelling constructor aan ??--------------------------------------------------------
+                            Bestelling bestelling = bDAO.GetLopendeBestellingByTafelID(huidigeTafel.Id);
                             List<Product> gereedGemeldeProducten = new List<Product>();
                             Image img;
                             string text = "";
@@ -92,18 +92,19 @@ namespace Classes_Project
         private void lunchToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             ProductDAO productDAO = new ProductDAO();
-            List<Product> lijst_producten = new List<Product>(productDAO.GetProducten());
-            List<Product> producten = new List<Product>();
+            List<Product> lijst_producten = new List<Product>(productDAO.GetProducten());//Haalt alle producten op.
+            List<Product> Lunch_producten = new List<Product>();//Nieuwe lijst voor Producten die Lunch Categorie zijn.
 
             foreach (Product product in lijst_producten)
             {
                 if (product.Categorie_id == 1 || product.Categorie_id == 2 || product.Categorie_id == 3)
                 {
-                    producten.Add(product);
+                    Lunch_producten.Add(product);
                 }
             }
+            //Wat gebeurt hier ?????????????????????????????------------------------------------------------------------------
             listB_producten.SelectedIndexChanged -= listB_producten_SelectedIndexChanged;
-            listB_producten.DataSource = producten;
+            listB_producten.DataSource = Lunch_producten;
             listB_producten.SelectedIndex = -1;
             listB_producten.SelectedIndexChanged += listB_producten_SelectedIndexChanged;
         }
@@ -151,6 +152,7 @@ namespace Classes_Project
         //verwijderen product uit listview
         private void listview_producten_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            //CustomListViewItem bevat alle data van een product dus ook aantal.
             foreach (CustomListViewItem eachItem in listview_producten.SelectedItems)
             {
                 if (eachItem.Aantal > 1)
@@ -182,7 +184,7 @@ namespace Classes_Project
                 product.Aantal = 1;
             }
 
-            besteldeProducten.Add(product);
+            besteldeProducten.Add(product); //voegt geselecteerde product aan list.
             showBesteldeProducten();
 
             if (true)
@@ -195,24 +197,24 @@ namespace Classes_Project
         //Methode voor het samenvoegen van listviewitems en het tonen van de juiste aantal.
         private void showBesteldeProducten()
         {
-            string omschrijving = listB_producten.SelectedItems[0].ToString();
+            string omschrijving = listB_producten.SelectedItems[0].ToString();//Zet product omschrijving in de variabele omschrijving.
 
             for (int i = 0; i < besteldeProducten.Count; i++)
             {
                 for (int j = 0; j < besteldeProducten.Count; j++)
                 {
-                    if (besteldeProducten[i].Id == besteldeProducten[j].Id)
+                    if (besteldeProducten[i].Id == besteldeProducten[j].Id)//Als het om dezelfde producten gaat..
                     {
-                        if (i != j)
+                        if (i != j)//Als het niet om dezelfde product in list gaat.
                         {
                             besteldeProducten[i].Aantal += 1;
-                            besteldeProducten.Remove(besteldeProducten[j]);
+                            besteldeProducten.Remove(besteldeProducten[j]);// voorkomen dat er dubbel wordt getoond.
                         }
                     }
                 }
             }
 
-            foreach (ListViewItem item in listview_producten.Items)
+            foreach (ListViewItem item in listview_producten.Items) // listview clear
             {
                 item.Remove();
             }
@@ -303,30 +305,29 @@ namespace Classes_Project
 
         }
 
-        //Het terug halen van de bijhorende bestelling.
+        //Bepalen bestaand of nieuwe bestelling en deze meegeven.
         public Bestelling Bestelling_bijTafel(int Tafelnr)
         {
             BestellingDAO bestellingDAO = new BestellingDAO();
             TafelDAO tafelDAO = new TafelDAO();
             Tafel tafel = tafelDAO.GetByTafelNummer(Tafelnr);
             Bestelling bestelling;
-            //tafel.Status = TafelStatus.VRIJ;
 
             if (tafel.Status == TafelStatus.VRIJ)
             {
                 besteldeProducten.Clear();
-                bestelling = new Bestelling(tafel.Id, ingelogdemedewerker.Id, DateTime.Now, 0, " ", 1, 0, besteldeProducten);
+                bestelling = new Bestelling(tafel.Id, ingelogdemedewerker.Id, DateTime.Now, 0, " ", 1, 0, besteldeProducten);//Nieuwe bestelling.
                 return bestelling;
             }
             else if (tafel.Status == TafelStatus.BEZET)
             {
-                bestelling = bestellingDAO.GetBestellingByTafelId(geselecteerdeTafel.Id);
+                bestelling = bestellingDAO.GetLopendeBestellingByTafelID(geselecteerdeTafel.Id);//Haalt bestelling op.
                 return bestelling;
             }
             return null;
         }
 
-        //Bestelling/ bestelde producten worden naar database geschreven
+        //Bestelling/bestelde producten worden naar database geschreven
         private void btn_bevestig_Click(object sender, EventArgs e)
         {
             //controleren of bestelling echt geplaatst moet worden.
@@ -334,14 +335,14 @@ namespace Classes_Project
             {
                 bestelling.Tafel_id = bestelling.Tafel_id;
                 bestelling.Medewerker_id = ingelogdemedewerker.Id;
-                bestelling.Opmerking = " ";
+                bestelling.Opmerking = " "; // Bij rekening wordt dit toegevoegd.
                 bestelling.Status = BestellingStatus.Open;
                 bestelling.Tijd = DateTime.Now;
-                bestelling.Totaalbedrag = 0;
-                bestelling.Fooi = 0;
+                bestelling.Totaalbedrag = 0; // Bij rekening wordt dit toegevoegd.
+                bestelling.Fooi = 0; // Bij rekening wordt dit toegevoegd.
                 bestelling.Bestelde_producten = besteldeProducten;
 
-                foreach (Product p in bestelling.Bestelde_producten)
+                foreach (Product p in bestelling.Bestelde_producten)// Ervoor zorgen dat elk bestelde producten geen NULL waarde bevatten.
                 {
                     if (p.Opmerking == null)
                     {
@@ -371,7 +372,7 @@ namespace Classes_Project
             this.Hide();
         }
 
-        private void btn_Tafel1_MouseEnter(object sender, EventArgs e)
+        private void btn_Tafel1_MouseEnter(object sender, EventArgs e)//???-------------------------------------------------
         {
         }
 
@@ -493,6 +494,7 @@ namespace Classes_Project
         {
         }
 
+        //Opmerking toevoegen aan besteld_producten.
         private void btnB_OpmerkingToevoegen_Click(object sender, EventArgs e)
         {
             Product product = (Product)cmbB_productenShow.SelectedItem;
@@ -520,6 +522,7 @@ namespace Classes_Project
             this.Hide();
         }
 
+        //Leeg maken van Bestelling object.
         private void btnB_Verwijderen_Click(object sender, EventArgs e)
         {
             if (bestelling != null)
@@ -571,6 +574,11 @@ namespace Classes_Project
                 }
             }
             btn_Serveer.Visible = false;
+        }
+
+        private void btnB_NaarOpmerkingen_Click(object sender, EventArgs e)
+        {
+            tabB_volledig.SelectedTab = tabB_GeAdvanceerd;
         }
     }
 }

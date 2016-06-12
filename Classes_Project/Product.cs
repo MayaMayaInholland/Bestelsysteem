@@ -7,7 +7,6 @@ namespace Classes_Project
 {
     public class Product
     {
-        //veiligheid controleren ( properties correct toegepast ? )
         public int Id { get; set; }
         public int Categorie_id { get; set; }
         public int Prijs { get; set; }
