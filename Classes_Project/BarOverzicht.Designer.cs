@@ -30,13 +30,11 @@
         {
             this.Overzichtbar = new System.Windows.Forms.TabControl();
             this.BarNu = new System.Windows.Forms.TabPage();
-            this.label16 = new System.Windows.Forms.Label();
             this.Geschiedenis = new System.Windows.Forms.TabPage();
-            this.label42 = new System.Windows.Forms.Label();
+            this.kop = new System.Windows.Forms.Label();
             this.btn_Loguit = new System.Windows.Forms.Button();
             this.lbl_IngelogdeMedewerker = new System.Windows.Forms.Label();
             this.Overzichtbar.SuspendLayout();
-            this.BarNu.SuspendLayout();
             this.SuspendLayout();
             // 
             // Overzichtbar
@@ -52,7 +50,6 @@
             // BarNu
             // 
             this.BarNu.AutoScroll = true;
-            this.BarNu.Controls.Add(this.label16);
             this.BarNu.Location = new System.Drawing.Point(4, 22);
             this.BarNu.Name = "BarNu";
             this.BarNu.Padding = new System.Windows.Forms.Padding(3);
@@ -61,35 +58,26 @@
             this.BarNu.Text = "Nu";
             this.BarNu.UseVisualStyleBackColor = true;
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(90, 1051);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(41, 13);
-            this.label16.TabIndex = 70;
-            this.label16.Text = "label16";
-            // 
             // Geschiedenis
             // 
             this.Geschiedenis.AutoScroll = true;
             this.Geschiedenis.Location = new System.Drawing.Point(4, 22);
             this.Geschiedenis.Name = "Geschiedenis";
             this.Geschiedenis.Padding = new System.Windows.Forms.Padding(3);
-            this.Geschiedenis.Size = new System.Drawing.Size(921, 607);
+            this.Geschiedenis.Size = new System.Drawing.Size(921, 474);
             this.Geschiedenis.TabIndex = 2;
             this.Geschiedenis.Text = "Geschiedenis";
             this.Geschiedenis.UseVisualStyleBackColor = true;
             // 
-            // label42
+            // kop
             // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(4, 9);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(79, 44);
-            this.label42.TabIndex = 102;
-            this.label42.Text = "Bar";
+            this.kop.AutoSize = true;
+            this.kop.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kop.Location = new System.Drawing.Point(4, 9);
+            this.kop.Name = "kop";
+            this.kop.Size = new System.Drawing.Size(79, 44);
+            this.kop.TabIndex = 102;
+            this.kop.Text = "Bar";
             // 
             // btn_Loguit
             // 
@@ -117,13 +105,11 @@
             this.ClientSize = new System.Drawing.Size(953, 597);
             this.Controls.Add(this.lbl_IngelogdeMedewerker);
             this.Controls.Add(this.btn_Loguit);
-            this.Controls.Add(this.label42);
+            this.Controls.Add(this.kop);
             this.Controls.Add(this.Overzichtbar);
             this.Name = "BarOverzicht";
             this.Text = "BarOverzicht";
             this.Overzichtbar.ResumeLayout(false);
-            this.BarNu.ResumeLayout(false);
-            this.BarNu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,9 +119,8 @@
 
         private System.Windows.Forms.TabControl Overzichtbar;
         private System.Windows.Forms.TabPage BarNu;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TabPage Geschiedenis;
-        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label kop;
         private System.Windows.Forms.Button btn_Loguit;
         private System.Windows.Forms.Label lbl_IngelogdeMedewerker;
     }

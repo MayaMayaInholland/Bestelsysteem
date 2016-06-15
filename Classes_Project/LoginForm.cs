@@ -118,15 +118,19 @@ namespace Classes_Project
                         }
                         else if (m.Rol == MedewerkerRol.Keuken)
                         {
-                            KeukenOverzicht keuken = new KeukenOverzicht(m);
-                            keuken.StartPosition = FormStartPosition.CenterScreen;
-                            keuken.Show();
+                            string rol = "Keuken";
+                            string meer = "<";
+                            BarOverzicht bar = new BarOverzicht(m, meer, rol);
+                            bar.StartPosition = FormStartPosition.CenterScreen;
+                            bar.Show();
                             this.Hide();
                             conn.Close();
                         }
                         else if (m.Rol == MedewerkerRol.Bar)
                         {
-                            BarOverzicht bar = new BarOverzicht(m);
+                            string rol = "Bar";
+                            string meer = ">";
+                            BarOverzicht bar = new BarOverzicht(m, meer, rol);
                             bar.StartPosition = FormStartPosition.CenterScreen;
                             bar.Show();
                             this.Hide();
