@@ -157,7 +157,7 @@ namespace Classes_Project
                 Command.Parameters.AddWithValue("@product_id", bestelling.Bestelde_producten[i].Id);
                 Command.Parameters.AddWithValue("@status", bestelling.Status);
                 Command.Parameters.AddWithValue("@aantal", bestelling.Bestelde_producten[i].Aantal);
-                Command.Parameters.AddWithValue("@opmerkingen", bestelling.Opmerking);
+                Command.Parameters.AddWithValue("@opmerkingen", bestelling.Bestelde_producten[i].Opmerking);
 
                 Command.ExecuteNonQuery();
             }
