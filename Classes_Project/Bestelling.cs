@@ -33,9 +33,10 @@ namespace Classes_Project
         }
 
         //BestellingDAO : Lopende_bestelling ophalen.
-        public Bestelling(int id, int medewerker_id, DateTime tijd, BestellingStatus status, string opmerking, List<Product> producten)
+        public Bestelling(int id, int tafel_id, int medewerker_id, DateTime tijd, BestellingStatus status, string opmerking, List<Product> producten)
         {
             this.Id = id;
+            this.Tafel_id = tafel_id;
             this.Medewerker_id = medewerker_id;
             this.Tijd = tijd;
             this.Status = status;

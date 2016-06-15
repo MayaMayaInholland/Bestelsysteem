@@ -11,7 +11,7 @@ namespace Classes_Project
 
         public Bediening(int id, int pincode, string naam, string achternaam, MedewerkerRol rol) : base(id, pincode, naam, achternaam, rol)
         {
-            tafels = new List<Tafel>();
+           tafels = new List<Tafel>();
         }
     }
 }

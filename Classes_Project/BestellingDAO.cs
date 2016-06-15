@@ -53,7 +53,7 @@ namespace Classes_Project
                 lijst_BesteldeProducten = GetProductenByBestellingId(Id);
 
                 //Bestelling Lopende_bestelling = new Bestelling(Id, Tafel_id, Medewerker_id, Tijd, totaalbedrag, opmerkingen, (int)status, fooi, lijst_Producten);
-                Bestelling Lopende_bestelling = new Bestelling(Id, Medewerker_id, Tijd, status, opmerkingen, lijst_BesteldeProducten);
+                Bestelling Lopende_bestelling = new Bestelling(Id, tafelID, Medewerker_id, Tijd, status, opmerkingen, lijst_BesteldeProducten);
                 return Lopende_bestelling;
             }
             reader.Close();
@@ -80,7 +80,7 @@ namespace Classes_Project
                 int id = (int)reader["id"]; // welke id zal de reader readen ?
                 int categorie_id = (int)reader["categorie_id"];
                 string omschrijving = (string)reader["omschrijving"];
-                int prijs = (int)reader["prijs"]; // prijs nog niet in database ?
+                int prijs = (int)reader["prijs"]; 
                 int voorraad = (int)reader["voorraad"];
                 int btw = (int)reader["btw"];
                 int bestelling_id = (int)reader["bestelling_id"];
@@ -92,17 +92,13 @@ namespace Classes_Project
                     opmerking = (string)reader["opmerking"];
                 }
                 ProductStatus status = (ProductStatus)reader["status"];
-
-                //Hier constructor product gewijzigd ivm conflict besteldproduct class enzo..
-                //Product = new Product(id, categorie_id, prijs, btw, omschrijving, aantal);
+       
                 Product = new Product(id, categorie_id, prijs, btw, omschrijving, aantal, status);
                                
                 Besteld_producten.Add(Product); // Toevoegen product aan Besteld_product list.          
             }
             reader.Close();
-
             return Besteld_producten;
-
         }
 
         // DATA INSERT & UPDATE --------------------------------->---------------------------------------->------------------------
